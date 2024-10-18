@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4cq7vev1xowi"]
+
+[ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://item.tscn" id="1_hd8n8"]
+[ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://player.tscn" id="2_7m2ob"]
+
+[node name="World" type="Node2D"]
+
+[node name="Item" parent="." instance=ExtResource("1_hd8n8")]
+position = Vector2(500, 200)
+
+[node name="Item2" parent="." instance=ExtResource("1_hd8n8")]
+position = Vector2(300, 200)
+
+[node name="Item3" parent="." instance=ExtResource("1_hd8n8")]
+position = Vector2(400, 300)
+
+[node name="Player" parent="." instance=ExtResource("2_7m2ob")]
+position = Vector2(96, 96)
