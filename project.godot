@@ -14,7 +14,6 @@ config/name="Frozen Valley"
 run/main_scene="res://World.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
-
 [display]
 
 window/size/viewport_width=1920
