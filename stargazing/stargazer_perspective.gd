@@ -14,7 +14,7 @@ var instability_dir = Vector2.RIGHT
 var instability_elapsed = 0
 
 func _ready() -> void:
-	camera_rotate(Vector2.ZERO)
+	camera_rotate(Vector2(horizontal_angle, vertical_angle))
 
 func _process(delta: float) -> void:
 	var h_dir = 0
@@ -37,9 +37,6 @@ func _process(delta: float) -> void:
 	instability_dir = Vector2(sin(instability_elapsed*0.5), -cos(2*instability_elapsed*0.5))
 	
 	camera_rotate(instability_dir * instability * delta * 0.25)
-
-func bezier_blend(t: float):
-	return t * t * (3.0 - 2.0 * t)
 		
 func camera_rotate(direction: Vector2):
 	horizontal_angle = -direction.x + horizontal_angle

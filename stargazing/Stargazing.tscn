@@ -16,9 +16,6 @@ sky = ExtResource("1_mlj65")
 environment = SubResource("Environment_yn6f6")
 size = 1.75
 script = ExtResource("2_dcg3g")
-min_vertical_angle = 0.0
-max_vertical_angle = 1.178
-instability = 0.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
