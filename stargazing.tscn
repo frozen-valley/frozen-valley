@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b7riegut3a8nm"]
+
+[ext_resource type="Sky" uid="uid://bxnbg6nhs5ov0" path="res://starry_skybox.tres" id="1_fb1pn"]
+[ext_resource type="Script" path="res://stargazer_perspective.gd" id="2_u4wv6"]
+[ext_resource type="Texture2D" uid="uid://dei7ywcj6peou" path="res://finger_pointing.png" id="3_bxob7"]
+[ext_resource type="Script" path="res://angle_label.gd" id="4_8p7jl"]
+
+[sub_resource type="Environment" id="Environment_yn6f6"]
+background_mode = 2
+sky = ExtResource("1_fb1pn")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StargazerPerspective" type="Camera3D" parent="."]
+environment = SubResource("Environment_yn6f6")
+size = 1.75
+script = ExtResource("2_u4wv6")
+min_vertical_angle = 0.0
+max_vertical_angle = 1.178
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="Sprite2D" parent="UI"]
+position = Vector2(-536, 375)
+rotation = 0.122173
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_bxob7")
+
+[node name="Angle Label" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = -941.0
+offset_top = -524.0
+offset_right = -863.0
+offset_bottom = -501.0
+text = "angle: 0, 0"
+script = ExtResource("4_8p7jl")
+
+[connection signal="rotated" from="StargazerPerspective" to="UI/Angle Label" method="_on_stargazer_perspective_camera_rotated"]
