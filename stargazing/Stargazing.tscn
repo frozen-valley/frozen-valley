@@ -2,7 +2,7 @@
 
 [ext_resource type="Sky" uid="uid://bxnbg6nhs5ov0" path="res://stargazing/starry_skybox.tres" id="1_mlj65"]
 [ext_resource type="Script" path="res://stargazing/stargazer_perspective.gd" id="2_dcg3g"]
-[ext_resource type="Texture2D" uid="uid://dei7ywcj6peou" path="res://stargazing/finger_pointing.png" id="3_xwxac"]
+[ext_resource type="Texture2D" uid="uid://oo6chm0walfo" path="res://stargazing/finger_pointing.png" id="3_g5msl"]
 [ext_resource type="Script" path="res://stargazing/angle_label.gd" id="4_tr0va"]
 [ext_resource type="Texture2D" uid="uid://dlfuhn5twteud" path="res://icon.svg" id="5_4ts8q"]
 
@@ -34,7 +34,7 @@ grow_vertical = 2
 position = Vector2(-536, 375)
 rotation = 0.122173
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("3_xwxac")
+texture = ExtResource("3_g5msl")
 
 [node name="AngleLabel" type="Label" parent="UI"]
 layout_mode = 0
