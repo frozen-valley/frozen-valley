@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://de52svsa7v0in"]
+[gd_scene load_steps=7 format=3 uid="uid://de52svsa7v0in"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_yisvx"]
+[ext_resource type="Resource" uid="uid://bhset6bsfxlrw" path="res://inventory/player_inventory.tres" id="2_5ve6o"]
 [ext_resource type="Texture2D" uid="uid://bvx32qqrtbh7o" path="res://sprites/player.png" id="2_n72h5"]
 [ext_resource type="Texture2D" uid="uid://ql31cdmw5w62" path="res://sprites/player_walk.png" id="3_cfsha"]
 
@@ -30,6 +31,7 @@ height = 45.0
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 script = ExtResource("1_yisvx")
+inventory = ExtResource("2_5ve6o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
