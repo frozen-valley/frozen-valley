@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4cq7vev1xowi"]
+
+[ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
+[ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://scenes/player.tscn" id="2_rl5vm"]
+[ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://scenes/tree.tscn" id="3_6e2c5"]
+[ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="4_h1r4w"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+
+[node name="Item" parent="." instance=ExtResource("1_ybk0r")]
+position = Vector2(500, 200)
+
+[node name="Item2" parent="." instance=ExtResource("1_ybk0r")]
+position = Vector2(300, 200)
+
+[node name="Item3" parent="." instance=ExtResource("1_ybk0r")]
+position = Vector2(400, 300)
+
+[node name="Player" parent="." instance=ExtResource("2_rl5vm")]
+position = Vector2(96, 96)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("3_6e2c5")]
+position = Vector2(387, -30)
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("3_6e2c5")]
+position = Vector2(-269, 6)
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("3_6e2c5")]
+position = Vector2(-150, 329)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("4_h1r4w")]
+offset_left = 634.0
+offset_top = 520.0
+offset_right = 735.0
+offset_bottom = 543.0
+scale = Vector2(5, 5)
