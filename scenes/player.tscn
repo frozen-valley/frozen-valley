@@ -28,7 +28,7 @@ animations = [{
 radius = 12.5
 height = 45.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_yisvx")
 inventory = ExtResource("2_5ve6o")
