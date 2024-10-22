@@ -8,11 +8,13 @@ var move_y: float = 0
 var direction_x: int = 1
 var pickup_queue: Array[Pickupable]
 
-@export var inventory: Inv
+@export var inventory: Inventory
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _add_to_inventory(item: Pickupable) -> void:
+	var item_type = item.item
 	item.pick_me_up(self)
+	inventory.insert(item_type)
 	# Add to inventory...
 
 func _pickup() -> void:
@@ -55,6 +57,3 @@ func _physics_process(_delta: float) -> void:
 
 	if !pickup_queue.is_empty():
 		_listen_for_pickups()	
-
-func collect(item):
-	inventory.insert(item)

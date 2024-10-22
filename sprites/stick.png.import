@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5llqesdnbwe3"
-path="res://.godot/imported/Drvo.png-357661adba562113ed7792146dbc55b5.ctex"
+uid="uid://dh1skibqn2c0y"
+path="res://.godot/imported/stick.png-b18ecaf66f5960c72eab6d6dd414318f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Drvo.png"
-dest_files=["res://.godot/imported/Drvo.png-357661adba562113ed7792146dbc55b5.ctex"]
+source_file="res://sprites/stick.png"
+dest_files=["res://.godot/imported/stick.png-b18ecaf66f5960c72eab6d6dd414318f.ctex"]
 
 [params]
 

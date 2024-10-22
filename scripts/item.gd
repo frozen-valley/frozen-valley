@@ -4,7 +4,7 @@ class_name Pickupable
 var follow_player := false
 var player: Player
 
-@export var item: InvItem
+@export var item: InventoryItem
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,7 +19,6 @@ func _process(_delta: float) -> void:
 func pick_me_up(player_ref: Player) -> void:
 	player = player_ref
 	follow_player = true
-	player.collect(item)
 	await get_tree().create_timer(1.2).timeout
 	queue_free()
 

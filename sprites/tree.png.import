@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh1skibqn2c0y"
-path="res://.godot/imported/stick.png-43c641965162549a2d1a885155fcb5e6.ctex"
+uid="uid://c5llqesdnbwe3"
+path="res://.godot/imported/tree.png-f6c9ce7c15c3646c3c37a737953f3b49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scripts/stick.png"
-dest_files=["res://.godot/imported/stick.png-43c641965162549a2d1a885155fcb5e6.ctex"]
+source_file="res://sprites/tree.png"
+dest_files=["res://.godot/imported/tree.png-f6c9ce7c15c3646c3c37a737953f3b49.ctex"]
 
 [params]
 
