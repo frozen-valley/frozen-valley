@@ -7,7 +7,6 @@ var x_offset: int = 100
 var camera: Camera2D
 var center: Vector2
 
-
 func _ready() -> void:
 	camera = get_viewport().get_camera_2d()
 	if (!camera):
