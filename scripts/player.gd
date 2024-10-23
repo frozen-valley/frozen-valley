@@ -15,7 +15,6 @@ func _add_to_inventory(item: Pickupable) -> void:
 	var item_type = item.item
 	item.pick_me_up(self)
 	inventory.insert(item_type)
-	# Add to inventory...
 
 func _pickup() -> void:
 	var item: Pickupable = pickup_queue[0]
@@ -32,6 +31,10 @@ func add_to_pickup_queue(item: Pickupable) -> void:
 
 func remove_from_pickup_queue(item: Pickupable) -> void:
 	pickup_queue.erase(item)
+
+func _process(_delta: float) -> void:
+	if !pickup_queue.is_empty():
+		_listen_for_pickups()	
 
 func _physics_process(_delta: float) -> void:
 	# Get the input directions
@@ -54,6 +57,3 @@ func _physics_process(_delta: float) -> void:
 	# Update the velocity
 	velocity = move * SPEED
 	move_and_slide()
-
-	if !pickup_queue.is_empty():
-		_listen_for_pickups()	
