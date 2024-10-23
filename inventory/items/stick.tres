@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cggowsgoo8c2h"]
+=======
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cggowsgoo8c2h"]
+>>>>>>> e476eba0dcf34d6611b4fb9a96e36facc783bf2d
 
 [ext_resource type="Script" path="res://inventory/inv_scripts/inventory_item.gd" id="1_a2wy2"]
 [ext_resource type="Texture2D" uid="uid://dh1skibqn2c0y" path="res://sprites/stick.png" id="2_pef3s"]
