@@ -12,14 +12,13 @@ var isInside = false
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _physics_process(delta):
-	
 	if (runToPlayer):
 		var direction = global_position.direction_to(player.global_position) 
 		velocity = direction * SPEED
 	
 	move_x = Input.get_axis("ui_left", "ui_right")
 
-		# Flip based on X direction
+	# Flip based on X direction
 	if move_x != 0 && direction_x != sign(move_x):
 		direction_x *= -1
 		scale.x = default_scale_x * -1

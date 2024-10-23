@@ -15,7 +15,6 @@ func _add_to_inventory(item: Pickupable) -> void:
 	var item_type = item.item
 	item.pick_me_up(self)
 	inventory.insert(item_type)
-	# Add to inventory...
 
 func _pickup() -> void:
 	var item: Pickupable = pickup_queue[0]

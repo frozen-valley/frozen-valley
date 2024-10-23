@@ -33,7 +33,7 @@ collision_layer = 2
 script = ExtResource("1_g38vx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_tys6c")
 animation = &"idle"
 
