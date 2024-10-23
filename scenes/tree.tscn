@@ -6,6 +6,7 @@
 radius = 16.0312
 
 [node name="StaticBody2D" type="StaticBody2D"]
+collision_layer = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
