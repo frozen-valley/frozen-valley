@@ -35,7 +35,6 @@ func _physics_process(_delta: float) -> void:
 	else:
 		velocity = Vector2(0, 0)
 	
-	print(direction.angle())
 	if (direction.angle() > (-PI / 2.0) && direction.angle() < (PI / 2.0)):
 		move_x = 1
 	else:
