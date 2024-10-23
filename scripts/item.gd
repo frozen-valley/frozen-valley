@@ -4,6 +4,8 @@ class_name Pickupable
 var follow_player := false
 var player: Player
 
+@export var item: InventoryItem
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -25,5 +27,3 @@ func _on_body_entered(body: Player) -> void:
 
 func _on_body_exited(body: Player) -> void:
 	body.remove_from_pickup_queue(self)
-
-

@@ -8,8 +8,13 @@ var move_y: float = 0
 var direction_x: int = 1
 var pickup_queue: Array[Pickupable]
 
+@export var inventory: Inventory
+@onready var animated_sprite = $AnimatedSprite2D
+
 func _add_to_inventory(item: Pickupable) -> void:
+	var item_type = item.item
 	item.pick_me_up(self)
+	inventory.insert(item_type)
 	# Add to inventory...
 
 func _pickup() -> void:
@@ -40,6 +45,11 @@ func _physics_process(_delta: float) -> void:
 	if move_x != 0 && direction_x != sign(move_x):
 		direction_x *= -1
 		scale.x = default_scale_x * -1
+	
+	if move != Vector2(0,0):
+		animated_sprite.play("walk")
+	else:
+		animated_sprite.play("idle")
 
 	# Update the velocity
 	velocity = move * SPEED
