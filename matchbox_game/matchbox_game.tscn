@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://matchbox_game/scripts/matchbox_game.gd" id="1_ou3uw"]
 [ext_resource type="Texture2D" uid="uid://dlfuhn5twteud" path="res://icon.svg" id="2_dbsxo"]
-[ext_resource type="Curve" path="res://matchbox_game/matchbox_velocity.tres" id="2_yv6x5"]
+[ext_resource type="Curve" uid="uid://ddrr7x2w7m8up" path="res://matchbox_game/matchbox_velocity.tres" id="2_yv6x5"]
 [ext_resource type="Script" path="res://matchbox_game/scripts/quicktime.gd" id="3_lt3b6"]
 [ext_resource type="Script" path="res://matchbox_game/scripts/match.gd" id="4_y4b4d"]
 [ext_resource type="Texture2D" uid="uid://bmnie6ahbyc1u" path="res://matchbox_game/match_burn.png" id="5_ev540"]

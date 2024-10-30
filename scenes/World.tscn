@@ -29,8 +29,8 @@ position = Vector2(400, 300)
 
 [node name="Partner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_lvg3v")]
 player = NodePath("../Player")
-distance_treshold = 200.0
-distance_leeway = 100.0
+distance_treshold = 100.0
+distance_leeway = 200.0
 
 [node name="Player" parent="." instance=ExtResource("2_rl5vm")]
 position = Vector2(76, 28)
