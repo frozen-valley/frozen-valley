@@ -1,0 +1,36 @@
+[gd_scene load_steps=8 format=3 uid="uid://k3fyvx8tr23c"]
+
+[ext_resource type="Script" path="res://matchbox_game/scripts/matchbox_game.gd" id="1_ou3uw"]
+[ext_resource type="Texture2D" uid="uid://dlfuhn5twteud" path="res://icon.svg" id="2_dbsxo"]
+[ext_resource type="Curve" uid="uid://ddrr7x2w7m8up" path="res://matchbox_game/matchbox_velocity.tres" id="2_yv6x5"]
+[ext_resource type="Script" path="res://matchbox_game/scripts/quicktime.gd" id="3_lt3b6"]
+[ext_resource type="Script" path="res://matchbox_game/scripts/match.gd" id="4_y4b4d"]
+[ext_resource type="Texture2D" uid="uid://bmnie6ahbyc1u" path="res://matchbox_game/match_burn.png" id="5_ev540"]
+[ext_resource type="Texture2D" uid="uid://buhbdnl6mivtf" path="res://matchbox_game/match.png" id="6_vw4vt"]
+
+[node name="Game" type="Node2D"]
+
+[node name="MatchboxGame" type="Node2D" parent="."]
+position = Vector2(600, 400)
+script = ExtResource("1_ou3uw")
+_velocity_curve = ExtResource("2_yv6x5")
+
+[node name="Matchbox" type="Node2D" parent="MatchboxGame"]
+scale = Vector2(4.5, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="MatchboxGame/Matchbox"]
+texture = ExtResource("2_dbsxo")
+
+[node name="Quicktime" type="Node2D" parent="MatchboxGame"]
+position = Vector2(-290, -200)
+script = ExtResource("3_lt3b6")
+
+[node name="Match" type="Node2D" parent="MatchboxGame"]
+position = Vector2(-300, 80)
+rotation = 5.75959
+script = ExtResource("4_y4b4d")
+burn_sprite = ExtResource("5_ev540")
+
+[node name="Sprite2D" type="Sprite2D" parent="MatchboxGame/Match"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("6_vw4vt")
