@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=9 format=3 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
+[ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://scenes/player.tscn" id="2_rl5vm"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://scenes/tree.tscn" id="3_6e2c5"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="4_h1r4w"]
@@ -10,6 +11,7 @@
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_yr7tt")
 
 [node name="Snow" parent="." instance=ExtResource("6_n0jfh")]
 position = Vector2(480, -970)
@@ -27,8 +29,8 @@ position = Vector2(400, 300)
 
 [node name="Partner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_lvg3v")]
 player = NodePath("../Player")
-distance_treshold = 200.0
-distance_leeway = 100.0
+distance_treshold = 100.0
+distance_leeway = 200.0
 
 [node name="Player" parent="." instance=ExtResource("2_rl5vm")]
 position = Vector2(76, 28)
