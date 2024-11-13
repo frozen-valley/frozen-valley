@@ -1,7 +1,7 @@
 extends Node
 class_name StarAngles
 
-static var big_dipper_angles = [
+static var big_dipper_angles: Array[Vector2] = [
 	Vector2(1.270, 0.743),
 	Vector2(1.399, 0.851),
 	Vector2(1.563, 0.623),
@@ -11,7 +11,7 @@ static var big_dipper_angles = [
 	Vector2(2.442, 0.508)
 ]
 
-static var little_dipper_angles = [
+static var little_dipper_angles: Array[Vector2] = [
 	Vector2(2.981, 0.420),
 	Vector2(2.954, 0.494),
 	Vector2(3.225, 0.468),
@@ -21,7 +21,7 @@ static var little_dipper_angles = [
 	Vector2(3.444, 0.778)
 ]
 
-static var cassiopeia_angles = [
+static var cassiopeia_angles: Array[Vector2] = [
 	Vector2(4.565, 0.877),
 	Vector2(4.787, 0.882),
 	Vector2(4.718, 0.994),
@@ -33,7 +33,7 @@ static var north_star_angles: Array[Vector2] = [
 	Vector2(3.444, 0.778)
 ]
 
-static var groups = [
+static var groups: Array[Array] = [
 	cassiopeia_angles,
 	little_dipper_angles,
 	big_dipper_angles,

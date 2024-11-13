@@ -5,11 +5,11 @@ signal solved_star()
 
 const focus_duration: float = 1
 
-var horizontal_angle = 0
-var vertical_angle = 0
-var calibration = 0
+var horizontal_angle: float = 0
+var vertical_angle: float = 0
+var calibration: float = 0
 
-var stars = []
+var stars: Array = []
 
 func _process(delta: float) -> void:
 	if len(stars) == 0:

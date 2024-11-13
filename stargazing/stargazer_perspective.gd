@@ -2,16 +2,16 @@ extends Camera3D
 
 signal rotated(new_horizontal_angle: float, new_vertical_angle: float)
 
-@export var rotate_speed = 1/PI
-@export var min_vertical_angle = PI/8
-@export var max_vertical_angle = 3*PI/8
-@export var instability = 0.1
+@export var rotate_speed: float = 1/PI
+@export var min_vertical_angle: float = PI/8
+@export var max_vertical_angle: float = 3*PI/8
+@export var instability: float = 0.1
 
-var horizontal_angle = 0
-var vertical_angle = PI/2
+var horizontal_angle: float = 0
+var vertical_angle: float = PI/2
 
-var instability_dir = Vector2.RIGHT
-var instability_elapsed = 0
+var instability_dir: Vector2 = Vector2.RIGHT
+var instability_elapsed: float = 0
 
 func _ready() -> void:
 	camera_rotate(Vector2(horizontal_angle, vertical_angle))
@@ -20,8 +20,8 @@ func _process(delta: float) -> void:
 	movement(delta)
 
 func movement(delta: float):
-	var h_dir = 0
-	var v_dir = 0
+	var h_dir: float = 0
+	var v_dir: float = 0
 	
 	if Input.is_key_pressed(KEY_D):
 		h_dir += 1
