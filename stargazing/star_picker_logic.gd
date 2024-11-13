@@ -1,37 +1,41 @@
 extends Node
 
 signal calibrated(factor: float)
-signal solved_one()
-signal solved_all()
+signal solved_star()
+
+const focus_duration: float = 1
 
 var horizontal_angle = 0
 var vertical_angle = 0
 var calibration = 0
-var solved = 0
-var stars = StarAngles.cassiopeia_angles + StarAngles.big_dipper_angles + StarAngles.little_dipper_angles
 
-func get_next_star():
-	var star = stars[solved]
-	return star
-	
+var stars = []
 
 func _process(delta: float) -> void:
-	var star = get_next_star()
-	var dist_vector: Vector2 \
-	= Vector2(angle_difference(star.x, horizontal_angle), angle_difference(star.y, vertical_angle)) 
-	var dist = dist_vector.length()
-	if dist < 0.05:
-		calibration += 0.2*delta
+	if len(stars) == 0:
+		return
+	
+	var min_dist = 1
+	var chosen_star = stars[0]
+	
+	for star in stars:
+		var dist_vector: Vector2 \
+		= Vector2(angle_difference(star.x, horizontal_angle), angle_difference(star.y, vertical_angle)) 
+		var dist = dist_vector.length()
+		if dist < min_dist:
+			min_dist = dist
+			chosen_star = star
+		
+	if min_dist < 0.05:
+		calibration += delta / focus_duration
 	else:
-		calibration -= delta
+		calibration -= 5*delta
 	calibration = clamp(calibration, 0, 1)
 	calibrated.emit(calibration)
-	
 	if calibration >= 1:
-		solved += 1
-		solved_one.emit()
-		if solved == stars.size():
-			solved_all.emit()
+		stars.erase(chosen_star)
+		solved_star.emit()
+
 
 func angle_difference(angle1: float, angle2: float):
 	var diff = fmod(( angle2 - angle1 + PI ), 2*PI) - PI
@@ -41,3 +45,8 @@ func angle_difference(angle1: float, angle2: float):
 func _on_stargazer_perspective_rotated(new_horizontal_angle: float, new_vertical_angle: float) -> void:
 	horizontal_angle = new_horizontal_angle
 	vertical_angle = new_vertical_angle
+
+
+func _on_stargazing_tutorial_load_star_group(star_group_index: int) -> void:
+	stars = []
+	stars.append_array(StarAngles.groups[star_group_index])

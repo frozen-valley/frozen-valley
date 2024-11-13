@@ -28,3 +28,14 @@ static var cassiopeia_angles = [
 	Vector2(4.839, 1.046),
 	Vector2(4.796, 1.162)
 ]
+
+static var north_star_angles: Array[Vector2] = [
+	Vector2(3.444, 0.778)
+]
+
+static var groups = [
+	cassiopeia_angles,
+	little_dipper_angles,
+	big_dipper_angles,
+	north_star_angles,
+]
