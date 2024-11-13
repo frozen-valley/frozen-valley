@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://by5yyycldn78p" path="res://stargazing/circle_crosshair.png" id="3_7ybks"]
 [ext_resource type="Texture2D" uid="uid://oo6chm0walfo" path="res://stargazing/finger_pointing.png" id="3_g5msl"]
 [ext_resource type="Script" path="res://stargazing/crosshair.gd" id="4_2faaw"]
-[ext_resource type="Script" path="res://stargazing/angle_label.gd" id="4_tr0va"]
+[ext_resource type="Script" path="res://stargazing/star_picker_logic.gd" id="7_tyand"]
 
 [sub_resource type="Environment" id="Environment_yn6f6"]
 background_mode = 2
@@ -17,6 +17,9 @@ sky = ExtResource("1_mlj65")
 environment = SubResource("Environment_yn6f6")
 size = 1.75
 script = ExtResource("2_dcg3g")
+
+[node name="StarPickerLogic" type="Node" parent="."]
+script = ExtResource("7_tyand")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -39,14 +42,5 @@ rotation = 0.122173
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_g5msl")
 
-[node name="AngleLabel" type="Label" parent="UI"]
-layout_mode = 0
-offset_left = -941.0
-offset_top = -524.0
-offset_right = -863.0
-offset_bottom = -501.0
-text = "angle: 0, 0"
-script = ExtResource("4_tr0va")
-
-[connection signal="calibrated" from="StargazerPerspective" to="UI/Crosshair" method="set_calibration_factor"]
-[connection signal="rotated" from="StargazerPerspective" to="UI/AngleLabel" method="_on_stargazer_perspective_camera_rotated"]
+[connection signal="rotated" from="StargazerPerspective" to="StarPickerLogic" method="_on_stargazer_perspective_rotated"]
+[connection signal="calibrated" from="StarPickerLogic" to="UI/Crosshair" method="_on_star_picker_logic_calibrated"]

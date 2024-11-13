@@ -1,7 +1,7 @@
 extends Node
 class_name StarAngles
 
-static var little_dipper_angles = [
+static var big_dipper_angles = [
 	Vector2(1.270, 0.743),
 	Vector2(1.399, 0.851),
 	Vector2(1.563, 0.623),
@@ -11,7 +11,7 @@ static var little_dipper_angles = [
 	Vector2(2.442, 0.508)
 ]
 
-static var big_dipper_angles = [
+static var little_dipper_angles = [
 	Vector2(2.981, 0.420),
 	Vector2(2.954, 0.494),
 	Vector2(3.225, 0.468),
