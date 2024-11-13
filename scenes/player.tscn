@@ -25,16 +25,15 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ew5rr"]
-radius = 12.5
-height = 45.0
+radius = 26.0
+height = 106.0
 
-[node name="Player" type="CharacterBody2D"]
-scale = Vector2(2, 2)
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_yisvx")
 inventory = ExtResource("2_5ve6o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_sssw1")
 animation = &"idle"
 

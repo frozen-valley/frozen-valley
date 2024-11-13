@@ -1,12 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=9 format=3 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
+[ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://scenes/player.tscn" id="2_rl5vm"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://scenes/tree.tscn" id="3_6e2c5"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="4_h1r4w"]
+[ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://scenes/partner.tscn" id="5_lvg3v"]
+[ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://scenes/snow.tscn" id="6_n0jfh"]
+[ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://scenes/border.tscn" id="7_2d534"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_yr7tt")
+
+[node name="Snow" parent="." instance=ExtResource("6_n0jfh")]
+position = Vector2(480, -970)
+scale = Vector2(2, 1)
+amount = 1200
 
 [node name="Item" parent="." instance=ExtResource("1_ybk0r")]
 position = Vector2(500, 200)
@@ -17,10 +27,20 @@ position = Vector2(300, 200)
 [node name="Item3" parent="." instance=ExtResource("1_ybk0r")]
 position = Vector2(400, 300)
 
+[node name="Partner" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_lvg3v")]
+player = NodePath("../Player")
+distance_treshold = 100.0
+distance_leeway = 200.0
+
 [node name="Player" parent="." instance=ExtResource("2_rl5vm")]
-position = Vector2(96, 96)
+position = Vector2(76, 28)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+limit_left = -960
+limit_top = -960
+limit_right = 960
+limit_bottom = 960
 
 [node name="StaticBody2D" parent="." instance=ExtResource("3_6e2c5")]
 position = Vector2(387, -30)
@@ -34,8 +54,28 @@ position = Vector2(-150, 329)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("4_h1r4w")]
-offset_left = 634.0
-offset_top = 520.0
-offset_right = 735.0
-offset_bottom = 543.0
+offset_left = 1380.0
+offset_top = 940.0
+offset_right = 1481.0
+offset_bottom = 963.0
 scale = Vector2(5, 5)
+
+[node name="Border" parent="." instance=ExtResource("7_2d534")]
+position = Vector2(0, 960)
+scale = Vector2(10, 9)
+collision_layer = 3
+
+[node name="Border2" parent="." instance=ExtResource("7_2d534")]
+position = Vector2(-960, 0)
+rotation = 1.5708
+scale = Vector2(10, 9)
+
+[node name="Border3" parent="." instance=ExtResource("7_2d534")]
+position = Vector2(0, -960)
+rotation = 3.14159
+scale = Vector2(10, 9)
+
+[node name="Border4" parent="." instance=ExtResource("7_2d534")]
+position = Vector2(960, 0)
+rotation = 4.71239
+scale = Vector2(10, 9)

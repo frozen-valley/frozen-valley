@@ -1,4 +1,4 @@
-class_name InvItem
+class_name InventoryItem
 extends Resource
 
 @export var name: String = ""

@@ -1,11 +1,11 @@
-class_name Inv
+class_name Inventory
 extends Resource
 
 signal update
 
-@export var slots: Array[InvSlot]
+@export var slots: Array[InventorySlot]
 
-func insert(item: InvItem):
+func insert(item: InventoryItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
 	if !itemSlots.is_empty():
 		itemSlots[0].amount += 1
