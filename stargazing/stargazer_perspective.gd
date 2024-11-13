@@ -32,7 +32,7 @@ func movement(delta: float):
 	if Input.is_key_pressed(KEY_S):
 		v_dir -= 1
 		
-	var direction = Vector2(h_dir, v_dir).normalized() * delta * rotate_speed
+	var direction: Vector2 = Vector2(h_dir, v_dir).normalized() * delta * rotate_speed
 	if direction.length() != 0:
 		camera_rotate(direction)
 	

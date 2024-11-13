@@ -15,13 +15,13 @@ func _process(delta: float) -> void:
 	if len(stars) == 0:
 		return
 	
-	var min_dist = 1
-	var chosen_star = stars[0]
+	var min_dist: float = 1
+	var chosen_star: Vector2 = stars[0]
 	
-	for star in stars:
+	for star: Vector2 in stars:
 		var dist_vector: Vector2 \
 		= Vector2(angle_difference(star.x, horizontal_angle), angle_difference(star.y, vertical_angle)) 
-		var dist = dist_vector.length()
+		var dist: float = dist_vector.length()
 		if dist < min_dist:
 			min_dist = dist
 			chosen_star = star
@@ -37,8 +37,8 @@ func _process(delta: float) -> void:
 		solved_star.emit()
 
 
-func angle_difference(angle1: float, angle2: float):
-	var diff = fmod(( angle2 - angle1 + PI ), 2*PI) - PI
+func angle_difference(angle1: float, angle2: float) -> float:
+	var diff: float = fmod(( angle2 - angle1 + PI ), 2*PI) - PI
 	return diff + 2*PI if diff < -PI else diff
 
 
