@@ -1,6 +1,7 @@
 extends Camera3D
 
 signal rotated(new_horizontal_angle: float, new_vertical_angle: float)
+signal calibrated(factor: float)
 
 @export var rotate_speed = 1/PI
 @export var min_vertical_angle = PI/8
@@ -17,6 +18,22 @@ func _ready() -> void:
 	camera_rotate(Vector2(horizontal_angle, vertical_angle))
 
 func _process(delta: float) -> void:
+	movement(delta)
+	
+	var star = StarAngles.cassiopeia_angles[0]
+	var dist_vector: Vector2 \
+	= Vector2(angle_difference(star.x, horizontal_angle), angle_difference(star.y, vertical_angle)) 
+	var dist = dist_vector.length()
+	calibrated.emit(1/(1+dist))
+
+
+func angle_difference(angle1: float, angle2: float):
+	var diff = fmod(( angle2 - angle1 + PI ), 2*PI) - PI
+	return diff + 2*PI if diff < -PI else diff
+
+
+
+func movement(delta: float):
 	var h_dir = 0
 	var v_dir = 0
 	
@@ -37,7 +54,8 @@ func _process(delta: float) -> void:
 	instability_dir = Vector2(sin(instability_elapsed*0.5), -cos(2*instability_elapsed*0.5))
 	
 	camera_rotate(instability_dir * instability * delta * 0.25)
-		
+
+
 func camera_rotate(direction: Vector2):
 	horizontal_angle = -direction.x + horizontal_angle
 	vertical_angle = clamp(direction.y + vertical_angle, min_vertical_angle, max_vertical_angle)
