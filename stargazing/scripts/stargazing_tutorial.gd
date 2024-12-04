@@ -14,7 +14,6 @@ func _on_star_picker_logic_solved_star() -> void:
 		solved_stars = 0
 		solved_groups += 1
 		if solved_groups == len(StarAngles.groups):
-			solved_groups = 0
 			all_solved.emit()
 		else:
 			load_star_group.emit(solved_groups)

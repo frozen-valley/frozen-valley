@@ -2,8 +2,6 @@ extends Node3D
 
 var stargazing_tree_preload := preload("res://stargazing/StargazingTree.tscn")
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	for i in range(200):
@@ -20,8 +18,3 @@ func _ready() -> void:
 		tree_instance.scale = Vector3.ONE * rand_scale
 		
 		tree_instance.adjust_rotation()
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

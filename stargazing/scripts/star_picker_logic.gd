@@ -3,7 +3,7 @@ extends Node
 signal calibrated(factor: float)
 signal solved_star()
 
-const focus_duration: float = 1
+@export var focus_duration: float = 1
 
 var horizontal_angle: float = 0
 var vertical_angle: float = 0
