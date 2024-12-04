@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by5yyycldn78p"
-path="res://.godot/imported/circle_crosshair.png-159643526b4883dc435e5c085ea21f13.ctex"
+uid="uid://bvx32qqrtbh7o"
+path="res://.godot/imported/player.png-f00d5c0e165755a8c86d9210ef9d8b13.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://stargazing/circle_crosshair.png"
-dest_files=["res://.godot/imported/circle_crosshair.png-159643526b4883dc435e5c085ea21f13.ctex"]
+source_file="res://sprites/characters/main_character/player.png"
+dest_files=["res://.godot/imported/player.png-f00d5c0e165755a8c86d9210ef9d8b13.ctex"]
 
 [params]
 

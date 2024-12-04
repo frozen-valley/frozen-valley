@@ -1,0 +1,6 @@
+[gd_resource type="Sky" load_steps=2 format=3 uid="uid://tm16h4yqewq4"]
+
+[ext_resource type="Material" uid="uid://ofkwqy26gagv" path="res://stargazing/skybox/variant2/starry_sky_treesless_material.tres" id="1_mu10e"]
+
+[resource]
+sky_material = ExtResource("1_mu10e")

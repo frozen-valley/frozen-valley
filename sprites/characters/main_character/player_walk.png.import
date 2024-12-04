@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh1skibqn2c0y"
-path="res://.godot/imported/stick.png-b18ecaf66f5960c72eab6d6dd414318f.ctex"
+uid="uid://ql31cdmw5w62"
+path="res://.godot/imported/player_walk.png-03e0041437227232afe1270f1fc91414.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/stick.png"
-dest_files=["res://.godot/imported/stick.png-b18ecaf66f5960c72eab6d6dd414318f.ctex"]
+source_file="res://sprites/characters/main_character/player_walk.png"
+dest_files=["res://.godot/imported/player_walk.png-03e0041437227232afe1270f1fc91414.ctex"]
 
 [params]
 
