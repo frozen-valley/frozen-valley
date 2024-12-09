@@ -8,8 +8,3 @@ func _on_stargazing_tutorial_load_star_group(star_group_index: int) -> void:
 		$LittleDipperStarchart.draw(StarAngles.little_dipper_angles)
 	elif star_group_index == 3:
 		$BigDipperStarchart.draw(StarAngles.big_dipper_angles)
-	
-
-
-func _on_stargazing_tutorial_all_solved() -> void:
-	pass

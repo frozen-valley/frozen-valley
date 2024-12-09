@@ -2,11 +2,11 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(1, 1, 1, 1),
+"color": Color(0.411765, 0.443137, 0.552941, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": ""
+"style": "main_character_dialogue_style"
 },
 "default_portrait": "Standing",
 "description": "",
@@ -21,7 +21,7 @@
 },
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 1.0,
 "scene": ""
 },
 "Standing": {

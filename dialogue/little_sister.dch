@@ -6,7 +6,7 @@
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": ""
+"style": "sister_character_dialogue_style"
 },
 "default_portrait": "Standing",
 "description": "",
@@ -19,11 +19,12 @@
 "export_overrides": {
 "image": "\"res://sprites/characters/main_character/player.png\""
 },
-"mirror": false,
+"ignore_char_scale": true,
+"mirror": true,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 0.8,
 "scene": ""
 }
 },
-"scale": 0.5
+"scale": 1.0
 }

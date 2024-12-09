@@ -8,9 +8,9 @@
 [ext_resource type="Script" path="res://stargazing/scripts/stargazing_tutorial.gd" id="4_sa6gw"]
 [ext_resource type="Script" path="res://stargazing/scripts/star_picker_logic.gd" id="7_tyand"]
 [ext_resource type="Script" path="res://stargazing/scripts/quest_labels.gd" id="8_odhg8"]
-[ext_resource type="Script" path="res://stargazing/star_highlighter.gd" id="10_3w00e"]
+[ext_resource type="Script" path="res://stargazing/sub_scenes/star_highlighter.gd" id="10_3w00e"]
 [ext_resource type="Script" path="res://stargazing/scripts/starcharter.gd" id="10_ku6pm"]
-[ext_resource type="PackedScene" uid="uid://dgic8434pc3fq" path="res://stargazing/starchart.tscn" id="11_7t2kk"]
+[ext_resource type="PackedScene" uid="uid://dgic8434pc3fq" path="res://stargazing/sub_scenes/starchart.tscn" id="11_7t2kk"]
 [ext_resource type="Script" path="res://stargazing/scripts/tree_spawner.gd" id="11_r2x1k"]
 
 [sub_resource type="Environment" id="Environment_dx87f"]
@@ -25,16 +25,37 @@ sky = ExtResource("1_36b8n")
 
 [node name="Stargazing" type="Node3D"]
 
-[node name="StargazerPerspective" type="Camera3D" parent="."]
-size = 1.75
-script = ExtResource("2_dcg3g")
-instability = 0.2
-
 [node name="StargazingTutorial" type="Node" parent="."]
 script = ExtResource("4_sa6gw")
 
 [node name="StarPickerLogic" type="Node" parent="."]
 script = ExtResource("7_tyand")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dx87f")
+
+[node name="StargazerPerspective" type="Camera3D" parent="."]
+size = 1.75
+script = ExtResource("2_dcg3g")
+instability = 0.2
+
+[node name="TreeSpawner" type="Node3D" parent="."]
+script = ExtResource("11_r2x1k")
+
+[node name="StarHighlighter" type="Node3D" parent="."]
+script = ExtResource("10_3w00e")
+
+[node name="Starcharter" type="Node3D" parent="."]
+script = ExtResource("10_ku6pm")
+
+[node name="CassiopeiaStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
+curve = SubResource("Curve3D_76yy0")
+
+[node name="LittleDipperStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
+curve = SubResource("Curve3D_f485u")
+
+[node name="BigDipperStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
+curve = SubResource("Curve3D_ssevu")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -89,32 +110,10 @@ modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 text = "- Find the North Star"
 
-[node name="TreeSpawner" type="Node3D" parent="."]
-script = ExtResource("11_r2x1k")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_dx87f")
-
-[node name="StarHighlighter" type="Node3D" parent="."]
-script = ExtResource("10_3w00e")
-
-[node name="Starcharter" type="Node3D" parent="."]
-script = ExtResource("10_ku6pm")
-
-[node name="CassiopeiaStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
-curve = SubResource("Curve3D_76yy0")
-
-[node name="LittleDipperStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
-curve = SubResource("Curve3D_f485u")
-
-[node name="BigDipperStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
-curve = SubResource("Curve3D_ssevu")
-
-[connection signal="rotated" from="StargazerPerspective" to="StarPickerLogic" method="_on_stargazer_perspective_rotated"]
-[connection signal="all_solved" from="StargazingTutorial" to="Starcharter" method="_on_stargazing_tutorial_all_solved"]
 [connection signal="load_star_group" from="StargazingTutorial" to="StarPickerLogic" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="load_star_group" from="StargazingTutorial" to="Starcharter" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="set_completion" from="StargazingTutorial" to="UI/QuestLabels" method="_on_stargazing_tutorial_set_completion"]
 [connection signal="calibrated" from="StarPickerLogic" to="UI/Crosshair" method="_on_star_picker_logic_calibrated"]
 [connection signal="solved_star" from="StarPickerLogic" to="StargazingTutorial" method="_on_star_picker_logic_solved_star"]
 [connection signal="solved_star" from="StarPickerLogic" to="StarHighlighter" method="_on_star_picker_logic_solved_star"]
+[connection signal="rotated" from="StargazerPerspective" to="StarPickerLogic" method="_on_stargazer_perspective_rotated"]
