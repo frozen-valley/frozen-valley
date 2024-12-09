@@ -1,21 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbgcye868tfcc"]
+[gd_scene load_steps=9 format=3 uid="uid://cbgcye868tfcc"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
 [ext_resource type="Script" path="res://dialogue/styles/base_style/textbox_with_portrait/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_sr2qw"]
+[ext_resource type="Texture2D" uid="uid://b7xogbj8sb0y7" path="res://sprites/misc/Snowflakes.png" id="6_eog72"]
+[ext_resource type="Texture2D" uid="uid://pnajxw1xi271" path="res://sprites/misc/Snowflake.png" id="7_8iga1"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irefr"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lu2x6"]
+bg_color = Color(1, 1, 1, 0.156863)
 border_width_left = 5
 border_width_top = 5
 border_width_right = 5
 border_width_bottom = 5
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+border_blend = true
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="TextboxWithSpeakerPortrait" type="Control"]
 layout_mode = 3
@@ -32,7 +35,6 @@ right_margin = 0
 bottom_margin = 0
 name_label_color_mode = 0
 name_label_hide_when_no_character = false
-use_custom_box_panel = null
 box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/default_stylebox.tres"
 
 [node name="Anchor" type="Control" parent="."]
@@ -54,14 +56,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -200.0
-offset_right = 250.0
-offset_bottom = -50.0
+offset_left = -450.0
+offset_top = -350.0
+offset_right = 450.0
+offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_irefr")
+theme_override_styles/panel = SubResource("StyleBoxFlat_lu2x6")
 
 [node name="HBox" type="HBoxContainer" parent="Anchor/Panel"]
 layout_mode = 2
@@ -124,3 +126,34 @@ textbox_root = NodePath("../../../..")
 
 [node name="DialogicNode_TypeSounds" type="AudioStreamPlayer" parent="Anchor/Panel/HBox/MarginContainer/VBoxContainer/DialogicNode_DialogText"]
 script = ExtResource("5_sr2qw")
+
+[node name="TextureRect" type="TextureRect" parent="Anchor"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 234.0
+offset_top = -284.0
+offset_right = 641.0
+offset_bottom = -13.0
+grow_vertical = 0
+texture = ExtResource("6_eog72")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Anchor"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -615.0
+offset_top = -231.0
+offset_right = -294.0
+offset_bottom = 2.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("7_8iga1")
+expand_mode = 1
+stretch_mode = 4

@@ -29,8 +29,10 @@ script = ExtResource("1_ps3bc")
 scene = ExtResource("8_dgc1m")
 overrides = {
 "bottom_margin": "20.0",
-"box_modulate_custom_color": "Color(0.47, 0.31725, 0.1645, 0)",
+"box_distance": "100.0",
+"box_modulate_custom_color": "Color(1, 1, 1, 1)",
 "box_modulate_global_color": "false",
+"box_panel": "\"default_stylebox.tres\"",
 "box_size": "Vector2(900, 250)",
 "left_margin": "30.0",
 "name_label_color_mode": "1",
