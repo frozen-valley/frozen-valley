@@ -1,6 +1,7 @@
 extends Camera3D
 
 signal rotated(new_horizontal_angle: float, new_vertical_angle: float)
+signal cinematic_movement_ended()
 
 @export var starting_horizontal_angle: float = 0
 @export var starting_vertical_angle: float = PI/8
@@ -15,13 +16,25 @@ var vertical_angle: float
 var instability_dir: Vector2 = Vector2.RIGHT
 var instability_elapsed: float = 0
 
+var cinematic_movement_enabled: bool = false
+var movement_enabled: bool = false
+
 func _ready() -> void:
 	camera_set_rotation(Vector2(starting_horizontal_angle, starting_vertical_angle))
 
 func _process(delta: float) -> void:
-	movement(delta)
+	if cinematic_movement_enabled:
+		cinematic_movement(delta)
+	if movement_enabled:
+		player_movement(delta)
+	instability_movement(delta)
 
-func movement(delta: float):
+
+func enable_cinematic_movement():
+	cinematic_movement_enabled = true
+
+
+func player_movement(delta: float):
 	var h_dir: float = 0
 	var v_dir: float = 0
 	
@@ -37,11 +50,22 @@ func movement(delta: float):
 	var direction: Vector2 = Vector2(h_dir, v_dir).normalized() * delta * rotate_speed
 	if direction.length() != 0:
 		camera_rotate(direction)
-	
+
+func instability_movement(delta):
 	instability_elapsed += delta
 	instability_dir = Vector2(sin(instability_elapsed*0.5), -cos(2*instability_elapsed*0.5))
 	
 	camera_rotate(instability_dir * instability * delta * 0.25)
+
+var cinematic_time_elapsed: float = 0
+
+func cinematic_movement(delta):
+	camera_rotate(-Vector2.UP * delta * rotate_speed * 0.75)
+	cinematic_time_elapsed += delta
+	if cinematic_time_elapsed > 4:
+		cinematic_movement_enabled = false
+		movement_enabled = true
+		cinematic_movement_ended.emit()
 
 func camera_set_rotation(direction: Vector2):
 	horizontal_angle = -direction.x
@@ -57,3 +81,7 @@ func camera_rotate(direction: Vector2):
 	
 	rotated.emit(horizontal_angle, vertical_angle)
 	
+
+
+func _on_stargazing_dialogue_manager_intro_dialogue_ended() -> void:
+	enable_cinematic_movement()

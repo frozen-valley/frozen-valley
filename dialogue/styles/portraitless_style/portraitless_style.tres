@@ -16,6 +16,13 @@ overrides = {}
 script = ExtResource("2_flqxu")
 overrides = {}
 
+[sub_resource type="Resource" id="Resource_x8s8a"]
+script = ExtResource("2_flqxu")
+overrides = {
+"portrait_visible": "false",
+"text_alignment": "1"
+}
+
 [sub_resource type="Resource" id="Resource_rk6pp"]
 script = ExtResource("2_flqxu")
 overrides = {}
@@ -31,13 +38,6 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_5cxtj"]
 script = ExtResource("2_flqxu")
 overrides = {}
-
-[sub_resource type="Resource" id="Resource_x8s8a"]
-script = ExtResource("2_flqxu")
-overrides = {
-"portrait_visible": "false",
-"text_alignment": "1"
-}
 
 [resource]
 script = ExtResource("3_4s52n")
@@ -56,4 +56,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("2_flqxu")]([])
-metadata/_latest_layer = "12"
+metadata/_latest_layer = "15"

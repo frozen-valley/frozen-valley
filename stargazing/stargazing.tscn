@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7riegut3a8nm"]
+[gd_scene load_steps=19 format=3 uid="uid://b7riegut3a8nm"]
 
 [ext_resource type="Sky" uid="uid://tm16h4yqewq4" path="res://stargazing/skybox/variant2/starry_skybox_treesless.tres" id="1_36b8n"]
+[ext_resource type="Script" path="res://stargazing/scripts/stargazing_dialogue_manager.gd" id="1_h8loa"]
 [ext_resource type="Script" path="res://stargazing/scripts/stargazer_perspective.gd" id="2_dcg3g"]
 [ext_resource type="Texture2D" uid="uid://by5yyycldn78p" path="res://stargazing/sprites/circle_crosshair.png" id="3_7ybks"]
 [ext_resource type="Texture2D" uid="uid://oo6chm0walfo" path="res://stargazing/sprites/finger_pointing.png" id="3_g5msl"]
@@ -10,6 +11,7 @@
 [ext_resource type="Script" path="res://stargazing/scripts/quest_labels.gd" id="8_odhg8"]
 [ext_resource type="Script" path="res://stargazing/sub_scenes/star_highlighter.gd" id="10_3w00e"]
 [ext_resource type="Script" path="res://stargazing/scripts/starcharter.gd" id="10_ku6pm"]
+[ext_resource type="Script" path="res://stargazing/scripts/stargazing_ui.gd" id="10_os6q2"]
 [ext_resource type="PackedScene" uid="uid://dgic8434pc3fq" path="res://stargazing/sub_scenes/starchart.tscn" id="11_7t2kk"]
 [ext_resource type="Script" path="res://stargazing/scripts/tree_spawner.gd" id="11_r2x1k"]
 
@@ -25,6 +27,9 @@ sky = ExtResource("1_36b8n")
 
 [node name="Stargazing" type="Node3D"]
 
+[node name="StargazingDialogueManager" type="Node" parent="."]
+script = ExtResource("1_h8loa")
+
 [node name="StargazingTutorial" type="Node" parent="."]
 script = ExtResource("4_sa6gw")
 
@@ -37,6 +42,8 @@ environment = SubResource("Environment_dx87f")
 [node name="StargazerPerspective" type="Camera3D" parent="."]
 size = 1.75
 script = ExtResource("2_dcg3g")
+starting_vertical_angle = -0.393
+min_vertical_angle = -0.393
 instability = 0.2
 
 [node name="TreeSpawner" type="Node3D" parent="."]
@@ -70,6 +77,7 @@ offset_right = 1.0
 offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("10_os6q2")
 
 [node name="Crosshair" type="Sprite2D" parent="UI"]
 scale = Vector2(0.75, 0.75)
@@ -110,10 +118,14 @@ modulate = Color(1, 1, 1, 0.498039)
 layout_mode = 2
 text = "- Find the North Star"
 
+[connection signal="explanation_dialogue_ended" from="StargazingDialogueManager" to="UI" method="_on_stargazing_dialogue_manager_explanation_dialogue_ended"]
+[connection signal="intro_dialogue_ended" from="StargazingDialogueManager" to="StargazerPerspective" method="_on_stargazing_dialogue_manager_intro_dialogue_ended"]
+[connection signal="intro_dialogue_ended" from="StargazingDialogueManager" to="UI" method="_on_stargazing_dialogue_manager_intro_dialogue_ended"]
 [connection signal="load_star_group" from="StargazingTutorial" to="StarPickerLogic" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="load_star_group" from="StargazingTutorial" to="Starcharter" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="set_completion" from="StargazingTutorial" to="UI/QuestLabels" method="_on_stargazing_tutorial_set_completion"]
 [connection signal="calibrated" from="StarPickerLogic" to="UI/Crosshair" method="_on_star_picker_logic_calibrated"]
 [connection signal="solved_star" from="StarPickerLogic" to="StargazingTutorial" method="_on_star_picker_logic_solved_star"]
 [connection signal="solved_star" from="StarPickerLogic" to="StarHighlighter" method="_on_star_picker_logic_solved_star"]
+[connection signal="cinematic_movement_ended" from="StargazerPerspective" to="StargazingDialogueManager" method="_on_stargazer_perspective_cinematic_movement_ended"]
 [connection signal="rotated" from="StargazerPerspective" to="StarPickerLogic" method="_on_stargazer_perspective_rotated"]

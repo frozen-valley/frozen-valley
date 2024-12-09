@@ -19,18 +19,20 @@
 "export_overrides": {
 "image": "\"res://sprites/characters/main_character/player_walk.png\""
 },
+"ignore_char_scale": true,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1.0,
+"scale": 2.0,
 "scene": ""
 },
 "Standing": {
 "export_overrides": {
 "image": "\"res://sprites/characters/main_character/player.png\""
 },
+"ignore_char_scale": true,
 "mirror": false,
 "offset": Vector2(0, 0),
-"scale": 1,
+"scale": 1.8,
 "scene": ""
 }
 },

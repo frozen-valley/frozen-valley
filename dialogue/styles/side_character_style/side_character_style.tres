@@ -16,6 +16,12 @@ overrides = {}
 script = ExtResource("2_h2cij")
 overrides = {}
 
+[sub_resource type="Resource" id="Resource_qjgk7"]
+script = ExtResource("2_h2cij")
+overrides = {
+"portrait_position": "1"
+}
+
 [sub_resource type="Resource" id="Resource_4du6d"]
 script = ExtResource("2_h2cij")
 overrides = {}
@@ -31,12 +37,6 @@ overrides = {}
 [sub_resource type="Resource" id="Resource_pmyxk"]
 script = ExtResource("2_h2cij")
 overrides = {}
-
-[sub_resource type="Resource" id="Resource_qjgk7"]
-script = ExtResource("2_h2cij")
-overrides = {
-"portrait_position": "1"
-}
 
 [resource]
 script = ExtResource("3_hj8ic")

@@ -22,7 +22,7 @@
 "ignore_char_scale": true,
 "mirror": true,
 "offset": Vector2(0, 0),
-"scale": 0.8,
+"scale": 1.5,
 "scene": ""
 }
 },
