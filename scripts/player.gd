@@ -22,7 +22,7 @@ func _pickup() -> void:
 	pickup_queue.remove_at(0)
 
 func _listen_for_pickups() -> void:
-	var interact = Input.is_action_just_pressed("interact")
+	var interact: bool = Input.is_action_just_pressed("interact")
 	if (interact): 
 		_pickup()
 

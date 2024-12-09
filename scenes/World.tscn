@@ -1,17 +1,36 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=12 format=3 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
 [ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
+[ext_resource type="Texture2D" uid="uid://mp85kb0g6qao" path="res://sprites/DeadTree.png" id="2_go7tl"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://scenes/player.tscn" id="2_rl5vm"]
+[ext_resource type="Script" path="res://scripts/dead_tree.gd" id="2_u0fry"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://scenes/tree.tscn" id="3_6e2c5"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="4_h1r4w"]
 [ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://scenes/partner.tscn" id="5_lvg3v"]
 [ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://scenes/snow.tscn" id="6_n0jfh"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://scenes/border.tscn" id="7_2d534"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7nkc7"]
+
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_yr7tt")
+
+[node name="DeadTree" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(0, -300)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_u0fry")
+player = NodePath("../Player")
+
+[node name="Sprite2D" type="Sprite2D" parent="DeadTree"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_go7tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadTree"]
+position = Vector2(1, 60)
+shape = SubResource("CircleShape2D_7nkc7")
 
 [node name="Snow" parent="." instance=ExtResource("6_n0jfh")]
 position = Vector2(480, -970)
@@ -42,13 +61,10 @@ limit_top = -960
 limit_right = 960
 limit_bottom = 960
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_6e2c5")]
+[node name="Tree" parent="." instance=ExtResource("3_6e2c5")]
 position = Vector2(387, -30)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("3_6e2c5")]
-position = Vector2(-269, 6)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("3_6e2c5")]
+[node name="Tree2" parent="." instance=ExtResource("3_6e2c5")]
 position = Vector2(-150, 329)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
