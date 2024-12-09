@@ -8,7 +8,7 @@ var solved_groups: int = 0
 var solved_stars: int = 0
 
 
-func _on_star_picker_logic_solved_star() -> void:
+func _on_star_picker_logic_solved_star(star: Vector2) -> void:
 	solved_stars += 1
 	if solved_stars == len(StarAngles.groups[solved_groups]):
 		solved_stars = 0

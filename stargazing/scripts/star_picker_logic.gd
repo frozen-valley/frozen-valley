@@ -1,9 +1,10 @@
 extends Node
 
 signal calibrated(factor: float)
-signal solved_star()
+signal solved_star(star: Vector2)
 
 @export var focus_duration: float = 1
+@export var precision_required: float = 0.03
 
 var horizontal_angle: float = 0
 var vertical_angle: float = 0
@@ -26,7 +27,7 @@ func _process(delta: float) -> void:
 			min_dist = dist
 			chosen_star = star
 		
-	if min_dist < 0.05:
+	if min_dist < precision_required:
 		calibration += delta / focus_duration
 	else:
 		calibration -= 5*delta
@@ -34,7 +35,7 @@ func _process(delta: float) -> void:
 	calibrated.emit(calibration)
 	if calibration >= 1:
 		stars.erase(chosen_star)
-		solved_star.emit()
+		solved_star.emit(chosen_star)
 
 
 func angle_difference(angle1: float, angle2: float) -> float:

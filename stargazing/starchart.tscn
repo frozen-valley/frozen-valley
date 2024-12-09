@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgic8434pc3fq"]
 
-[ext_resource type="Script" path="res://stargazing/star_chart.gd" id="1_eyhh8"]
+[ext_resource type="Script" path="res://stargazing/scripts/star_chart.gd" id="1_eyhh8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c5kx2"]
 emission_enabled = true
