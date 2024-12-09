@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b7riegut3a8nm"]
+[gd_scene load_steps=16 format=3 uid="uid://b7riegut3a8nm"]
 
 [ext_resource type="Sky" uid="uid://tm16h4yqewq4" path="res://stargazing/skybox/variant2/starry_skybox_treesless.tres" id="1_36b8n"]
 [ext_resource type="Script" path="res://stargazing/scripts/stargazer_perspective.gd" id="2_dcg3g"]
@@ -15,6 +15,12 @@
 [sub_resource type="Environment" id="Environment_dx87f"]
 background_mode = 2
 sky = ExtResource("1_36b8n")
+
+[sub_resource type="Curve3D" id="Curve3D_76yy0"]
+
+[sub_resource type="Curve3D" id="Curve3D_f485u"]
+
+[sub_resource type="Curve3D" id="Curve3D_ssevu"]
 
 [node name="Stargazing" type="Node3D"]
 
@@ -92,10 +98,13 @@ environment = SubResource("Environment_dx87f")
 script = ExtResource("10_ku6pm")
 
 [node name="CassiopeiaStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
+curve = SubResource("Curve3D_76yy0")
 
 [node name="LittleDipperStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
+curve = SubResource("Curve3D_f485u")
 
 [node name="BigDipperStarchart" parent="Starcharter" instance=ExtResource("11_7t2kk")]
+curve = SubResource("Curve3D_ssevu")
 
 [connection signal="rotated" from="StargazerPerspective" to="StarPickerLogic" method="_on_stargazer_perspective_rotated"]
 [connection signal="all_solved" from="StargazingTutorial" to="Starcharter" method="_on_stargazing_tutorial_all_solved"]
