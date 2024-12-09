@@ -1,10 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbgcye868tfcc"]
+[gd_scene load_steps=7 format=3 uid="uid://cbgcye868tfcc"]
 
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Character/node_portrait_container.gd" id="1_4jxq7"]
 [ext_resource type="Script" path="res://dialogue/styles/base_style/textbox_with_portrait/speaker_portrait_textbox_layer.gd" id="1_7jt4d"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_name_label.gd" id="2_y0h34"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_dialog_text.gd" id="3_11puy"]
 [ext_resource type="Script" path="res://addons/dialogic/Modules/Text/node_type_sound.gd" id="5_sr2qw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_irefr"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [node name="TextboxWithSpeakerPortrait" type="Control"]
 layout_mode = 3
@@ -21,6 +32,7 @@ right_margin = 0
 bottom_margin = 0
 name_label_color_mode = 0
 name_label_hide_when_no_character = false
+use_custom_box_panel = null
 box_panel = "res://addons/dialogic/Modules/DefaultLayoutParts/Layer_SpeakerPortraitTextbox/default_stylebox.tres"
 
 [node name="Anchor" type="Control" parent="."]
@@ -36,7 +48,6 @@ mouse_filter = 2
 
 [node name="Panel" type="PanelContainer" parent="Anchor"]
 unique_name_in_owner = true
-self_modulate = Color(0.533333, 0.376471, 0.176471, 1)
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -50,6 +61,7 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 0
 mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_irefr")
 
 [node name="HBox" type="HBoxContainer" parent="Anchor/Panel"]
 layout_mode = 2

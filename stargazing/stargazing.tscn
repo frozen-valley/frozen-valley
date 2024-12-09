@@ -35,6 +35,7 @@ script = ExtResource("4_sa6gw")
 
 [node name="StarPickerLogic" type="Node" parent="."]
 script = ExtResource("7_tyand")
+precision_required = 0.035
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_dx87f")

@@ -47,6 +47,7 @@ enum NameLabelColorModes {GLOBAL_COLOR, CHARACTER_COLOR, CUSTOM_COLOR}
 
 @export_group('Box')
 @export_subgroup("Box")
+@export var use_custom_box_panel: bool = false
 @export_file('*.tres') var box_panel: String = this_folder.path_join("default_stylebox.tres")
 @export var box_modulate_global_color: bool = true
 @export var box_modulate_custom_color: Color = Color(0.47247135639191, 0.31728461384773, 0.16592600941658)
@@ -112,8 +113,9 @@ func _apply_export_overrides() -> void:
 	panel.position = Vector2(-box_size.x/2, -box_size.y-box_distance)
 	portrait_panel.size_flags_stretch_ratio = portrait_stretch_factor
 
-	var stylebox: StyleBox = load(box_panel)
-	panel.add_theme_stylebox_override(&'panel', stylebox)
+	if use_custom_box_panel:
+		var stylebox: StyleBox = load(box_panel)
+		panel.add_theme_stylebox_override(&'panel', stylebox)
 
 	## PORTRAIT SETTINGS
 	%PortraitPanel.visible = portrait_visible

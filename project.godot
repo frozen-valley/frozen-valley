@@ -59,6 +59,7 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 text/autoadvance_enabled=false
+animations/join_default="Fade In"
 
 [display]
 
