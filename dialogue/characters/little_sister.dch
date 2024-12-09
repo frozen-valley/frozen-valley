@@ -2,11 +2,11 @@
 "@path": "res://addons/dialogic/Resources/character.gd",
 "@subpath": NodePath(""),
 "_translation_id": "",
-"color": Color(1, 1, 1, 1),
+"color": Color(0.360784, 0.172549, 0.243137, 1),
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": "sister_character_dialogue_style"
+"style": "side_character_style"
 },
 "default_portrait": "Standing",
 "description": "",
@@ -17,7 +17,7 @@
 "portraits": {
 "Standing": {
 "export_overrides": {
-"image": "\"res://sprites/characters/main_character/player.png\""
+"image": "\"res://sprites/characters/main_character/MCRed.png\""
 },
 "ignore_char_scale": true,
 "mirror": true,

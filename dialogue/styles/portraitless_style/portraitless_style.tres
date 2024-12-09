@@ -1,0 +1,59 @@
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=12 format=3 uid="uid://dfhkbrfq7jauy"]
+
+[ext_resource type="Resource" uid="uid://cpbr5rkutwl1a" path="res://dialogue/styles/base_style/base_style.tres" id="1_eyil6"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="2_flqxu"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="3_4s52n"]
+
+[sub_resource type="Resource" id="Resource_1s6m1"]
+script = ExtResource("2_flqxu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_rn3s3"]
+script = ExtResource("2_flqxu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_ssgnr"]
+script = ExtResource("2_flqxu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_rk6pp"]
+script = ExtResource("2_flqxu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_mbjsq"]
+script = ExtResource("2_flqxu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_gogdf"]
+script = ExtResource("2_flqxu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_5cxtj"]
+script = ExtResource("2_flqxu")
+overrides = {}
+
+[sub_resource type="Resource" id="Resource_x8s8a"]
+script = ExtResource("2_flqxu")
+overrides = {
+"portrait_visible": "false",
+"text_alignment": "1"
+}
+
+[resource]
+script = ExtResource("3_4s52n")
+name = "portraitless_style"
+inherits = ExtResource("1_eyil6")
+layer_list = Array[String](["10", "11", "13", "14", "15", "16", "12"])
+layer_info = {
+"": SubResource("Resource_1s6m1"),
+"10": SubResource("Resource_rn3s3"),
+"11": SubResource("Resource_ssgnr"),
+"12": SubResource("Resource_x8s8a"),
+"13": SubResource("Resource_rk6pp"),
+"14": SubResource("Resource_mbjsq"),
+"15": SubResource("Resource_gogdf"),
+"16": SubResource("Resource_5cxtj")
+}
+base_overrides = {}
+layers = Array[ExtResource("2_flqxu")]([])
+metadata/_latest_layer = "12"

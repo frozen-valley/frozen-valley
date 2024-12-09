@@ -26,15 +26,15 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"little_sister": "res://dialogue/little_sister.dch",
-"main_character": "res://dialogue/main_character.dch"
+"little_sister": "res://dialogue/characters/little_sister.dch",
+"main_character": "res://dialogue/characters/main_character.dch"
 }
 directories/dtl_directory={
 "stargazing_intro": "res://dialogue/stargazing_intro.dtl"
 }
 glossary/default_case_sensitive=true
-layout/style_list=["res://dialogue/main_character_dialogue_style.tres", "res://dialogue/sister_character_dialogue_style.tres"]
-layout/default_style="res://dialogue/main_character_dialogue_style.tres"
+layout/style_list=["res://dialogue/styles/base_style/base_style.tres", "res://dialogue/styles/main_character_style/main_character_style.tres", "res://dialogue/styles/side_character_style/side_character_style.tres", "res://dialogue/styles/portraitless_style/portraitless_style.tres"]
+layout/default_style=""
 variables={}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
