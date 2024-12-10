@@ -1,0 +1,30 @@
+{
+"@path": "res://addons/dialogic/Resources/character.gd",
+"@subpath": NodePath(""),
+"_translation_id": "",
+"color": Color(0.360784, 0.172549, 0.243137, 1),
+"custom_info": {
+"sound_mood_default": "",
+"sound_moods": {},
+"style": "side_character_style"
+},
+"default_portrait": "Standing",
+"description": "",
+"display_name": "Little sister",
+"mirror": false,
+"nicknames": [""],
+"offset": Vector2(0, 0),
+"portraits": {
+"Standing": {
+"export_overrides": {
+"image": "\"res://sprites/characters/main_character/MCRed.png\""
+},
+"ignore_char_scale": true,
+"mirror": true,
+"offset": Vector2(0, 0),
+"scale": 1.5,
+"scene": ""
+}
+},
+"scale": 1.0
+}

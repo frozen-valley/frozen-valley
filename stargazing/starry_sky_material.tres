@@ -1,6 +1,0 @@
-[gd_resource type="PanoramaSkyMaterial" load_steps=2 format=3 uid="uid://2yepdr0mdmik"]
-
-[ext_resource type="Texture2D" uid="uid://dbkg8gutmgjgt" path="res://stargazing/starry_sky.png" id="1_um63f"]
-
-[resource]
-panorama = ExtResource("1_um63f")
