@@ -28,10 +28,9 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 	player_body.add_to_pickup_queue(self)
 
+
 func _on_body_exited(body: Node2D) -> void:
 	var player_body = body as Player
 	if (!player_body):
 		return
 	player_body.remove_from_pickup_queue(self)
-
-

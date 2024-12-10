@@ -9,4 +9,3 @@ func _process(_delta: float) -> void:
 		var new_scene_resource = load("res://matchbox_game/matchbox_game.tscn") 
 		var new_scene_node = new_scene_resource.instantiate() 
 		root_node.add_child(new_scene_node)
-

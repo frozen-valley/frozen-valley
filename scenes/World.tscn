@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://scenes/partner.tscn" id="5_lvg3v"]
 [ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://scenes/snow.tscn" id="6_n0jfh"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://scenes/border.tscn" id="7_2d534"]
+[ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://book/book.tscn" id="8_q46yu"]
+
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -59,6 +61,14 @@ offset_top = 940.0
 offset_right = 1481.0
 offset_bottom = 963.0
 scale = Vector2(5, 5)
+
+[node name="Book" parent="CanvasLayer" instance=ExtResource("8_q46yu")]
+visible = false
+offset_left = 350.0
+offset_top = 151.0
+offset_right = 177.0
+offset_bottom = 81.0
+scale = Vector2(0.7, 0.7)
 
 [node name="Border" parent="." instance=ExtResource("7_2d534")]
 position = Vector2(0, 960)
