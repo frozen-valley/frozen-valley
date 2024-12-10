@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://043jwwnvlhht"]
+
+[ext_resource type="Script" path="res://inventory/inv_scripts/inventory_item.gd" id="1_k738c"]
+[ext_resource type="Texture2D" uid="uid://hm1kw0lvrp1m" path="res://sprites/FoxClean.png" id="2_ixaee"]
+
+[resource]
+script = ExtResource("1_k738c")
+name = "fox"
+texture = ExtResource("2_ixaee")
