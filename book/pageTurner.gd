@@ -1,7 +1,7 @@
 extends Control
 
-var current_page = 1
-var is_open = false
+int current_page = 1
+bool is_open = false
 
 func _process(delta):
 	if Input.is_action_just_pressed("book"):
