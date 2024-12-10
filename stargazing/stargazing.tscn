@@ -9,7 +9,7 @@
 [ext_resource type="Script" path="res://stargazing/scripts/stargazing_tutorial.gd" id="4_sa6gw"]
 [ext_resource type="Script" path="res://stargazing/scripts/star_picker_logic.gd" id="7_tyand"]
 [ext_resource type="Script" path="res://stargazing/scripts/quest_labels.gd" id="8_odhg8"]
-[ext_resource type="Script" path="res://stargazing/sub_scenes/star_highlighter.gd" id="10_3w00e"]
+[ext_resource type="Script" path="res://stargazing/scripts/star_highlighter.gd" id="10_3w00e"]
 [ext_resource type="Script" path="res://stargazing/scripts/starcharter.gd" id="10_ku6pm"]
 [ext_resource type="Script" path="res://stargazing/scripts/stargazing_ui.gd" id="10_os6q2"]
 [ext_resource type="PackedScene" uid="uid://dgic8434pc3fq" path="res://stargazing/sub_scenes/starchart.tscn" id="11_7t2kk"]

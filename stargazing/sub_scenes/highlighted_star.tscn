@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3hj1wl6i0a04"]
 
 [ext_resource type="Texture2D" uid="uid://sq46en4ltcwm" path="res://stargazing/sprites/shining_star.png" id="1_vv4lf"]
-[ext_resource type="Script" path="res://stargazing/sub_scenes/highlighted_star.gd" id="2_y47hu"]
+[ext_resource type="Script" path="res://stargazing/scripts/highlighted_star.gd" id="2_y47hu"]
 
 [node name="HighlightedStar" type="Sprite3D"]
 texture = ExtResource("1_vv4lf")
