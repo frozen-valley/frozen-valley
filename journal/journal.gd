@@ -3,7 +3,7 @@ extends Control
 var current_page: int = 0
 var is_open: bool = false
 
-@onready var pages: Array = $NinePatchRect/Pages.get_children()
+@onready var pages: Array = $JournalBackground/Pages.get_children()
 
 func _ready() -> void:
 	for page: Control in pages:

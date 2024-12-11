@@ -10,22 +10,23 @@ var root_node: Window
 var world_node: Node2D
 var tree_chop_node: QuicktimeGame
 
-func _on_finished_quicktime() -> void:
-	did_quicktime = true
-	tree_chop_node.queue_free()
-	root_node.add_child(world_node)
-	var log_and_stump_resource := load("res://scenes/log_and_stump.tscn") 
-	var log_and_stump_node = log_and_stump_resource.instantiate()
-	log_and_stump_node.position = position
-	world_node.add_child(log_and_stump_node)
-	self.queue_free()
-
 func play_quicktime() -> void:
 	root_node.remove_child(world_node)
 	var tree_chop_resource := load("res://tree_chop_game/tree_chop_game.tscn") 
 	tree_chop_node = tree_chop_resource.instantiate() 	
 	tree_chop_node.finished_quicktime.connect(_on_finished_quicktime)
 	root_node.add_child(tree_chop_node)
+	
+func _on_finished_quicktime() -> void:
+	did_quicktime = true
+	tree_chop_node.queue_free()
+	root_node.add_child(world_node)
+	var log_and_stump_resource := load("res://map/sub_scenes/log_and_stump.tscn") 
+	var log_and_stump_node = log_and_stump_resource.instantiate()
+	log_and_stump_node.position = position
+	log_and_stump_node.scale.x *= -1
+	world_node.add_child(log_and_stump_node)
+	self.queue_free()
 
 func _ready() -> void:
 	root_node = get_tree().get_root()

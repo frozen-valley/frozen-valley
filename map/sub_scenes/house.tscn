@@ -47,8 +47,10 @@ texture = ExtResource("1_ccge6")
 
 [node name="HouseFront" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, 150)
 scale = Vector2(2, 2)
 texture = ExtResource("2_tm0q6")
+offset = Vector2(0, -75)
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_p2i1u")

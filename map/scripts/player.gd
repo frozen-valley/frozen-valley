@@ -3,8 +3,7 @@ class_name Player
 
 const SPEED: float = 300.0
 var default_scale_x: float = scale.x
-var move_x: float = 0
-var move_y: float = 0
+
 var direction_x: int = 1
 var pickup_queue: Array[Pickupable]
 
@@ -38,9 +37,20 @@ func _process(_delta: float) -> void:
 
 func _physics_process(_delta: float) -> void:
 	# Get the input directions
-	move_x = Input.get_axis("ui_left", "ui_right")
-	move_y = Input.get_axis("ui_up", "ui_down")
+	var move_x: float = 0
+	var move_y: float = 0
+	if Input.is_action_pressed("move_left"):
+		move_x -= 1
+	if Input.is_action_pressed("move_right"):
+		move_x += 1
+	if Input.is_action_pressed("move_up"):
+		move_y -= 1
+	if Input.is_action_pressed("move_down"):
+		move_y += 1
+	
 	var move := Vector2(move_x, move_y)
+	
+	print(move)
 	# Normalize to avoid diagonal speedup
 	move = move.normalized()
 	

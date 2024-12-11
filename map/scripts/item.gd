@@ -1,3 +1,5 @@
+@tool
+
 extends Area2D
 class_name Pickupable
 
@@ -6,12 +8,13 @@ var player: Player
 
 @export var item: InventoryItem
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func _ready():
+	$Sprite2D.texture = item.texture
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	if Engine.is_editor_hint():
+		$Sprite2D.texture = item.texture
+		return
 	if (follow_player):
 		var new_pos := Vector2(player.position.x, player.position.y - 100)
 		set_global_position(new_pos)
