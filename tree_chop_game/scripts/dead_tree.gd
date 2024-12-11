@@ -31,7 +31,7 @@ func _ready() -> void:
 	root_node = get_tree().get_root()
 	world_node = root_node.get_node("World")
 	if (!player):
-		queue_free()
+		printerr("There's no player!")
 
 func _process(_delta: float) -> void:
 	distance = global_position.distance_to(player.global_position)
