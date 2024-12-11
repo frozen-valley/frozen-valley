@@ -1,4 +1,5 @@
-[gd_scene load_steps=15 format=3 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=10 format=3 uid="uid://d4cq7vev1xowi"]
+
 
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
 [ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
@@ -13,6 +14,7 @@
 [ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="11_8meuo"]
 [ext_resource type="Texture2D" uid="uid://dt4rsvdwxu0wb" path="res://sprites/misc/Axe.png" id="13_7elck"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://book/book.tscn" id="13_i7sj3"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7nkc7"]
 
