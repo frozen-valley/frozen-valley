@@ -14,6 +14,11 @@ func _on_finished_quicktime() -> void:
 	did_quicktime = true
 	tree_chop_node.queue_free()
 	root_node.add_child(world_node)
+	var log_and_stump_resource := load("res://scenes/log_and_stump.tscn") 
+	var log_and_stump_node = log_and_stump_resource.instantiate()
+	log_and_stump_node.position = position
+	world_node.add_child(log_and_stump_node)
+	self.queue_free()
 
 func play_quicktime() -> void:
 	root_node.remove_child(world_node)

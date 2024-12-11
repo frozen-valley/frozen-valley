@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxb04lv3lejuq"]
+
+[ext_resource type="Texture2D" uid="uid://d1uuyx7rmmmlr" path="res://sprites/TreeLog.png" id="1_a2sa5"]
+[ext_resource type="Texture2D" uid="uid://b4exiyo12wtsb" path="res://sprites/Stump.png" id="2_kctlx"]
+
+[node name="LogAndStump" type="Node2D"]
+
+[node name="Log" type="StaticBody2D" parent="."]
+position = Vector2(180, 25)
+rotation = 0.785398
+
+[node name="Sprite2D" type="Sprite2D" parent="Log"]
+texture = ExtResource("1_a2sa5")
+
+[node name="Stump" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Stump"]
+texture = ExtResource("2_kctlx")
