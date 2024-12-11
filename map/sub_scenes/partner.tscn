@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxjtf42fqpgp5"]
 
-[ext_resource type="Script" path="res://scripts/partner.gd" id="1_g38vx"]
+[ext_resource type="Script" path="res://map/scripts/partner.gd" id="1_g38vx"]
 [ext_resource type="Texture2D" uid="uid://s1evgrc68l15" path="res://sprites/characters/main_character/MCRed.png" id="2_pl4v2"]
 [ext_resource type="Texture2D" uid="uid://ql31cdmw5w62" path="res://sprites/characters/main_character/player_walk.png" id="3_46msi"]
 

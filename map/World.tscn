@@ -1,16 +1,16 @@
 [gd_scene load_steps=16 format=4 uid="uid://d4cq7vev1xowi"]
 
-[ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
-[ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map/player.tscn" id="2_rl5vm"]
-[ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map/tree.tscn" id="3_6e2c5"]
+[ext_resource type="Script" path="res://map/scripts/world_control.gd" id="1_yr7tt"]
+[ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map/sub_scenes/player.tscn" id="2_rl5vm"]
+[ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map/sub_scenes/tree.tscn" id="3_6e2c5"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="4_h1r4w"]
-[ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://map/partner.tscn" id="5_lvg3v"]
-[ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://map/snow.tscn" id="6_n0jfh"]
-[ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map/border.tscn" id="7_2d534"]
+[ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://map/sub_scenes/partner.tscn" id="5_lvg3v"]
+[ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://map/sub_scenes/snow.tscn" id="6_n0jfh"]
+[ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map/sub_scenes/border.tscn" id="7_2d534"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://book/book.tscn" id="8_q46yu"]
 [ext_resource type="Texture2D" uid="uid://df31t0dtpu16h" path="res://sprites/tiles/Tiles.png" id="10_1w6iw"]
-[ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map/house.tscn" id="11_6iee2"]
-[ext_resource type="PackedScene" uid="uid://r1vy6v2axr5u" path="res://map/fox.tscn" id="11_gs481"]
+[ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map/sub_scenes/house.tscn" id="11_6iee2"]
+[ext_resource type="PackedScene" uid="uid://r1vy6v2axr5u" path="res://map/sub_scenes/fox.tscn" id="11_gs481"]
 [ext_resource type="Resource" uid="uid://043jwwnvlhht" path="res://inventory/items/fox.tres" id="12_0i8eo"]
 [ext_resource type="Texture2D" uid="uid://d24ygkoekf5o6" path="res://sprites/River.png" id="14_gtx8h"]
 
@@ -142,7 +142,7 @@ item = ExtResource("12_0i8eo")
 [node name="House" parent="." instance=ExtResource("11_6iee2")]
 position = Vector2(502, -606)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="River" type="Sprite2D" parent="."]
 position = Vector2(-512, -640)
 scale = Vector2(2, 2)
 texture = ExtResource("14_gtx8h")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bnlky7u2abek5"]
 
-[ext_resource type="Script" path="res://scripts/snow.gd" id="1_ntumx"]
+[ext_resource type="Script" path="res://map/scripts/snow.gd" id="1_ntumx"]
 
 [sub_resource type="Curve" id="Curve_ypbdh"]
 min_value = -20.0
