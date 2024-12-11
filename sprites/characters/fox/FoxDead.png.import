@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccab8kodugxbg"
-path="res://.godot/imported/Key.png-aa14a6d4497aa96e7ef3473a2fc24044.ctex"
+uid="uid://bqu14pd4m7asp"
+path="res://.godot/imported/FoxDead.png-70de15407be219f7cddb0e69f0552e7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Key.png"
-dest_files=["res://.godot/imported/Key.png-aa14a6d4497aa96e7ef3473a2fc24044.ctex"]
+source_file="res://sprites/characters/fox/FoxDead.png"
+dest_files=["res://.godot/imported/FoxDead.png-70de15407be219f7cddb0e69f0552e7c.ctex"]
 
 [params]
 

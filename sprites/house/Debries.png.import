@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dt4rsvdwxu0wb"
-path="res://.godot/imported/Axe.png-fa080600def42161ba874aa52c947e24.ctex"
+uid="uid://dra4y6o67h8mm"
+path="res://.godot/imported/Debries.png-4a9c8c48e3530849886c50630a6d5826.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/misc/Axe.png"
-dest_files=["res://.godot/imported/Axe.png-fa080600def42161ba874aa52c947e24.ctex"]
+source_file="res://sprites/house/Debries.png"
+dest_files=["res://.godot/imported/Debries.png-4a9c8c48e3530849886c50630a6d5826.ctex"]
 
 [params]
 

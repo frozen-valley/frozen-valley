@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f1urde71obbn"
-path="res://.godot/imported/Plank.png-ce32065c9f72adad4a7f0d03fe292f4e.ctex"
+uid="uid://da3xw8x4wq3s1"
+path="res://.godot/imported/HouseFront.png-e51798315b33a304f9dab9df19ef109b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/misc/Plank.png"
-dest_files=["res://.godot/imported/Plank.png-ce32065c9f72adad4a7f0d03fe292f4e.ctex"]
+source_file="res://sprites/house/HouseFront.png"
+dest_files=["res://.godot/imported/HouseFront.png-e51798315b33a304f9dab9df19ef109b.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc8n8vf5m2vva"
-path="res://.godot/imported/HouseBack.png-778f2ec21d5566e3dbe592e82a2aa06b.ctex"
+uid="uid://d24ygkoekf5o6"
+path="res://.godot/imported/River.png-d4471f7c178e4ff1cf98dd64a2585cc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/HouseBack.png"
-dest_files=["res://.godot/imported/HouseBack.png-778f2ec21d5566e3dbe592e82a2aa06b.ctex"]
+source_file="res://sprites/River.png"
+dest_files=["res://.godot/imported/River.png-d4471f7c178e4ff1cf98dd64a2585cc9.ctex"]
 
 [params]
 

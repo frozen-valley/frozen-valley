@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyu5aud0p7xly"
-path="res://.godot/imported/HouseFullPreview.png-879fc032fbb60260bcbd670fc152ed62.ctex"
+uid="uid://hm1kw0lvrp1m"
+path="res://.godot/imported/FoxClean.png-98a480cb4d9580242b8c9be280f82883.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/HouseFullPreview.png"
-dest_files=["res://.godot/imported/HouseFullPreview.png-879fc032fbb60260bcbd670fc152ed62.ctex"]
+source_file="res://sprites/characters/fox/FoxClean.png"
+dest_files=["res://.godot/imported/FoxClean.png-98a480cb4d9580242b8c9be280f82883.ctex"]
 
 [params]
 

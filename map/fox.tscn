@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_gqm71"]
 [ext_resource type="Resource" uid="uid://cggowsgoo8c2h" path="res://inventory/items/stick.tres" id="2_pgfsp"]
-[ext_resource type="Texture2D" uid="uid://bqu14pd4m7asp" path="res://sprites/FoxDead.png" id="3_3cd8e"]
+[ext_resource type="Texture2D" uid="uid://bqu14pd4m7asp" path="res://sprites/characters/fox/FoxDead.png" id="3_3cd8e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flr71"]
 radius = 93.0215

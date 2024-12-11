@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3brr82dyccfc"]
 
-[ext_resource type="Texture2D" uid="uid://cc8n8vf5m2vva" path="res://sprites/HouseBack.png" id="1_ccge6"]
-[ext_resource type="Texture2D" uid="uid://da3xw8x4wq3s1" path="res://sprites/HouseFront.png" id="2_tm0q6"]
-[ext_resource type="Script" path="res://scenes/area_2d.gd" id="3_p2i1u"]
+[ext_resource type="Texture2D" uid="uid://cc8n8vf5m2vva" path="res://sprites/house/HouseBack.png" id="1_ccge6"]
+[ext_resource type="Texture2D" uid="uid://da3xw8x4wq3s1" path="res://sprites/house/HouseFront.png" id="2_tm0q6"]
+[ext_resource type="Script" path="res://map/area_2d.gd" id="3_p2i1u"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_j840s"]
 a = Vector2(219, 230)
