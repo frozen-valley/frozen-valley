@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b4exiyo12wtsb" path="res://sprites/Stump.png" id="2_kctlx"]
 
 [node name="LogAndStump" type="Node2D"]
+scale = Vector2(0.5, 0.5)
 
 [node name="Log" type="StaticBody2D" parent="."]
 position = Vector2(180, 25)
