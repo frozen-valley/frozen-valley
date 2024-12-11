@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://cwqno01601qxx" path="res://sprites/axe.png" id="12_w3soj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7nkc7"]
+[ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://book/book.tscn" id="8_q46yu"]
+
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
@@ -77,6 +79,14 @@ offset_top = 940.0
 offset_right = 1481.0
 offset_bottom = 963.0
 scale = Vector2(5, 5)
+
+[node name="Book" parent="CanvasLayer" instance=ExtResource("8_q46yu")]
+visible = false
+offset_left = 350.0
+offset_top = 151.0
+offset_right = 177.0
+offset_bottom = 81.0
+scale = Vector2(0.7, 0.7)
 
 [node name="Border" parent="." instance=ExtResource("7_2d534")]
 position = Vector2(0, 960)
