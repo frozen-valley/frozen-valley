@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://dlfuhn5twteud" path="res://icon.svg" id="3_r4u2g"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/quicktime.gd" id="4_n3hck"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/quicktime_item.gd" id="5_ik6if"]
-[ext_resource type="Texture2D" uid="uid://cwqno01601qxx" path="res://sprites/axe.png" id="7_154p1"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/dead_tree_game.gd" id="7_m8k55"]
-[ext_resource type="Texture2D" uid="uid://mp85kb0g6qao" path="res://sprites/DeadTree.png" id="7_rwf5i"]
-[ext_resource type="Texture2D" uid="uid://ct1tj425an6of" path="res://sprites/ChoppedTree1.png" id="8_p3n0i"]
-[ext_resource type="Texture2D" uid="uid://djvfdtn8fosep" path="res://sprites/ChoppedTree2.png" id="9_cnmkn"]
-[ext_resource type="Texture2D" uid="uid://b7tmckerqmmjf" path="res://sprites/ChoppedTree3.png" id="9_wt8ji"]
-[ext_resource type="Texture2D" uid="uid://ch8mb470xohf1" path="res://sprites/ChoppedTree4.png" id="10_upr3t"]
+[ext_resource type="Texture2D" uid="uid://dt4rsvdwxu0wb" path="res://sprites/misc/Axe.png" id="8_gem4a"]
+[ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/trees/DeadTree.png" id="9_t3d4o"]
+[ext_resource type="Texture2D" uid="uid://bln1bnqqa8s2k" path="res://sprites/trees/ChoppedTree1.png" id="10_q6sxq"]
+[ext_resource type="Texture2D" uid="uid://dqishhaa8m6c0" path="res://sprites/trees/ChoppedTree2.png" id="11_ln1sr"]
+[ext_resource type="Texture2D" uid="uid://b5pgttapedfmq" path="res://sprites/trees/ChoppedTree3.png" id="12_0tqvj"]
+[ext_resource type="Texture2D" uid="uid://8sxjxs6oljoi" path="res://sprites/trees/ChoppedTree4.png" id="13_l7vcy"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_a5lmt")
@@ -38,19 +38,19 @@ script = ExtResource("4_n3hck")
 position = Vector2(-300, 80)
 rotation = 5.75959
 script = ExtResource("5_ik6if")
-burn_sprite = ExtResource("7_154p1")
+burn_sprite = ExtResource("8_gem4a")
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeChopGame/Axe"]
-texture = ExtResource("7_154p1")
+texture = ExtResource("8_gem4a")
 
 [node name="DeadTree" type="Node2D" parent="." node_paths=PackedStringArray("quicktime_game")]
 position = Vector2(1650, 500)
 scale = Vector2(2, 2)
 script = ExtResource("7_m8k55")
-texture_array = Array[Texture2D]([ExtResource("7_rwf5i"), ExtResource("8_p3n0i"), ExtResource("9_cnmkn"), ExtResource("9_wt8ji"), ExtResource("10_upr3t")])
+texture_array = Array[Texture2D]([ExtResource("9_t3d4o"), ExtResource("10_q6sxq"), ExtResource("11_ln1sr"), ExtResource("12_0tqvj"), ExtResource("13_l7vcy")])
 quicktime_game = NodePath("../TreeChopGame")
 
 [node name="Sprite2D" type="Sprite2D" parent="DeadTree"]
-texture = ExtResource("7_rwf5i")
+texture = ExtResource("9_t3d4o")
 
 [connection signal="quicktime_finished" from="TreeChopGame/Quicktime" to="DeadTree" method="_on_quicktime_quicktime_finished"]

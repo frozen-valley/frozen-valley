@@ -2,16 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
 [ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
-[ext_resource type="Texture2D" uid="uid://mp85kb0g6qao" path="res://sprites/DeadTree.png" id="2_go7tl"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://scenes/player.tscn" id="2_rl5vm"]
 [ext_resource type="Script" path="res://scripts/dead_tree.gd" id="2_u0fry"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://scenes/tree.tscn" id="3_6e2c5"]
+[ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/trees/DeadTree.png" id="3_hm3gl"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="4_h1r4w"]
 [ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://scenes/partner.tscn" id="5_lvg3v"]
 [ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://scenes/snow.tscn" id="6_n0jfh"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://scenes/border.tscn" id="7_2d534"]
 [ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="11_8meuo"]
-[ext_resource type="Texture2D" uid="uid://cwqno01601qxx" path="res://sprites/axe.png" id="12_w3soj"]
+[ext_resource type="Texture2D" uid="uid://dt4rsvdwxu0wb" path="res://sprites/misc/Axe.png" id="13_7elck"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://book/book.tscn" id="13_i7sj3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7nkc7"]
@@ -29,7 +29,7 @@ player = NodePath("../Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="DeadTree"]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_go7tl")
+texture = ExtResource("3_hm3gl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeadTree"]
 position = Vector2(1, 60)
@@ -41,7 +41,7 @@ scale = Vector2(2, 1)
 amount = 1200
 
 [node name="Item" parent="." instance=ExtResource("1_ybk0r")]
-position = Vector2(500, 200)
+position = Vector2(500, 203)
 
 [node name="Item2" parent="." instance=ExtResource("1_ybk0r")]
 position = Vector2(300, 200)
@@ -114,6 +114,6 @@ item = ExtResource("11_8meuo")
 [node name="Sprite2D" parent="Item4" index="1"]
 rotation = 0.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_w3soj")
+texture = ExtResource("13_7elck")
 
 [editable path="Item4"]
