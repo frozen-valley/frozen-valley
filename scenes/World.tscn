@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=14 format=3 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
 [ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://scenes/partner.tscn" id="5_lvg3v"]
 [ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://scenes/snow.tscn" id="6_n0jfh"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://scenes/border.tscn" id="7_2d534"]
+[ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="11_8meuo"]
+[ext_resource type="Texture2D" uid="uid://cwqno01601qxx" path="res://sprites/axe.png" id="12_w3soj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7nkc7"]
 
@@ -95,3 +97,14 @@ scale = Vector2(10, 9)
 position = Vector2(960, 0)
 rotation = 4.71239
 scale = Vector2(10, 9)
+
+[node name="Item4" parent="." instance=ExtResource("1_ybk0r")]
+position = Vector2(179, -97)
+item = ExtResource("11_8meuo")
+
+[node name="Sprite2D" parent="Item4" index="1"]
+rotation = 0.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("12_w3soj")
+
+[editable path="Item4"]

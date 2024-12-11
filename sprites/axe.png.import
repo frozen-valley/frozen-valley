@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buhbdnl6mivtf"
-path="res://.godot/imported/match.png-e7b075397cc5fa373c9f33844fc702d4.ctex"
+uid="uid://cwqno01601qxx"
+path="res://.godot/imported/axe.png-7ad8fa60a528d53f2a9596e2cbdc2634.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://matchbox_game/match.png"
-dest_files=["res://.godot/imported/match.png-e7b075397cc5fa373c9f33844fc702d4.ctex"]
+source_file="res://sprites/axe.png"
+dest_files=["res://.godot/imported/axe.png-7ad8fa60a528d53f2a9596e2cbdc2634.ctex"]
 
 [params]
 
