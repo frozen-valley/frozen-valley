@@ -1,18 +1,41 @@
 [gd_scene load_steps=10 format=3 uid="uid://d4cq7vev1xowi"]
 
+
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
 [ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://scenes/player.tscn" id="2_rl5vm"]
+[ext_resource type="Script" path="res://scripts/dead_tree.gd" id="2_u0fry"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://scenes/tree.tscn" id="3_6e2c5"]
+[ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/trees/DeadTree.png" id="3_hm3gl"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="4_h1r4w"]
 [ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://scenes/partner.tscn" id="5_lvg3v"]
 [ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://scenes/snow.tscn" id="6_n0jfh"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://scenes/border.tscn" id="7_2d534"]
-[ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://book/book.tscn" id="8_q46yu"]
+[ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="11_8meuo"]
+[ext_resource type="Texture2D" uid="uid://dt4rsvdwxu0wb" path="res://sprites/misc/Axe.png" id="13_7elck"]
+[ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://book/book.tscn" id="13_i7sj3"]
+
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7nkc7"]
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_yr7tt")
+
+[node name="DeadTree" type="StaticBody2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(0, -300)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_u0fry")
+player = NodePath("../Player")
+
+[node name="Sprite2D" type="Sprite2D" parent="DeadTree"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_hm3gl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeadTree"]
+position = Vector2(1, 60)
+shape = SubResource("CircleShape2D_7nkc7")
 
 [node name="Snow" parent="." instance=ExtResource("6_n0jfh")]
 position = Vector2(480, -970)
@@ -20,7 +43,7 @@ scale = Vector2(2, 1)
 amount = 1200
 
 [node name="Item" parent="." instance=ExtResource("1_ybk0r")]
-position = Vector2(500, 200)
+position = Vector2(500, 203)
 
 [node name="Item2" parent="." instance=ExtResource("1_ybk0r")]
 position = Vector2(300, 200)
@@ -43,13 +66,10 @@ limit_top = -960
 limit_right = 960
 limit_bottom = 960
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_6e2c5")]
+[node name="Tree" parent="." instance=ExtResource("3_6e2c5")]
 position = Vector2(387, -30)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("3_6e2c5")]
-position = Vector2(-269, 6)
-
-[node name="StaticBody2D3" parent="." instance=ExtResource("3_6e2c5")]
+[node name="Tree2" parent="." instance=ExtResource("3_6e2c5")]
 position = Vector2(-150, 329)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -61,7 +81,7 @@ offset_right = 1481.0
 offset_bottom = 963.0
 scale = Vector2(5, 5)
 
-[node name="Book" parent="CanvasLayer" instance=ExtResource("8_q46yu")]
+[node name="Book" parent="CanvasLayer" instance=ExtResource("13_i7sj3")]
 visible = false
 offset_left = 350.0
 offset_top = 151.0
@@ -88,3 +108,14 @@ scale = Vector2(10, 9)
 position = Vector2(960, 0)
 rotation = 4.71239
 scale = Vector2(10, 9)
+
+[node name="Item4" parent="." instance=ExtResource("1_ybk0r")]
+position = Vector2(179, -97)
+item = ExtResource("11_8meuo")
+
+[node name="Sprite2D" parent="Item4" index="1"]
+rotation = 0.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_7elck")
+
+[editable path="Item4"]

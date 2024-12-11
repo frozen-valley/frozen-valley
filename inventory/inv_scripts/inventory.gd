@@ -5,6 +5,14 @@ signal update
 
 @export var slots: Array[InventorySlot]
 
+func has_item(item_name: String) -> bool:
+	for item: InventorySlot in slots:
+		if (!item.item):
+			continue
+		if (item.item.name == item_name):
+			return true
+	return false
+
 func insert(item: InventoryItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
 	if !itemSlots.is_empty():

@@ -15,6 +15,10 @@ var _confirmed := false
 
 signal quicktime_finished (win: bool)
 
+func restart_quicktime() -> void:
+	_confirmed = false
+	_x_offset = 0
+
 func set_x_offset(new_x_offset: float) -> void:
 	_x_offset = min(x_size - needle_width, x_size * new_x_offset)
 
