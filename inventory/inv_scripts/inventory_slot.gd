@@ -14,4 +14,4 @@ func update(slot: InventorySlot):
 			amount_text.visible = true
 		amount_text.text = str(slot.amount)
 		if slot.item.name == "fox":
-				item_visual.scale = Vector2(0.075, 0.075)
+			item_visual.scale = Vector2(0.075, 0.075)
