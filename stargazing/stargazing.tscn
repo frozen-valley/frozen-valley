@@ -1,6 +1,7 @@
-[gd_scene load_steps=20 format=3 uid="uid://b7riegut3a8nm"]
+[gd_scene load_steps=21 format=3 uid="uid://b7riegut3a8nm"]
 
 [ext_resource type="Sky" uid="uid://tm16h4yqewq4" path="res://stargazing/skybox/variant2/starry_skybox_treesless.tres" id="1_36b8n"]
+[ext_resource type="Script" path="res://stargazing/stargazing.gd" id="1_fapj7"]
 [ext_resource type="Script" path="res://stargazing/scripts/stargazing_dialogue_manager.gd" id="1_h8loa"]
 [ext_resource type="Script" path="res://stargazing/scripts/stargazer_perspective.gd" id="2_dcg3g"]
 [ext_resource type="Texture2D" uid="uid://by5yyycldn78p" path="res://stargazing/sprites/circle_crosshair.png" id="3_7ybks"]
@@ -27,6 +28,7 @@ sky = ExtResource("1_36b8n")
 [sub_resource type="Curve3D" id="Curve3D_ssevu"]
 
 [node name="Stargazing" type="Node3D"]
+script = ExtResource("1_fapj7")
 
 [node name="StargazingDialogueManager" type="Node" parent="."]
 script = ExtResource("1_h8loa")
@@ -126,6 +128,7 @@ visible = false
 [connection signal="explanation_dialogue_ended" from="StargazingDialogueManager" to="UI" method="_on_stargazing_dialogue_manager_explanation_dialogue_ended"]
 [connection signal="intro_dialogue_ended" from="StargazingDialogueManager" to="StargazerPerspective" method="_on_stargazing_dialogue_manager_intro_dialogue_ended"]
 [connection signal="intro_dialogue_ended" from="StargazingDialogueManager" to="UI" method="_on_stargazing_dialogue_manager_intro_dialogue_ended"]
+[connection signal="all_solved" from="StargazingTutorial" to="." method="_on_stargazing_tutorial_all_solved"]
 [connection signal="load_star_group" from="StargazingTutorial" to="StarPickerLogic" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="load_star_group" from="StargazingTutorial" to="Starcharter" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="set_completion" from="StargazingTutorial" to="UI/QuestLabels" method="_on_stargazing_tutorial_set_completion"]

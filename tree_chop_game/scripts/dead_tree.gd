@@ -1,6 +1,8 @@
 extends StaticBody2D
 class_name DeadTree
 
+signal minigame_solved
+
 @export var player: Player 
 @export var distance_treshold: float = 300
 var distance: float = 0
@@ -18,6 +20,7 @@ func play_quicktime() -> void:
 	root_node.add_child(tree_chop_node)
 	
 func _on_finished_quicktime() -> void:
+	minigame_solved.emit()
 	did_quicktime = true
 	tree_chop_node.queue_free()
 	root_node.add_child(world_node)

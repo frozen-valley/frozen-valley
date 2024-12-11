@@ -39,6 +39,7 @@ func _physics_process(_delta: float) -> void:
 	# Get the input directions
 	var move_x: float = 0
 	var move_y: float = 0
+		
 	if Input.is_action_pressed("move_left"):
 		move_x -= 1
 	if Input.is_action_pressed("move_right"):
