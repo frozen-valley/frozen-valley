@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyb86ci6680i2"]
+[gd_scene load_steps=4 format=3 uid="uid://davqj3l78lli2"]
 
 [ext_resource type="Script" path="res://book/book.gd" id="1_8yidi"]
 [ext_resource type="Texture2D" uid="uid://dg5df1op5xgkf" path="res://inventory/inventory-background.png" id="2_h58g3"]
@@ -76,6 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StargazingPage" type="Control" parent="NinePatchRect/Pages"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,3 +90,22 @@ offset_right = 40.0
 offset_bottom = 23.0
 text = "Star navigation guide"
 label_settings = SubResource("LabelSettings_gwbjx")
+
+[node name="TreeChoppingPage" type="Control" parent="NinePatchRect/Pages"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="NinePatchRect/Pages/TreeChoppingPage"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Tree chopping guide"
+label_settings = SubResource("LabelSettings_gwbjx")
+
+[connection signal="pressed" from="NinePatchRect/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="NinePatchRect/RightButton" to="." method="_on_right_button_pressed"]

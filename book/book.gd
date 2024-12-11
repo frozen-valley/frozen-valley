@@ -3,12 +3,12 @@ extends Control
 var current_page: int = 0
 var is_open: bool = false
 
-@onready var pages: Array[Control] = $Pages.get_children() as Array[Control]
+@onready var pages: Array = $NinePatchRect/Pages.get_children()
 
 func _ready() -> void:
 	for page: Control in pages:
 		page.visible = false
-	pages[current_page].visibile = true
+	pages[current_page].visible = true
 
 func _process(delta):
 	if Input.is_action_just_pressed("book"):

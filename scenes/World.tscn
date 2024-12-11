@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=10 format=3 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
 [ext_resource type="Script" path="res://scripts/world_control.gd" id="1_yr7tt"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://scenes/snow.tscn" id="6_n0jfh"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://scenes/border.tscn" id="7_2d534"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://book/book.tscn" id="8_q46yu"]
-
 
 [node name="World" type="Node2D"]
 y_sort_enabled = true
