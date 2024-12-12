@@ -4,3 +4,4 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_7w6kg")
+begin_level1 = true

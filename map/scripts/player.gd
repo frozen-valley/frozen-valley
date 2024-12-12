@@ -51,7 +51,6 @@ func _physics_process(_delta: float) -> void:
 	
 	var move := Vector2(move_x, move_y)
 	
-	print(move)
 	# Normalize to avoid diagonal speedup
 	move = move.normalized()
 	

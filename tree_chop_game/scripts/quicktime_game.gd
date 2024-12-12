@@ -10,4 +10,3 @@ func _on_finished_quicktime() -> void:
 	
 func _ready() -> void:
 	_quicktime_game.finished_quicktime.connect(_on_finished_quicktime)
-

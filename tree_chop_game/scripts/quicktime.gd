@@ -49,5 +49,3 @@ func _draw():
 	draw_rect(Rect2(3 * (x_size / 5), 0, x_size / 5, 100.0), correct)
 	draw_rect(Rect2(_x_offset, 0, needle_width, 100.0), needle_color)
 	draw_rect(Rect2(0, 0, x_size, 100.0), border, false, 6.0)
-
-

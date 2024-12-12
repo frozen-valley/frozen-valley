@@ -208,5 +208,7 @@ offset_bottom = -880.0
 text = "Cross the river"
 script = ExtResource("15_34xsh")
 
+[connection signal="minigame_solved" from="Trees/DeadTree" to="." method="_on_dead_tree_minigame_solved"]
 [connection signal="minigame_solved" from="Trees/DeadTree" to="CrossRiverButton" method="_on_dead_tree_minigame_solved"]
+[connection signal="play_minigame" from="Trees/DeadTree" to="." method="_on_dead_tree_play_minigame"]
 [connection signal="pressed" from="CrossRiverButton" to="." method="_on_cross_river_button_pressed"]
