@@ -62,3 +62,4 @@ func start_bonfire():
 
 func end_bonfire():
 	bonfire_scene.queue_free()
+	Dialogic.start("ending")
