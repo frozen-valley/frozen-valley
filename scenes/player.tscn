@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_yisvx"]
 [ext_resource type="Resource" uid="uid://bhset6bsfxlrw" path="res://inventory/player_inventory.tres" id="2_5ve6o"]
-[ext_resource type="Texture2D" uid="uid://bvx32qqrtbh7o" path="res://sprites/player.png" id="2_n72h5"]
-[ext_resource type="Texture2D" uid="uid://ql31cdmw5w62" path="res://sprites/player_walk.png" id="3_cfsha"]
+[ext_resource type="Texture2D" uid="uid://bvx32qqrtbh7o" path="res://sprites/characters/main_character/player.png" id="2_n72h5"]
+[ext_resource type="Texture2D" uid="uid://ql31cdmw5w62" path="res://sprites/characters/main_character/player_walk.png" id="3_cfsha"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sssw1"]
 animations = [{
@@ -26,7 +26,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ew5rr"]
 radius = 26.0
-height = 106.0
+height = 88.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_yisvx")
@@ -38,5 +38,5 @@ sprite_frames = SubResource("SpriteFrames_sssw1")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 13)
+position = Vector2(-5, 20)
 shape = SubResource("CapsuleShape2D_ew5rr")

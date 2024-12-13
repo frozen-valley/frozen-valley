@@ -1,8 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://b5qs07i1uh2um"]
 
 [ext_resource type="Script" path="res://scripts/item.gd" id="1_vjvyv"]
-[ext_resource type="Resource" path="res://inventory/items/stick.tres" id="2_hnr0n"]
-[ext_resource type="Texture2D" uid="uid://dh1skibqn2c0y" path="res://sprites/stick.png" id="3_oxjf5"]
+[ext_resource type="Resource" uid="uid://cggowsgoo8c2h" path="res://inventory/items/stick.tres" id="2_hnr0n"]
+
+[ext_resource type="Texture2D" uid="uid://dh1skibqn2c0y" path="res://sprites/legacy/stick.png" id="3_oxjf5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flr71"]
 radius = 120.0
