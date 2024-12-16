@@ -14,7 +14,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_quicktime_quicktime_finished(win:bool) -> void:
+func _on_quicktime_quicktime_finished(win: bool) -> void:
 	if (win):
 		hit_counter += 1
 		await get_tree().create_timer(0.2).timeout

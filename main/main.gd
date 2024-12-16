@@ -18,7 +18,6 @@ func _ready() -> void:
 	else:
 		start_stargazing()
 
-
 func start_stargazing():
 	stargazing_scene = stargazing_preload.instantiate()
 	stargazing_scene.connect("solved", end_stargazing)
@@ -44,14 +43,11 @@ func start_chop():
 
 func end_chop():
 	chop_scene.queue_free()
-	start_level12()
-
-func start_level12():
 	add_child(map_level1_scene)
-	map_level1_scene.connect("solved", end_level12)
+	map_level1_scene.connect("solved", start_cross_river)
 	map_level1_scene.do_solved_minigame()
 
-func end_level12():
+func start_cross_river():
 	map_level1_scene.queue_free()
 	start_bonfire()
 
