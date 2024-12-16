@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://do5pa605qh5no"]
+
+[ext_resource type="Script" path="res://bonfire/bonfire.gd" id="1_mea2b"]
+[ext_resource type="Texture2D" uid="uid://cgthq0ya6gec4" path="res://bonfire/Matches.png" id="2_lt5p1"]
+[ext_resource type="PackedScene" uid="uid://bmonj80xa8v4b" path="res://bonfire/bonfire_material.tscn" id="3_lxgxt"]
+[ext_resource type="Script" path="res://bonfire/matches.gd" id="3_n30q7"]
+[ext_resource type="Texture2D" uid="uid://d4ewxfg72ueou" path="res://bonfire/Plank.png" id="4_lac62"]
+[ext_resource type="Texture2D" uid="uid://c78ghc5hbbr2v" path="res://bonfire/Twigs.png" id="5_4381t"]
+[ext_resource type="Texture2D" uid="uid://ce1tfhf67qm3v" path="res://bonfire/Logs.png" id="6_dj0rn"]
+[ext_resource type="Texture2D" uid="uid://fxedoaux7od5" path="res://bonfire/Grass.png" id="7_t5vuo"]
+
+[node name="Bonfire" type="Node2D"]
+script = ExtResource("1_mea2b")
+
+[node name="Fireplace" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 958.0
+offset_top = 302.0
+offset_right = 998.0
+offset_bottom = 342.0
+
+[node name="Matches" type="Button" parent="." node_paths=PackedStringArray("fireplace")]
+offset_left = 1583.0
+offset_top = 803.0
+offset_right = 1791.0
+offset_bottom = 1011.0
+icon = ExtResource("2_lt5p1")
+script = ExtResource("3_n30q7")
+fireplace = NodePath("../Fireplace")
+
+[node name="LogsMaterial" parent="." node_paths=PackedStringArray("fireplace") instance=ExtResource("3_lxgxt")]
+offset_left = 57.0
+offset_top = 781.0
+offset_right = 265.0
+offset_bottom = 989.0
+icon = ExtResource("6_dj0rn")
+fireplace = NodePath("../Fireplace")
+
+[node name="KindleMaterial" parent="." node_paths=PackedStringArray("fireplace") instance=ExtResource("3_lxgxt")]
+offset_left = 304.0
+offset_right = 512.0
+fireplace = NodePath("../Fireplace")
+
+[node name="TwigsMaterial" parent="." node_paths=PackedStringArray("fireplace") instance=ExtResource("3_lxgxt")]
+offset_left = 541.0
+offset_right = 749.0
+icon = ExtResource("5_4381t")
+fireplace = NodePath("../Fireplace")
+
+[node name="PlanksMaterial" parent="." node_paths=PackedStringArray("fireplace") instance=ExtResource("3_lxgxt")]
+offset_left = 783.0
+offset_top = 792.0
+offset_right = 991.0
+offset_bottom = 1000.0
+icon = ExtResource("4_lac62")
+fireplace = NodePath("../Fireplace")
+
+[node name="GrassMaterial" parent="." node_paths=PackedStringArray("fireplace") instance=ExtResource("3_lxgxt")]
+offset_left = 1012.0
+offset_top = 794.0
+offset_right = 1220.0
+offset_bottom = 1002.0
+icon = ExtResource("7_t5vuo")
+fireplace = NodePath("../Fireplace")
+
+[connection signal="pressed" from="Matches" to="." method="_on_matches_pressed"]
+[connection signal="pressed" from="Matches" to="Matches" method="_on_pressed"]
