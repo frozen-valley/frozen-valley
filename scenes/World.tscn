@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream:scenes/World.tscn
 [gd_scene load_steps=16 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://scenes/item.tscn" id="1_ybk0r"]
@@ -13,6 +14,65 @@
 [ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://scenes/house.tscn" id="11_6iee2"]
 [ext_resource type="PackedScene" uid="uid://r1vy6v2axr5u" path="res://scenes/fox.tscn" id="11_gs481"]
 [ext_resource type="Resource" uid="uid://043jwwnvlhht" path="res://inventory/items/fox.tres" id="12_0i8eo"]
+=======
+[gd_scene load_steps=21 format=4 uid="uid://d4cq7vev1xowi"]
+
+[ext_resource type="Script" path="res://map/level1/map_level1.gd" id="1_j1dqv"]
+[ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map/river_tilemap_atlas.tres" id="2_rxlgl"]
+[ext_resource type="Texture2D" uid="uid://df31t0dtpu16h" path="res://sprites/tiles/Tiles.png" id="3_73peq"]
+[ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://map/sub_scenes/item.tscn" id="4_dapfc"]
+[ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="5_7mr62"]
+[ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://map/sub_scenes/snow.tscn" id="6_fwclf"]
+[ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://map/sub_scenes/partner.tscn" id="7_jlq1f"]
+[ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map/sub_scenes/player.tscn" id="8_mgbvs"]
+[ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="9_ovmc0"]
+[ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="10_p54oi"]
+[ext_resource type="PackedScene" uid="uid://ck68v3ll5u0mf" path="res://UI/pause_menu.tscn" id="11_eadt3"]
+[ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map/sub_scenes/border.tscn" id="11_i65b4"]
+[ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map/sub_scenes/tree.tscn" id="12_2duby"]
+[ext_resource type="PackedScene" uid="uid://cc2bvnlef8n01" path="res://tree_chop_game/dead_tree.tscn" id="13_juv8s"]
+[ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map/sub_scenes/house.tscn" id="14_gnrko"]
+[ext_resource type="Script" path="res://map/scripts/cross_river_button.gd" id="15_34xsh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugstr"]
+texture = ExtResource("2_rxlgl")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+>>>>>>> Stashed changes:map/level1/map_level1.tscn
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e87v8"]
 texture = ExtResource("10_jn74g")
@@ -87,6 +147,8 @@ offset_top = 151.0
 offset_right = 177.0
 offset_bottom = 81.0
 scale = Vector2(0.7, 0.7)
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("11_eadt3")]
 
 [node name="Borders" type="Node" parent="."]
 
