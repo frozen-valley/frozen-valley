@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=21 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="Script" path="res://map/level1/map_level1.gd" id="1_j1dqv"]
 [ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map/river_tilemap_atlas.tres" id="2_rxlgl"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="9_ovmc0"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="10_p54oi"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map/sub_scenes/border.tscn" id="11_i65b4"]
+[ext_resource type="PackedScene" uid="uid://ck68v3ll5u0mf" path="res://UI/pause_menu.tscn" id="11_six8w"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map/sub_scenes/tree.tscn" id="12_2duby"]
 [ext_resource type="PackedScene" uid="uid://cc2bvnlef8n01" path="res://tree_chop_game/dead_tree.tscn" id="13_juv8s"]
 [ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map/sub_scenes/house.tscn" id="14_gnrko"]
@@ -134,6 +135,8 @@ offset_top = 151.0
 offset_right = 177.0
 offset_bottom = 81.0
 scale = Vector2(0.7, 0.7)
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("11_six8w")]
 
 [node name="Borders" type="Node" parent="."]
 
