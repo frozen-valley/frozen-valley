@@ -1,5 +1,7 @@
 extends Node
 
+@onready var optionsScreen_preload = preload("res://UI/optionsScreen.tscn")
+@onready var startScreen_preload = preload("res://UI/startScreen.tscn")
 @onready var stargazing_preload = preload("res://stargazing/stargazing.tscn")
 @onready var map_level1_preload = preload("res://map/level1/map_level1.tscn")
 @onready var chop_preload = preload("res://tree_chop_game/tree_chop_game.tscn")
@@ -7,6 +9,8 @@ extends Node
 
 @export var begin_level1 = false
 
+var optionsScreen_scene
+var startScreen_scene
 var stargazing_scene
 var map_level1_scene
 var chop_scene
@@ -16,9 +20,26 @@ func _ready() -> void:
 	if begin_level1:
 		start_level1()
 	else:
-		start_stargazing()
+		#start_stargazing()
+		startScreen_scene = startScreen_preload.instantiate()
+		start_StartScreen()
+		
+func start_StartScreen():
+	startScreen_scene.connect("pressed_play",start_stargazing)
+	startScreen_scene.connect("pressed_options",open_options)
+	add_child(startScreen_scene)
+
+func open_options():
+	optionsScreen_scene = optionsScreen_preload.instantiate()
+	optionsScreen_scene.connect("pressed_back", close_options)
+	add_child(optionsScreen_scene)
+
+func close_options():
+	optionsScreen_scene.queue_free()
+	start_StartScreen()
 
 func start_stargazing():
+	startScreen_scene.queue_free()
 	stargazing_scene = stargazing_preload.instantiate()
 	stargazing_scene.connect("solved", end_stargazing)
 	add_child(stargazing_scene)
