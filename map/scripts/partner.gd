@@ -1,9 +1,6 @@
 extends CharacterBody2D
 class_name Partner
 
-# We should probably implement a pathfinding algorithm for this because I'm not
-# sure how to avoid getting stuck on trees (and other objects in the future)
-
 const SPEED: float = 300.0
 const POSSIBLE_DIRECTIONS: Array[Vector2] = [
 	Vector2(1, 0), # 0
@@ -19,7 +16,7 @@ const POSSIBLE_DIRECTIONS: Array[Vector2] = [
 @export var distance_treshold: float = 160
 @export var distance_leeway: float = 50
 # The minimum walk amount required before changing move_direction
-@export var minimum_step_direction_time: float = 0.75
+@export var minimum_step_direction_time: float = 0.65
 var default_scale_x: float = scale.x
 var move_x: float = 0
 var direction_x: int = 1
@@ -31,6 +28,9 @@ var move_direction: Vector2 = Vector2(0, 0)
 var distance: float = 0
 var previous_move_direction: Vector2
 var can_change_direction := true
+
+var target_position: Vector2 = Vector2(0, 0)
+@onready var navigation_agent: NavigationAgent2D = $NavigationAgent2D
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -55,7 +55,12 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:	
 	distance = global_position.distance_to(player.global_position)
-	direction = global_position.direction_to(player.global_position) 
+	navigation_agent.target_position = player.position
+
+func _physics_process(_delta: float) -> void:
+	var current_agent_position: Vector2 = global_position
+	var next_path_position: Vector2 = navigation_agent.get_next_path_position()
+	direction = _closest_to_angle(current_agent_position.direction_to(next_path_position))
 	previous_move_direction = move_direction
 
 	if (can_change_direction):
@@ -68,28 +73,14 @@ func _process(_delta: float) -> void:
 
 	if (running):
 		running = distance > distance_treshold 
-	else:
-		running = distance > distance_treshold + distance_leeway
-
-func _physics_process(_delta: float) -> void:
-	if (running):
 		velocity = move_direction * SPEED
 	else:
+		running = distance > distance_treshold + distance_leeway
 		velocity = Vector2(0, 0)
-	
-	# Flip based on X direction
-	if (direction.angle() > (-PI / 2.0) && direction.angle() < (PI / 2.0)):
-		move_x = 1
-	else:
-		move_x = -1
 
-	if (move_x != 0 && direction_x != sign(move_x)):
-		direction_x *= -1
-		scale.x = default_scale_x * -1
-	
 	if velocity != Vector2(0,0):
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.play("idle")
-		
+	
 	move_and_slide()	
