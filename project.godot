@@ -31,6 +31,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "bonfire_intro": "res://dialogue/timelines/bonfire_intro.dtl",
+"cassiopeia_solved": "res://dialogue/timelines/cassiopeia_solved.dtl",
 "ending": "res://dialogue/timelines/ending.dtl",
 "found_axe": "res://dialogue/timelines/found_axe.dtl",
 "found_canyon": "res://dialogue/timelines/found_canyon.dtl",
@@ -54,7 +55,7 @@ text/letter_speed=0.01
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
-text/autoadvance_per_character_delay=0.05
+text/autoadvance_per_character_delay=0.03
 text/autoadvance_ignored_characters_enabled=true
 audio/max_channels=4.0
 animations/join_default_length=0.5
@@ -71,7 +72,7 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 text/autoadvance_enabled=false
 animations/join_default="Fade In"
-text/autoadvance_fixed_delay=2.0
+text/autoadvance_fixed_delay=1.5
 
 [display]
 

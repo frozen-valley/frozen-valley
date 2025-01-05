@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b7riegut3a8nm"]
+[gd_scene load_steps=20 format=3 uid="uid://b7riegut3a8nm"]
 
 [ext_resource type="Sky" uid="uid://tm16h4yqewq4" path="res://stargazing/skybox/variant2/starry_skybox_treesless.tres" id="1_36b8n"]
 [ext_resource type="Script" path="res://stargazing/stargazing.gd" id="1_fapj7"]
@@ -9,7 +9,6 @@
 [ext_resource type="Script" path="res://stargazing/scripts/crosshair.gd" id="4_2faaw"]
 [ext_resource type="Script" path="res://stargazing/scripts/stargazing_tutorial.gd" id="4_sa6gw"]
 [ext_resource type="Script" path="res://stargazing/scripts/star_picker_logic.gd" id="7_tyand"]
-[ext_resource type="Script" path="res://stargazing/scripts/quest_labels.gd" id="8_odhg8"]
 [ext_resource type="Script" path="res://stargazing/scripts/star_highlighter.gd" id="10_3w00e"]
 [ext_resource type="Script" path="res://stargazing/scripts/starcharter.gd" id="10_ku6pm"]
 [ext_resource type="Script" path="res://stargazing/scripts/stargazing_ui.gd" id="10_os6q2"]
@@ -95,34 +94,6 @@ rotation = 0.122173
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("3_g5msl")
 
-[node name="QuestLabels" type="VBoxContainer" parent="UI"]
-layout_mode = 0
-offset_left = -938.0
-offset_top = -512.0
-offset_right = -898.0
-offset_bottom = -472.0
-script = ExtResource("8_odhg8")
-
-[node name="Label" type="Label" parent="UI/QuestLabels"]
-modulate = Color(1, 1, 1, 0.498039)
-layout_mode = 2
-text = "- Find all Cassiopeia stars (0/5)"
-
-[node name="Label2" type="Label" parent="UI/QuestLabels"]
-modulate = Color(1, 1, 1, 0.498039)
-layout_mode = 2
-text = "- Find all Big Dipper stars (0/7)"
-
-[node name="Label3" type="Label" parent="UI/QuestLabels"]
-modulate = Color(1, 1, 1, 0.498039)
-layout_mode = 2
-text = "- Find all Little Dipper stars (0/7)"
-
-[node name="Label4" type="Label" parent="UI/QuestLabels"]
-modulate = Color(1, 1, 1, 0.498039)
-layout_mode = 2
-text = "- Find the North Star"
-
 [node name="Book" parent="." instance=ExtResource("15_i5mt1")]
 visible = false
 
@@ -130,9 +101,9 @@ visible = false
 [connection signal="intro_dialogue_ended" from="StargazingDialogueManager" to="StargazerPerspective" method="_on_stargazing_dialogue_manager_intro_dialogue_ended"]
 [connection signal="intro_dialogue_ended" from="StargazingDialogueManager" to="UI" method="_on_stargazing_dialogue_manager_intro_dialogue_ended"]
 [connection signal="all_solved" from="StargazingTutorial" to="." method="_on_stargazing_tutorial_all_solved"]
+[connection signal="load_star_group" from="StargazingTutorial" to="StargazingDialogueManager" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="load_star_group" from="StargazingTutorial" to="StarPickerLogic" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="load_star_group" from="StargazingTutorial" to="Starcharter" method="_on_stargazing_tutorial_load_star_group"]
-[connection signal="set_completion" from="StargazingTutorial" to="UI/QuestLabels" method="_on_stargazing_tutorial_set_completion"]
 [connection signal="calibrated" from="StarPickerLogic" to="UI/Crosshair" method="_on_star_picker_logic_calibrated"]
 [connection signal="solved_star" from="StarPickerLogic" to="StargazingTutorial" method="_on_star_picker_logic_solved_star"]
 [connection signal="solved_star" from="StarPickerLogic" to="StarHighlighter" method="_on_star_picker_logic_solved_star"]
