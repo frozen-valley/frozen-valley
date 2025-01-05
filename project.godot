@@ -30,12 +30,14 @@ directories/dch_directory={
 "main_character": "res://dialogue/characters/main_character.dch"
 }
 directories/dtl_directory={
+"big_dipper_solved": "res://dialogue/timelines/big_dipper_solved.dtl",
 "bonfire_intro": "res://dialogue/timelines/bonfire_intro.dtl",
 "cassiopeia_solved": "res://dialogue/timelines/cassiopeia_solved.dtl",
 "ending": "res://dialogue/timelines/ending.dtl",
 "found_axe": "res://dialogue/timelines/found_axe.dtl",
 "found_canyon": "res://dialogue/timelines/found_canyon.dtl",
 "level1_intro": "res://dialogue/timelines/level1_intro.dtl",
+"little_dipper_solved": "res://dialogue/timelines/little_dipper_solved.dtl",
 "little_sister_found_something": "res://dialogue/timelines/little_sister_found_something.dtl",
 "sad_tree": "res://dialogue/timelines/sad_tree.dtl",
 "stargazing_cassiopeia": "res://dialogue/timelines/stargazing_cassiopeia.dtl",

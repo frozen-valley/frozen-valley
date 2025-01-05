@@ -5,7 +5,7 @@ class_name Transition
 @export var float_speed: float = 5
 
 @export var phase_in: bool = true
-@export var phase_in_time: float = 5
+@export var phase_in_time: float = 3
 @export var transition_time: float = 10
 
 var passed_time := 0.0
