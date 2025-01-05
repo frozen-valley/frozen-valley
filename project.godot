@@ -32,8 +32,11 @@ directories/dch_directory={
 directories/dtl_directory={
 "bonfire_intro": "res://dialogue/bonfire_intro.dtl",
 "ending": "res://dialogue/ending.dtl",
+"ending1": "res://dialogue/ending1.dtl",
 "found_axe": "res://dialogue/found_axe.dtl",
 "found_canyon": "res://dialogue/found_canyon.dtl",
+"level1_intro": "res://dialogue/level1_intro.dtl",
+"little_sister_found_something": "res://dialogue/little_sister_found_something.dtl",
 "sad_tree": "res://dialogue/sad_tree.dtl",
 "stargazing_cassiopeia": "res://dialogue/stargazing_cassiopeia.dtl",
 "stargazing_explanation": "res://dialogue/stargazing_explanation.dtl",
@@ -43,7 +46,9 @@ directories/dtl_directory={
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogue/styles/base_style/base_style.tres", "res://dialogue/styles/main_character_style/main_character_style.tres", "res://dialogue/styles/side_character_style/side_character_style.tres", "res://dialogue/styles/portraitless_style/portraitless_style.tres"]
 layout/default_style="res://dialogue/styles/portraitless_style/portraitless_style.tres"
-variables={}
+variables={
+"found_expression": 1
+}
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true

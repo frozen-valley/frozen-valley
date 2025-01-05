@@ -6,6 +6,16 @@ var fireplace_material: Sprite2D
 
 var duration = 0
 
+func _ready() -> void:
+	Dialogic.start("bonfire_intro")
+	Dialogic.signal_event.connect(start_game)
+
+func start_game(arg):
+	if arg == "start_bonfire":
+		$Materials.visible = true
+	else:
+		printerr("Unknown signal fired: " + arg)
+
 func _on_matches_pressed() -> void:
 	if $GrassMaterial.button_pressed:
 		return
