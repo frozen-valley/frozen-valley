@@ -1,33 +1,8 @@
 extends Node
 
 @onready var optionsScreen_preload = preload("res://UI/optionsScreen.tscn")
-@onready var startScreen_preload = preload("res://UI/startScreen.tscn")
-@onready var stargazing_preload = preload("res://stargazing/stargazing.tscn")
-@onready var map_level1_preload = preload("res://map/level1/map_level1.tscn")
-@onready var chop_preload = preload("res://tree_chop_game/tree_chop_game.tscn")
-@onready var bonfire_preload = preload("res://bonfire/bonfire.tscn")
-
-@export var begin_level1 = false
 
 var optionsScreen_scene
-var startScreen_scene
-var stargazing_scene
-var map_level1_scene
-var chop_scene
-var bonfire_scene
-
-func _ready() -> void:
-	if begin_level1:
-		start_level1()
-	else:
-		#start_stargazing()
-		startScreen_scene = startScreen_preload.instantiate()
-		start_StartScreen()
-		
-func start_StartScreen():
-	startScreen_scene.connect("pressed_play",start_stargazing)
-	startScreen_scene.connect("pressed_options",open_options)
-	add_child(startScreen_scene)
 
 func open_options():
 	optionsScreen_scene = optionsScreen_preload.instantiate()
@@ -36,47 +11,37 @@ func open_options():
 
 func close_options():
 	optionsScreen_scene.queue_free()
-	start_StartScreen()
+	#start_StartScreen()
 
-func start_stargazing():
-	startScreen_scene.queue_free()
-	stargazing_scene = stargazing_preload.instantiate()
-	stargazing_scene.connect("solved", end_stargazing)
-	add_child(stargazing_scene)
+@onready var levels: Array[PackedScene] = [
+	preload("res://UI/startScreen.tscn"),
+	preload("res://stargazing/stargazing.tscn"),
+	preload("res://transitions/stargazing/stargazing_transition.tscn"),
+	preload("res://map_levels/level1/map_level1.tscn"),
+	preload("res://transitions/river_cross/river_cross_transition.tscn"),
+	preload("res://bonfire/bonfire.tscn"),
+	preload("res://transitions/bonfire/bonfire_transition.tscn"),
+]
 
-func end_stargazing():
-	stargazing_scene.queue_free()
-	start_level1()
+var current_scene: Level
+var index_current := 0
 
-func start_level1():
-	map_level1_scene = map_level1_preload.instantiate()
-	map_level1_scene.connect("play_chop", end_level1)
-	add_child(map_level1_scene)
+func _ready() -> void:
+	play_next()
+
+func _on_done():
+	remove_child(current_scene)
+	current_scene.queue_free()
+	current_scene = null
+	index_current += 1
+	if index_current < len(levels):
+		play_next()
+
+func play_next():
+	current_scene = levels[index_current].instantiate()
+	current_scene.connect("done", _on_done)
+	add_child(current_scene)
 	
-func end_level1():
-	remove_child(map_level1_scene)
-	start_chop()
-
-func start_chop():
-	chop_scene = chop_preload.instantiate()
-	chop_scene.connect("finished_quicktime", end_chop)
-	add_child(chop_scene)
-
-func end_chop():
-	chop_scene.queue_free()
-	add_child(map_level1_scene)
-	map_level1_scene.connect("solved", start_cross_river)
-	map_level1_scene.do_solved_minigame()
-
-func start_cross_river():
-	map_level1_scene.queue_free()
-	start_bonfire()
-
-func start_bonfire():
-	bonfire_scene = bonfire_preload.instantiate()
-	bonfire_scene.connect("solved", end_bonfire)
-	add_child(bonfire_scene)
-
-func end_bonfire():
-	bonfire_scene.queue_free()
-	Dialogic.start("ending")
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("skip_scene"):
+		_on_done()

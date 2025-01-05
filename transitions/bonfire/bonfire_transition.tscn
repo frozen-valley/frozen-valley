@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cg52vr1gbuv38"]
+
+[ext_resource type="Script" path="res://transitions/bonfire/bonfire_transition.gd" id="1_p3xjp"]
+[ext_resource type="Texture2D" uid="uid://bojbgntef7sgt" path="res://transitions/bonfire/SceneFire1.png" id="2_bacbd"]
+[ext_resource type="Texture2D" uid="uid://bvv4fhx4de17j" path="res://transitions/bonfire/SceneFire2.png" id="3_sffxm"]
+[ext_resource type="Texture2D" uid="uid://bfbyq7ksdrtt4" path="res://transitions/bonfire/SceneFire3.png" id="4_mdnt7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ab1q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_bacbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_sffxm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mdnt7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="BonfireTransition" type="Node"]
+script = ExtResource("1_p3xjp")
+transition_time = 12.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+sprite_frames = SubResource("SpriteFrames_7ab1q")
+autoplay = "default"

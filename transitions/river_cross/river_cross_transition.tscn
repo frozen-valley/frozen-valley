@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dug8exxtenltr"]
+
+[ext_resource type="Script" path="res://transitions/river_cross/river_cross_transition.gd" id="1_vr5h2"]
+[ext_resource type="Texture2D" uid="uid://x8c7hcdlgtw7" path="res://transitions/river_cross/SceneBridge.png" id="2_2y3st"]
+
+[node name="RiverCrossTransition" type="Node"]
+script = ExtResource("1_vr5h2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_2y3st")

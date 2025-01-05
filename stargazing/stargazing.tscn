@@ -27,7 +27,7 @@ sky = ExtResource("1_36b8n")
 
 [sub_resource type="Curve3D" id="Curve3D_ssevu"]
 
-[node name="Stargazing" type="Node3D"]
+[node name="Stargazing" type="Node"]
 script = ExtResource("1_fapj7")
 
 [node name="StargazingDialogueManager" type="Node" parent="."]
@@ -44,6 +44,7 @@ precision_required = 0.035
 environment = SubResource("Environment_dx87f")
 
 [node name="StargazerPerspective" type="Camera3D" parent="."]
+current = true
 size = 1.75
 script = ExtResource("2_dcg3g")
 starting_vertical_angle = -0.393

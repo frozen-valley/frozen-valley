@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnlky7u2abek5"]
+
+[ext_resource type="Script" path="res://map_levels/scripts/snow.gd" id="1_ntumx"]
+
+[sub_resource type="Curve" id="Curve_ypbdh"]
+min_value = -20.0
+max_value = 20.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.5, -20), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_pwupn"]
+curve = SubResource("Curve_ypbdh")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_y80fj"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(-1, 1, 0)
+spread = 15.0
+initial_velocity_min = 70.0
+initial_velocity_max = 80.0
+angular_velocity_min = -1.60933e-05
+angular_velocity_max = -1.60933e-05
+gravity = Vector3(0, 10, 0)
+linear_accel_curve = SubResource("CurveTexture_pwupn")
+
+[node name="Snow" type="GPUParticles2D"]
+z_index = 4096
+amount = 1000
+process_material = SubResource("ParticleProcessMaterial_y80fj")
+lifetime = 100.0
+preprocess = 100.0
+script = ExtResource("1_ntumx")
