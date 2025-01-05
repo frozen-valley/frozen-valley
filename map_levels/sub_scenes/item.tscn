@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b5qs07i1uh2um"]
 
-[ext_resource type="Script" path="res://map/scripts/item.gd" id="1_vjvyv"]
+[ext_resource type="Script" path="res://map_levels/scripts/item.gd" id="1_vjvyv"]
 [ext_resource type="Resource" uid="uid://043jwwnvlhht" path="res://inventory/items/fox.tres" id="2_3ac4f"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flr71"]

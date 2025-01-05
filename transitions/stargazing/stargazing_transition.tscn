@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b63tal8n8fat7"]
+
+[ext_resource type="Script" path="res://transitions/stargazing/stargazing_transition.gd" id="1_vgtpm"]
+[ext_resource type="Texture2D" uid="uid://k4fgr5lcnqqb" path="res://transitions/stargazing/SceneStargazing.png" id="2_clf7x"]
+
+[node name="StargazingTransition" type="Node"]
+script = ExtResource("1_vgtpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("2_clf7x")

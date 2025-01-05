@@ -36,9 +36,6 @@ func on_quicktime_event_confirm() -> void:
 	else:
 		_lose()
 
-func _ready() -> void:
-	pass
-
 func _process(_delta: float) -> void:
 	# Redraw only if not confirmed (makes the needle stop if confirmed)
 	if (!_confirmed):

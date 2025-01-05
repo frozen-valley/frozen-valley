@@ -10,7 +10,7 @@ signal minigame_solved
 var distance: float = 0
 var did_quicktime := false
 
-var tree_chop_node: QuicktimeGame
+var tree_chop_node
 var world_node
 var main_node
 
