@@ -1,20 +1,20 @@
 [gd_scene load_steps=20 format=4 uid="uid://d4cq7vev1xowi"]
 
-[ext_resource type="Script" path="res://map/level1/map_level1.gd" id="1_j1dqv"]
-[ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map/river_tilemap_atlas.tres" id="2_rxlgl"]
+[ext_resource type="Script" path="res://map_levels/level1/map_level1.gd" id="1_j1dqv"]
+[ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map_levels/river_tilemap_atlas.tres" id="2_rxlgl"]
 [ext_resource type="Texture2D" uid="uid://df31t0dtpu16h" path="res://sprites/tiles/Tiles.png" id="3_73peq"]
-[ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://map/sub_scenes/item.tscn" id="4_dapfc"]
+[ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://map_levels/sub_scenes/item.tscn" id="4_dapfc"]
 [ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="5_7mr62"]
-[ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://map/sub_scenes/snow.tscn" id="6_fwclf"]
-[ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://map/sub_scenes/partner.tscn" id="7_jlq1f"]
-[ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map/sub_scenes/player.tscn" id="8_mgbvs"]
+[ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://map_levels/sub_scenes/snow.tscn" id="6_fwclf"]
+[ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://map_levels/sub_scenes/partner.tscn" id="7_jlq1f"]
+[ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map_levels/sub_scenes/player.tscn" id="8_mgbvs"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="9_ovmc0"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="10_p54oi"]
-[ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map/sub_scenes/border.tscn" id="11_i65b4"]
-[ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map/sub_scenes/tree.tscn" id="12_2duby"]
+[ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map_levels/sub_scenes/border.tscn" id="11_i65b4"]
+[ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map_levels/sub_scenes/tree.tscn" id="12_2duby"]
 [ext_resource type="PackedScene" uid="uid://cc2bvnlef8n01" path="res://tree_chop_game/dead_tree.tscn" id="13_juv8s"]
-[ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map/sub_scenes/house.tscn" id="14_gnrko"]
-[ext_resource type="Script" path="res://map/scripts/cross_river_button.gd" id="15_34xsh"]
+[ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map_levels/sub_scenes/house.tscn" id="14_gnrko"]
+[ext_resource type="Script" path="res://map_levels/scripts/cross_river_button.gd" id="15_34xsh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugstr"]
 texture = ExtResource("2_rxlgl")
@@ -157,7 +157,7 @@ position = Vector2(960, 0)
 rotation = -1.5708
 scale = Vector2(10, 9)
 
-[node name="Trees" type="Node" parent="."]
+[node name="Trees" type="Node2D" parent="."]
 
 [node name="tree" parent="Trees" instance=ExtResource("12_2duby")]
 position = Vector2(387, -30)
