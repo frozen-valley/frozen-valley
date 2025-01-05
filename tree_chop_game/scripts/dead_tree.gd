@@ -44,3 +44,13 @@ func _process(_delta: float) -> void:
 			# Dialog
 			print("I could use an axe")
 			
+
+var seen = false
+func _on_notice_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	var player_body = body as Player
+	if (!player_body):
+		return
+	if not seen:
+		seen = true
+		Dialogic.Inputs.auto_advance.enabled_forced = true
+		Dialogic.start("sad_tree")

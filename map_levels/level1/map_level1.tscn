@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=22 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="Script" path="res://map_levels/level1/map_level1.gd" id="1_j1dqv"]
 [ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map_levels/river_tilemap_atlas.tres" id="2_rxlgl"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cc2bvnlef8n01" path="res://tree_chop_game/dead_tree.tscn" id="13_juv8s"]
 [ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map_levels/sub_scenes/house.tscn" id="14_gnrko"]
 [ext_resource type="Script" path="res://map_levels/scripts/cross_river_button.gd" id="15_34xsh"]
+[ext_resource type="Script" path="res://map_levels/level1/canyon_notice.gd" id="16_ianfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugstr"]
 texture = ExtResource("2_rxlgl")
@@ -83,6 +84,9 @@ sources/0 = SubResource("TileSetAtlasSource_ugstr")
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kgvex"]
 a = Vector2(295, -193)
 b = Vector2(-266, 166)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1018v"]
+size = Vector2(328.196, 633.511)
 
 [node name="MapLevel1" type="Node"]
 script = ExtResource("1_j1dqv")
@@ -216,7 +220,17 @@ offset_bottom = -880.0
 text = "Cross the river"
 script = ExtResource("15_34xsh")
 
+[node name="CanyonNotice" type="Area2D" parent="."]
+position = Vector2(-791, -824)
+script = ExtResource("16_ianfm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanyonNotice"]
+position = Vector2(93.2256, 31.5257)
+rotation = 0.984219
+shape = SubResource("RectangleShape2D_1018v")
+
 [connection signal="minigame_solved" from="Trees/DeadTree" to="." method="_on_dead_tree_minigame_solved"]
 [connection signal="minigame_solved" from="Trees/DeadTree" to="CrossRiverButton" method="_on_dead_tree_minigame_solved"]
 [connection signal="play_minigame" from="Trees/DeadTree" to="." method="_on_dead_tree_play_minigame"]
 [connection signal="pressed" from="CrossRiverButton" to="." method="_on_cross_river_button_pressed"]
+[connection signal="body_entered" from="CanyonNotice" to="CanyonNotice" method="_on_body_entered"]
