@@ -7,7 +7,7 @@ extends Node
 ]
 
 var current_scene: Level
-var index_current := -1
+var index_current := 0
 
 func _ready() -> void:
 	play_next()
@@ -16,10 +16,15 @@ func _on_done():
 	remove_child(current_scene)
 	current_scene.queue_free()
 	current_scene = null
+	index_current += 1
+	if index_current < len(levels):
+		play_next()
 
 func play_next():
-	index_current += 1
 	current_scene = levels[index_current].instantiate()
 	current_scene.connect("done", _on_done)
 	add_child(current_scene)
 	
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("skip_scene"):
+		_on_done()

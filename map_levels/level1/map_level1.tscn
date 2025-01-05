@@ -84,8 +84,7 @@ sources/0 = SubResource("TileSetAtlasSource_ugstr")
 a = Vector2(295, -193)
 b = Vector2(-266, 166)
 
-[node name="MapLevel1" type="Node2D"]
-y_sort_enabled = true
+[node name="MapLevel1" type="Node"]
 script = ExtResource("1_j1dqv")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
@@ -94,6 +93,7 @@ tile_map_data = PackedByteArray("AADz//b/AQACAAIAAAD0//b/AQAAAAAAAAD1//f/AQACAAI
 tile_set = SubResource("TileSet_ryj3h")
 
 [node name="Item" parent="." instance=ExtResource("4_dapfc")]
+z_index = 100
 position = Vector2(683, -596)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("5_7mr62")

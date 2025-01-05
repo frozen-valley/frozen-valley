@@ -14,11 +14,11 @@
 [ext_resource type="Texture2D" uid="uid://b5pgttapedfmq" path="res://sprites/trees/ChoppedTree3.png" id="12_0tqvj"]
 [ext_resource type="Texture2D" uid="uid://8sxjxs6oljoi" path="res://sprites/trees/ChoppedTree4.png" id="13_l7vcy"]
 
-[node name="Game" type="Node2D"]
+[node name="TreeChop" type="Node"]
 script = ExtResource("1_a5lmt")
 
 [node name="TreeChopGame" type="Node2D" parent="."]
-position = Vector2(750, 600)
+position = Vector2(3210, 2033)
 scale = Vector2(2, 2)
 script = ExtResource("2_g7vns")
 _velocity_curve = ExtResource("2_prdf5")
@@ -44,7 +44,7 @@ burn_sprite = ExtResource("8_gem4a")
 texture = ExtResource("8_gem4a")
 
 [node name="DeadTree" type="Node2D" parent="." node_paths=PackedStringArray("quicktime_game")]
-position = Vector2(1650, 500)
+position = Vector2(4110, 1933)
 scale = Vector2(2, 2)
 script = ExtResource("7_m8k55")
 texture_array = Array[Texture2D]([ExtResource("9_t3d4o"), ExtResource("10_q6sxq"), ExtResource("11_ln1sr"), ExtResource("12_0tqvj"), ExtResource("13_l7vcy")])
@@ -53,4 +53,9 @@ quicktime_game = NodePath("../TreeChopGame")
 [node name="Sprite2D" type="Sprite2D" parent="DeadTree"]
 texture = ExtResource("9_t3d4o")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(3420, 1973)
+
+[connection signal="finished_quicktime" from="TreeChopGame" to="." method="_on_tree_chop_game_finished_quicktime"]
+[connection signal="quicktime_finished" from="TreeChopGame/Quicktime" to="TreeChopGame" method="_on_quicktime_quicktime_finished"]
 [connection signal="quicktime_finished" from="TreeChopGame/Quicktime" to="DeadTree" method="_on_quicktime_quicktime_finished"]

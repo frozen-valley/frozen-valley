@@ -1,17 +1,26 @@
-extends Node2D
+extends Level
 
-signal play_chop
-signal solved_chop
-signal solved
+@onready var treechop_minigame = preload("res://tree_chop_game/tree_chop_game.tscn")
 
 func _on_cross_river_button_pressed() -> void:
-	solved.emit()
+	finish()
+
+
+var tree_chop
 
 func _on_dead_tree_play_minigame() -> void:
-	play_chop.emit()
+	tree_chop = treechop_minigame.instantiate()
+	add_child(tree_chop)
+	tree_chop.connect("done", _on_tree_chopped)
+	$Player/Camera2D.enabled = false
 
-func _on_dead_tree_minigame_solved() -> void:
-	solved_chop.emit()
+func _on_tree_chopped() -> void:
+	$Player/Camera2D.enabled = true
+	remove_child(tree_chop)
+	tree_chop.queue_free()
+	tree_chop = null
+	do_solved_minigame()
+	
 
 func do_solved_minigame():
 	var log_and_stump_resource := load("res://map_levels/sub_scenes/log_and_stump.tscn") 

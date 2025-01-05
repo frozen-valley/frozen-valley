@@ -11,9 +11,6 @@ func _ready() -> void:
 	sprite.texture = texture_array[hit_counter]	
 	hits_to_win = texture_array.size() - 1
 
-func _process(_delta: float) -> void:
-	pass
-
 func _on_quicktime_quicktime_finished(win: bool) -> void:
 	if (win):
 		hit_counter += 1
