@@ -30,10 +30,15 @@ directories/dch_directory={
 "main_character": "res://dialogue/characters/main_character.dch"
 }
 directories/dtl_directory={
+"bonfire_intro": "res://dialogue/bonfire_intro.dtl",
 "ending": "res://dialogue/ending.dtl",
+"found_axe": "res://dialogue/found_axe.dtl",
+"found_canyon": "res://dialogue/found_canyon.dtl",
+"sad_tree": "res://dialogue/sad_tree.dtl",
 "stargazing_cassiopeia": "res://dialogue/stargazing_cassiopeia.dtl",
 "stargazing_explanation": "res://dialogue/stargazing_explanation.dtl",
-"stargazing_intro": "res://dialogue/stargazing_intro.dtl"
+"stargazing_intro": "res://dialogue/stargazing_intro.dtl",
+"tree_as_bridge": "res://dialogue/tree_as_bridge.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogue/styles/base_style/base_style.tres", "res://dialogue/styles/main_character_style/main_character_style.tres", "res://dialogue/styles/side_character_style/side_character_style.tres", "res://dialogue/styles/portraitless_style/portraitless_style.tres"]
@@ -132,5 +137,10 @@ move_left={
 skip_scene={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":78,"key_label":0,"unicode":110,"location":0,"echo":false,"script":null)
+]
+}
+esc={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
