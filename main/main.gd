@@ -2,8 +2,11 @@ extends Node
 
 @onready var levels: Array[PackedScene] = [
 	preload("res://stargazing/stargazing.tscn"),
+	preload("res://transitions/stargazing/stargazing_transition.tscn"),
 	preload("res://map_levels/level1/map_level1.tscn"),
-	preload("res://bonfire/bonfire.tscn")
+	preload("res://transitions/river_cross/river_cross_transition.tscn"),
+	preload("res://bonfire/bonfire.tscn"),
+	preload("res://transitions/bonfire/bonfire_transition.tscn"),
 ]
 
 var current_scene: Level
