@@ -1,20 +1,11 @@
 extends Node
 
-@onready var optionsScreen_preload = preload("res://UI/optionsScreen.tscn")
+@onready var optionsScreen_preload = preload("res://UI/options_menu.tscn")
 
 var optionsScreen_scene
 
-func open_options():
-	optionsScreen_scene = optionsScreen_preload.instantiate()
-	optionsScreen_scene.connect("pressed_back", close_options)
-	add_child(optionsScreen_scene)
-
-func close_options():
-	optionsScreen_scene.queue_free()
-	#start_StartScreen()
-
 @onready var levels: Array[PackedScene] = [
-	preload("res://UI/startScreen.tscn"),
+	preload("res://UI/start_screen.tscn"),
 	preload("res://stargazing/stargazing.tscn"),
 	preload("res://transitions/stargazing/stargazing_transition.tscn"),
 	preload("res://map_levels/level1/map_level1.tscn"),

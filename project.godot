@@ -31,6 +31,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "ending": "res://dialogue/ending.dtl",
+"little_sister_found_something": "res://dialogue/little_sister_found_something.dtl",
 "stargazing_cassiopeia": "res://dialogue/stargazing_cassiopeia.dtl",
 "stargazing_explanation": "res://dialogue/stargazing_explanation.dtl",
 "stargazing_intro": "res://dialogue/stargazing_intro.dtl"
