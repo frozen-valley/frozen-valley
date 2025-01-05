@@ -35,4 +35,5 @@ func play_next():
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("skip_scene"):
+		Dialogic.end_timeline()
 		_on_done()

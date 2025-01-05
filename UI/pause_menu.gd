@@ -2,15 +2,18 @@ extends Control
 
 func _ready():
 	$AnimationPlayer.play("RESET")
+	$PauseCanvas.hide()
 
 func resume():
 	$AnimationPlayer.play_backwards("blur")
 	$PauseCanvas.layer = 0
+	$PauseCanvas.hide()
 	get_tree().paused = false
 
 func pause():
 	$AnimationPlayer.play("blur")
 	$PauseCanvas.layer = 20
+	$PauseCanvas.show()
 	get_tree().paused = true
 
 func deffer_tree(pause_mode = false):
