@@ -1,7 +1,0 @@
-little_sister: Brrr.... It's so cold.
-main_character: I'll try to light up the fire.
-little_sister: Please hurry...
-main_character: Mother left instructions in the journal.
-little_sister: I miss mom.
-main_character: Me too, sis.
-[signal arg="start_bonfire"]

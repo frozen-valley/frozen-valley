@@ -46,7 +46,7 @@ func _process(_delta: float) -> void:
 			
 
 var seen = false
-func _on_notice_area_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+func _on_notice_area_body_entered(body: Node2D) -> void:
 	var player_body = body as Player
 	if (!player_body):
 		return

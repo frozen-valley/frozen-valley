@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=23 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="Script" path="res://map_levels/level1/map_level1.gd" id="1_j1dqv"]
 [ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map_levels/river_tilemap_atlas.tres" id="2_rxlgl"]
@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map_levels/sub_scenes/player.tscn" id="8_mgbvs"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="9_ovmc0"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="10_p54oi"]
-[ext_resource type="PackedScene" uid="uid://ck68v3ll5u0mf" path="res://UI/pause_menu.tscn" id="11_six8w"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map_levels/sub_scenes/border.tscn" id="11_i65b4"]
+[ext_resource type="PackedScene" uid="uid://ck68v3ll5u0mf" path="res://UI/pause_menu.tscn" id="11_six8w"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map_levels/sub_scenes/tree.tscn" id="12_2duby"]
 [ext_resource type="PackedScene" uid="uid://cc2bvnlef8n01" path="res://tree_chop_game/dead_tree.tscn" id="13_juv8s"]
 [ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map_levels/sub_scenes/house.tscn" id="14_gnrko"]

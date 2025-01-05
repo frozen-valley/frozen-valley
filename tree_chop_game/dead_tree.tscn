@@ -26,4 +26,4 @@ shape = SubResource("CircleShape2D_8o0lj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
 shape = SubResource("CircleShape2D_y2boc")
 
-[connection signal="body_shape_entered" from="NoticeArea" to="." method="_on_notice_area_body_shape_entered"]
+[connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]

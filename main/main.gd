@@ -12,6 +12,7 @@ var optionsScreen_scene
 	preload("res://transitions/river_cross/river_cross_transition.tscn"),
 	preload("res://bonfire/bonfire.tscn"),
 	preload("res://transitions/bonfire/bonfire_transition.tscn"),
+	preload("res://transitions/ending/ending_transition.tscn")
 ]
 
 var current_scene: Level
