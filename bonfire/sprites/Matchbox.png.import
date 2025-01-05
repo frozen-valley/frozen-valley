@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ce1tfhf67qm3v"
-path="res://.godot/imported/Logs.png-acb620f32889a877f3b9639b264d623c.ctex"
+uid="uid://bmuxphk7ub002"
+path="res://.godot/imported/Matchbox.png-d217e58cb7670e2e8a75b364bf254c06.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bonfire/Logs.png"
-dest_files=["res://.godot/imported/Logs.png-acb620f32889a877f3b9639b264d623c.ctex"]
+source_file="res://bonfire/sprites/Matchbox.png"
+dest_files=["res://.godot/imported/Matchbox.png-d217e58cb7670e2e8a75b364bf254c06.ctex"]
 
 [params]
 

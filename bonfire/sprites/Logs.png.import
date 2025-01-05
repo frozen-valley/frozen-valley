@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgthq0ya6gec4"
-path="res://.godot/imported/Matches.png-4fe52ded33347ea043f4a8d4fa051760.ctex"
+uid="uid://ce1tfhf67qm3v"
+path="res://.godot/imported/Logs.png-d54c2fdbe0da7927641490428dfa2ebc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bonfire/Matches.png"
-dest_files=["res://.godot/imported/Matches.png-4fe52ded33347ea043f4a8d4fa051760.ctex"]
+source_file="res://bonfire/sprites/Logs.png"
+dest_files=["res://.godot/imported/Logs.png-d54c2fdbe0da7927641490428dfa2ebc.ctex"]
 
 [params]
 

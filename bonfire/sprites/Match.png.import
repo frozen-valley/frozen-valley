@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d38laty5hsfnn"
-path="res://.godot/imported/Match.png-47a77dc6044e925ee55ade675e35cdba.ctex"
+path="res://.godot/imported/Match.png-ead768b77c1c991f6e2ae0764eeeae42.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bonfire/Match.png"
-dest_files=["res://.godot/imported/Match.png-47a77dc6044e925ee55ade675e35cdba.ctex"]
+source_file="res://bonfire/sprites/Match.png"
+dest_files=["res://.godot/imported/Match.png-ead768b77c1c991f6e2ae0764eeeae42.ctex"]
 
 [params]
 

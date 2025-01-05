@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fxedoaux7od5"
-path="res://.godot/imported/Grass.png-7ca9cf838fa7dc63019890296b6735ab.ctex"
+uid="uid://cgthq0ya6gec4"
+path="res://.godot/imported/Matches.png-edbec42d24d611a9e9ec4f9ab6bb9090.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bonfire/Grass.png"
-dest_files=["res://.godot/imported/Grass.png-7ca9cf838fa7dc63019890296b6735ab.ctex"]
+source_file="res://bonfire/sprites/Matches.png"
+dest_files=["res://.godot/imported/Matches.png-edbec42d24d611a9e9ec4f9ab6bb9090.ctex"]
 
 [params]
 

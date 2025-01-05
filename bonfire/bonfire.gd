@@ -17,11 +17,11 @@ func start_game(arg):
 		printerr("Unknown signal fired: " + arg)
 
 func _on_matches_pressed() -> void:
-	if $GrassMaterial.button_pressed:
+	if $Materials/GrassMaterial.button_pressed:
 		return
-	elif not $KindleMaterial.button_pressed:
+	elif not $Materials/KindleMaterial.button_pressed:
 		return
-	elif not $TwigsMaterial.button_pressed:
+	elif not $Materials/TwigsMaterial.button_pressed:
 		duration = 2
-	elif $KindleMaterial.button_pressed and $TwigsMaterial.button_pressed and $PlanksMaterial.button_pressed and $LogsMaterial.button_pressed:
+	elif $Materials/KindleMaterial.button_pressed and $Materials/TwigsMaterial.button_pressed and $Materials/PlanksMaterial.button_pressed and $Materials/LogsMaterial.button_pressed:
 		finish()

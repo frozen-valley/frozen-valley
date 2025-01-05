@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dn75ctdvtbldp"
-path="res://.godot/imported/Flame.png-7c3127e425d7a0827c04ea1eb1ab3c05.ctex"
+uid="uid://fxedoaux7od5"
+path="res://.godot/imported/Grass.png-6d12c697ab238a0a5e388c25e4ef2fdf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bonfire/Flame.png"
-dest_files=["res://.godot/imported/Flame.png-7c3127e425d7a0827c04ea1eb1ab3c05.ctex"]
+source_file="res://bonfire/sprites/Grass.png"
+dest_files=["res://.godot/imported/Grass.png-6d12c697ab238a0a5e388c25e4ef2fdf.ctex"]
 
 [params]
 

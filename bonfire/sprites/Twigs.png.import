@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2qukm537hi50"
-path="res://.godot/imported/Kindle.png-20b05ab1a868d33fdac0c7e6c1c7ccdd.ctex"
+uid="uid://c78ghc5hbbr2v"
+path="res://.godot/imported/Twigs.png-3efe301e94ddbdc0c0e9cb0dadaf6c4e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bonfire/Kindle.png"
-dest_files=["res://.godot/imported/Kindle.png-20b05ab1a868d33fdac0c7e6c1c7ccdd.ctex"]
+source_file="res://bonfire/sprites/Twigs.png"
+dest_files=["res://.godot/imported/Twigs.png-3efe301e94ddbdc0c0e9cb0dadaf6c4e.ctex"]
 
 [params]
 
