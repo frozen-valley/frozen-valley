@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://du0iklx8vrlab"]
+
+[node name="ObjectiveLabel" type="Label"]
+theme_override_font_sizes/font_size = 20
