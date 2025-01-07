@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dboc57qqhjrss"]
 
-[ext_resource type="Texture2D" uid="uid://dn75ctdvtbldp" path="res://bonfire/Flame.png" id="1_w4auh"]
+[ext_resource type="Texture2D" uid="uid://dn75ctdvtbldp" path="res://bonfire/sprites/Flame.png" id="1_w4auh"]
 
 [node name="SpriteForMaterial" type="Sprite2D"]
 texture = ExtResource("1_w4auh")

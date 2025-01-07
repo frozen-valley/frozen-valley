@@ -8,6 +8,10 @@ func _on_cross_river_button_pressed() -> void:
 
 var tree_chop
 
+func _ready() -> void:
+	Dialogic.Inputs.auto_advance.enabled_forced = true
+	Dialogic.start("level1_intro")
+
 func _on_dead_tree_play_minigame() -> void:
 	tree_chop = treechop_minigame.instantiate()
 	add_child(tree_chop)
