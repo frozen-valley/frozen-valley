@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="9_ovmc0"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="10_p54oi"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map_levels/sub_scenes/border.tscn" id="11_i65b4"]
-[ext_resource type="PackedScene" uid="uid://ck68v3ll5u0mf" path="res://UI/pause_menu.tscn" id="11_six8w"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map_levels/sub_scenes/tree.tscn" id="12_2duby"]
 [ext_resource type="PackedScene" uid="uid://cc2bvnlef8n01" path="res://tree_chop_game/dead_tree.tscn" id="13_juv8s"]
 [ext_resource type="PackedScene" uid="uid://b3brr82dyccfc" path="res://map_levels/sub_scenes/house.tscn" id="14_gnrko"]
@@ -163,7 +162,6 @@ offset_bottom = -880.0
 text = "Cross the river"
 script = ExtResource("15_34xsh")
 
-
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(-1, 0)
 navigation_polygon = SubResource("NavigationPolygon_usjpd")
@@ -246,7 +244,6 @@ rotation = 0.984219
 shape = SubResource("RectangleShape2D_1018v")
 
 [connection signal="pressed" from="CrossRiverButton" to="." method="_on_cross_river_button_pressed"]
-
 [connection signal="minigame_solved" from="NavigationRegion2D/Trees/DeadTree" to="." method="_on_dead_tree_minigame_solved"]
 [connection signal="minigame_solved" from="NavigationRegion2D/Trees/DeadTree" to="CrossRiverButton" method="_on_dead_tree_minigame_solved"]
 [connection signal="play_minigame" from="NavigationRegion2D/Trees/DeadTree" to="." method="_on_dead_tree_play_minigame"]
