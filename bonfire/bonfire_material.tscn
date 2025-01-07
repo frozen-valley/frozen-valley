@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bmonj80xa8v4b"]
 
-[ext_resource type="Texture2D" uid="uid://b2qukm537hi50" path="res://bonfire/Kindle.png" id="1_5kj6h"]
+[ext_resource type="Texture2D" uid="uid://b2qukm537hi50" path="res://bonfire/sprites/Kindle.png" id="1_5kj6h"]
 [ext_resource type="Script" path="res://bonfire/bonfire_material.gd" id="2_m0h11"]
 
 [node name="BonfireMaterial" type="Button"]
