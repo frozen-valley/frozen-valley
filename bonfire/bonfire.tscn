@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ce1tfhf67qm3v" path="res://bonfire/Logs.png" id="6_dj0rn"]
 [ext_resource type="Texture2D" uid="uid://fxedoaux7od5" path="res://bonfire/Grass.png" id="7_t5vuo"]
 
-[node name="Bonfire" type="Node2D"]
+[node name="Bonfire" type="Node"]
 script = ExtResource("1_mea2b")
 
 [node name="Fireplace" type="Control" parent="."]
@@ -64,5 +64,5 @@ offset_bottom = 1002.0
 icon = ExtResource("7_t5vuo")
 fireplace = NodePath("../Fireplace")
 
-[connection signal="pressed" from="Matches" to="." method="_on_matches_pressed"]
 [connection signal="pressed" from="Matches" to="Matches" method="_on_pressed"]
+[connection signal="pressed" from="Matches" to="." method="_on_matches_pressed"]

@@ -1,6 +1,4 @@
-extends Node2D
-
-signal solved
+extends Level
 
 @export var fireplace: Control
 @onready var material_sprite = preload("res://bonfire/sprite_for_material.tscn")
@@ -16,4 +14,4 @@ func _on_matches_pressed() -> void:
 	elif not $TwigsMaterial.button_pressed:
 		duration = 2
 	elif $KindleMaterial.button_pressed and $TwigsMaterial.button_pressed and $PlanksMaterial.button_pressed and $LogsMaterial.button_pressed:
-		solved.emit()
+		finish()

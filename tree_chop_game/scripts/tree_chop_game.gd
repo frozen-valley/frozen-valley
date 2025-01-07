@@ -20,7 +20,6 @@ var _confirmed := false
 var _finished := false
 
 signal started_quicktime
-signal confirmed_quicktime
 signal finished_quicktime
 
 func end_quicktime() -> void: 
@@ -40,9 +39,6 @@ func _ready() -> void:
 	_initial_position = _axe.position.x
 	_current_position = _axe.position.x
 
-	confirmed_quicktime.connect(_quicktime.on_quicktime_event_confirm)	
-	_quicktime.quicktime_finished.connect(_on_quicktime_finished)
-
 func _wait_for_start() -> void:
 	var pressed: bool = Input.is_action_just_pressed("ui_accept")
 	if (pressed):
@@ -53,7 +49,7 @@ func _poll_for_confirm() -> void:
 	var pressed: bool = Input.is_action_just_pressed("ui_accept")
 	if (pressed):
 		_confirmed = true
-		confirmed_quicktime.emit()
+		confirm_quicktime()
 
 func _process(delta: float) -> void:
 	if (!_start):
@@ -69,7 +65,7 @@ func _process(delta: float) -> void:
 	# Reached the end
 	if (is_zero_approx(_velocity) && !_finished):
 		_confirmed = true
-		confirmed_quicktime.emit()
+		confirm_quicktime()
 
 	_axe.position.x += _velocity
 
@@ -78,9 +74,12 @@ func _process(delta: float) -> void:
 		_quicktime.set_x_offset(_x_offset)
 		_poll_for_confirm()
 
-func _on_quicktime_finished(win: bool) -> void:
+func _on_quicktime_quicktime_finished(win: bool) -> void:
 	_finished = true
 	if (win):
 		_axe.light_on_fire()
 	else:
 		pass
+
+func confirm_quicktime():
+	_quicktime.on_quicktime_event_confirm()
