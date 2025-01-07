@@ -52,6 +52,7 @@ func _ready() -> void:
 	if (!player):
 		queue_free()
 		return
+	default_scale_x = animated_sprite.scale.x
 
 func _process(_delta: float) -> void:	
 	distance = global_position.distance_to(player.global_position)
@@ -82,5 +83,15 @@ func _physics_process(_delta: float) -> void:
 		animated_sprite.play("walk")
 	else:
 		animated_sprite.play("idle")
+	
+	# Flip based on X direction
+	if (direction.angle() > (-PI / 2.0) && direction.angle() < (PI / 2.0)):
+		move_x = 1
+	else:
+		move_x = -1
+
+	if (direction_x != sign(move_x)):
+		direction_x *= -1
+		animated_sprite.scale.x = default_scale_x * move_x
 	
 	move_and_slide()	
