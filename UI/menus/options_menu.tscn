@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://boadmbbqicjnd"]
+
+[ext_resource type="Script" path="res://UI/menus/options_menu.gd" id="1_iwk6n"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="3_p86ow"]
+
+[node name="OptionsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 11.0
+offset_right = -1905.0
+offset_bottom = -1069.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_iwk6n")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_top = 108.0
+offset_right = 100.0
+offset_bottom = 208.0
+scale = Vector2(2.16, 1.84)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+
+[node name="Volume" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_p86ow")
+text = "Volume"
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_p86ow")
+text = "Back"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 11.0
+offset_top = -3.0
+offset_right = 206.0
+offset_bottom = 112.0
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 50
+text = "Options
+"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
