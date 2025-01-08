@@ -7,5 +7,6 @@
 script = ExtResource("1_vgtpm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(960, 540)
 texture = ExtResource("2_clf7x")

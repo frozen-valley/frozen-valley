@@ -20,3 +20,12 @@ func handle_signal(arg: String):
 func _on_stargazer_perspective_cinematic_movement_ended() -> void:
 	Dialogic.Inputs.auto_advance.enabled_forced = true
 	Dialogic.start("stargazing_explanation")
+
+
+func _on_stargazing_tutorial_load_star_group(star_group_index: int) -> void:
+	if star_group_index == 1:
+		Dialogic.start("cassiopeia_solved")
+	if star_group_index == 2:
+		Dialogic.start("little_dipper_solved")
+	if star_group_index == 3:
+		Dialogic.start("big_dipper_solved")

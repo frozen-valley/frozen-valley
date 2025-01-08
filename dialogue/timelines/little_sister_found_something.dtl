@@ -1,0 +1,9 @@
+if {found_expression} == 0:
+	set {found_expression} = 1
+	little_sister: Look, I found something!
+elif {found_expression} == 1:
+	set {found_expression} = 2
+	little_sister: Could this be useful?
+elif {found_expression} == 2:
+	set {found_expression} = 0
+	little_sister: Over there! I see something.

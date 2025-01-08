@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cc2bvnlef8n01"]
+[gd_scene load_steps=5 format=3 uid="uid://cc2bvnlef8n01"]
 
 [ext_resource type="Script" path="res://tree_chop_game/scripts/dead_tree.gd" id="1_u6fak"]
 [ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/trees/DeadTree.png" id="2_wg4df"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8o0lj"]
 radius = 16.0312
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y2boc"]
+radius = 81.0
 
 [node name="DeadTree" type="StaticBody2D"]
 script = ExtResource("1_u6fak")
@@ -17,3 +20,10 @@ texture = ExtResource("2_wg4df")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_8o0lj")
+
+[node name="NoticeArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NoticeArea"]
+shape = SubResource("CircleShape2D_y2boc")
+
+[connection signal="body_entered" from="NoticeArea" to="." method="_on_notice_area_body_entered"]

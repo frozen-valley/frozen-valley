@@ -6,6 +6,7 @@ var default_scale_x: float = scale.x
 
 var direction_x: int = 1
 var pickup_queue: Array[Pickupable]
+var move := Vector2(0, 0)
 
 @export var inventory: Inventory
 @onready var animated_sprite = $AnimatedSprite2D
@@ -49,7 +50,7 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_pressed("move_down"):
 		move_y += 1
 	
-	var move := Vector2(move_x, move_y)
+	move = Vector2(move_x, move_y)
 	
 	# Normalize to avoid diagonal speedup
 	move = move.normalized()

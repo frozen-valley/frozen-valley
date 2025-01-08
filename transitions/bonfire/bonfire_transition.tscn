@@ -27,6 +27,7 @@ script = ExtResource("1_p3xjp")
 transition_time = 12.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
 position = Vector2(960, 540)
 sprite_frames = SubResource("SpriteFrames_7ab1q")
 autoplay = "default"
