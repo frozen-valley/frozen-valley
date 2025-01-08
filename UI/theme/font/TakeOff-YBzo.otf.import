@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://vxud46fiekf2"
-path="res://.godot/imported/Pixelme.ttf-5953c5e1383d29c796490f110e2b6cbf.fontdata"
+uid="uid://ckx1p1y80awcw"
+path="res://.godot/imported/TakeOff-YBzo.otf-f1559412a5df2f484f4d42cc08e21deb.fontdata"
 
 [deps]
 
-source_file="res://UI/theme/Pixelme.ttf"
-dest_files=["res://.godot/imported/Pixelme.ttf-5953c5e1383d29c796490f110e2b6cbf.fontdata"]
+source_file="res://UI/theme/font/TakeOff-YBzo.otf"
+dest_files=["res://.godot/imported/TakeOff-YBzo.otf-f1559412a5df2f484f4d42cc08e21deb.fontdata"]
 
 [params]
 
