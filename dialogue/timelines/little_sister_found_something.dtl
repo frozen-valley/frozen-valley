@@ -1,4 +1,4 @@
-if {} == 0:
+if {found_expression} == 0:
 	set {found_expression} = 1
 	little_sister: Look, I found something!
 elif {found_expression} == 1:

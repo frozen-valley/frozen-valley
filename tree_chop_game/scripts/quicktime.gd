@@ -41,9 +41,9 @@ func _process(_delta: float) -> void:
 	if (!_confirmed):
 		queue_redraw()
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("skip_scene"):
-		_win()
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("skip_scene"):
+		#_win()
 
 func _draw():
 	draw_rect(Rect2(0, 0, x_size, 100.0), background)
