@@ -1,8 +1,10 @@
 extends Level
+class_name BonfireGame
 
-@export var fireplace: Control
+@export var fireplace: Node
 @onready var material_sprite = preload("res://bonfire/sprite_for_material.tscn")
-var fireplace_material: Sprite2D
+@onready var materials: Control = $Materials
+var fireplace_material: Flammable
 
 var duration = 0
 
@@ -17,11 +19,11 @@ func start_game(arg):
 		printerr("Unknown signal fired: " + arg)
 
 func _on_matches_pressed() -> void:
-	if $Materials/GrassMaterial.button_pressed:
+	if $Materials/GrassButton.button_pressed:
 		return
-	elif not $Materials/KindleMaterial.button_pressed:
+	elif not $Materials/KindleButton.button_pressed:
 		return
-	elif not $Materials/TwigsMaterial.button_pressed:
+	elif not $Materials/TwigsButton.button_pressed:
 		duration = 2
-	elif $Materials/KindleMaterial.button_pressed and $Materials/TwigsMaterial.button_pressed and $Materials/PlanksMaterial.button_pressed and $Materials/LogsMaterial.button_pressed:
+	elif $Materials/KindleButton.button_pressed and $Materials/TwigsButton.button_pressed and $Materials/PlanksButton.button_pressed and $Materials/LogsButton.button_pressed:
 		finish()

@@ -2,6 +2,7 @@ extends Button
 
 @export var fireplace: Control
 @onready var material_sprite = preload("res://bonfire/sprite_for_material.tscn")
+@onready var match_sprite = preload("res://bonfire/match.tscn")
 
 var instance
 var spawned = false
