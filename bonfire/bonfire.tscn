@@ -30,9 +30,9 @@ scale = Vector2(2, 2)
 
 [node name="Materials" type="HBoxContainer" parent="."]
 visible = false
-offset_left = 325.0
+offset_left = 172.0
 offset_top = 858.0
-offset_right = 1673.0
+offset_right = 1748.0
 offset_bottom = 1066.0
 theme_override_constants/separation = 20
 
@@ -48,6 +48,12 @@ fireplace = NodePath("../../Fireplace")
 bonfire_material = ExtResource("6_biaru")
 
 [node name="TwigsButton" parent="Materials" node_paths=PackedStringArray("fireplace") instance=ExtResource("5_mfl55")]
+layout_mode = 2
+icon = ExtResource("5_4381t")
+fireplace = NodePath("../../Fireplace")
+bonfire_material = ExtResource("8_bj802")
+
+[node name="TwigsButton2" parent="Materials" node_paths=PackedStringArray("fireplace") instance=ExtResource("5_mfl55")]
 layout_mode = 2
 icon = ExtResource("5_4381t")
 fireplace = NodePath("../../Fireplace")

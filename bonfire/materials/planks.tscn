@@ -9,6 +9,10 @@ size = Vector2(200, 100)
 [node name="BonfireMaterial" type="Area2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_rbxhc")
+flammability = 3
+wet = null
+fire_y_offset = 15
+smoke_y_offset = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_g54tu")
