@@ -8,11 +8,11 @@
 [ext_resource type="Script" path="res://tree_chop_game/scripts/quicktime_item.gd" id="5_ik6if"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/dead_tree_game.gd" id="7_m8k55"]
 [ext_resource type="Texture2D" uid="uid://dt4rsvdwxu0wb" path="res://sprites/tools/Axe.png" id="8_gem4a"]
-[ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/trees/DeadTree.png" id="9_t3d4o"]
-[ext_resource type="Texture2D" uid="uid://bln1bnqqa8s2k" path="res://sprites/trees/ChoppedTree1.png" id="10_q6sxq"]
-[ext_resource type="Texture2D" uid="uid://dqishhaa8m6c0" path="res://sprites/trees/ChoppedTree2.png" id="11_ln1sr"]
-[ext_resource type="Texture2D" uid="uid://b5pgttapedfmq" path="res://sprites/trees/ChoppedTree3.png" id="12_0tqvj"]
-[ext_resource type="Texture2D" uid="uid://8sxjxs6oljoi" path="res://sprites/trees/ChoppedTree4.png" id="13_l7vcy"]
+[ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/world_environment/trees/DeadTree.png" id="9_t3d4o"]
+[ext_resource type="Texture2D" uid="uid://bln1bnqqa8s2k" path="res://sprites/world_environment/trees/ChoppedTree1.png" id="10_q6sxq"]
+[ext_resource type="Texture2D" uid="uid://dqishhaa8m6c0" path="res://sprites/world_environment/trees/ChoppedTree2.png" id="11_ln1sr"]
+[ext_resource type="Texture2D" uid="uid://b5pgttapedfmq" path="res://sprites/world_environment/trees/ChoppedTree3.png" id="12_0tqvj"]
+[ext_resource type="Texture2D" uid="uid://8sxjxs6oljoi" path="res://sprites/world_environment/trees/ChoppedTree4.png" id="13_l7vcy"]
 
 [node name="TreeChop" type="Node"]
 script = ExtResource("1_a5lmt")
