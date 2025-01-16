@@ -75,10 +75,11 @@ icon = ExtResource("7_t5vuo")
 fireplace = NodePath("../../Fireplace")
 bonfire_material = ExtResource("12_0pdiw")
 
-[node name="Matches" type="Button" parent="Materials"]
+[node name="Matches" type="Button" parent="Materials" node_paths=PackedStringArray("fireplace")]
 layout_mode = 2
 icon = ExtResource("2_lt5p1")
 script = ExtResource("3_n30q7")
+fireplace = NodePath("../../Fireplace")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
