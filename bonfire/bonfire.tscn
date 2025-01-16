@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://do5pa605qh5no"]
+[gd_scene load_steps=16 format=3 uid="uid://do5pa605qh5no"]
 
 [ext_resource type="Script" path="res://bonfire/bonfire.gd" id="1_mea2b"]
 [ext_resource type="Texture2D" uid="uid://cgthq0ya6gec4" path="res://bonfire/sprites/Matches.png" id="2_lt5p1"]
+[ext_resource type="Script" path="res://bonfire/fireplace.gd" id="3_2p8fn"]
 [ext_resource type="Script" path="res://bonfire/matches.gd" id="3_n30q7"]
 [ext_resource type="Texture2D" uid="uid://d4ewxfg72ueou" path="res://bonfire/sprites/Plank.png" id="4_lac62"]
 [ext_resource type="Texture2D" uid="uid://c78ghc5hbbr2v" path="res://bonfire/sprites/Twigs.png" id="5_4381t"]
@@ -15,9 +16,10 @@
 [ext_resource type="PackedScene" uid="uid://dpuvng05xhohw" path="res://bonfire/materials/planks.tscn" id="10_p30y3"]
 [ext_resource type="PackedScene" uid="uid://0njafmprn18g" path="res://bonfire/materials/grass.tscn" id="12_0pdiw"]
 
-[node name="Bonfire" type="Node" node_paths=PackedStringArray("fireplace")]
+[node name="Bonfire" type="Node" node_paths=PackedStringArray("fireplace", "matches")]
 script = ExtResource("1_mea2b")
 fireplace = NodePath("Fireplace")
+matches = NodePath("Materials/Matches")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
@@ -27,6 +29,7 @@ texture = ExtResource("9_77qpt")
 [node name="Fireplace" type="Node2D" parent="."]
 position = Vector2(960, 540)
 scale = Vector2(2, 2)
+script = ExtResource("3_2p8fn")
 
 [node name="Materials" type="HBoxContainer" parent="."]
 visible = false
@@ -71,10 +74,11 @@ icon = ExtResource("7_t5vuo")
 fireplace = NodePath("../../Fireplace")
 bonfire_material = ExtResource("12_0pdiw")
 
-[node name="Matches" type="Button" parent="Materials"]
+[node name="Matches" type="Button" parent="Materials" node_paths=PackedStringArray("fireplace")]
 layout_mode = 2
 icon = ExtResource("2_lt5p1")
 script = ExtResource("3_n30q7")
+fireplace = NodePath("../../Fireplace")
 
 [connection signal="pressed" from="Materials/Matches" to="." method="_on_matches_pressed"]
 [connection signal="pressed" from="Materials/Matches" to="Materials/Matches" method="_on_pressed"]

@@ -1,17 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://cln72ssgkuyw8"]
+[gd_scene load_steps=7 format=3 uid="uid://cln72ssgkuyw8"]
 
 [ext_resource type="Texture2D" uid="uid://d38laty5hsfnn" path="res://bonfire/sprites/Match.png" id="1_gsoef"]
 [ext_resource type="Script" path="res://bonfire/match.gd" id="1_hvu1t"]
 [ext_resource type="Texture2D" uid="uid://dn75ctdvtbldp" path="res://bonfire/sprites/Flame.png" id="2_xeoyr"]
+[ext_resource type="PackedScene" uid="uid://drnb4xc3j5o2w" path="res://bonfire/materials/match_fire_particles.tscn" id="4_p0gjp"]
+[ext_resource type="Script" path="res://bonfire/materials/bonfire_material.gd" id="4_wuxnu"]
 
-[node name="Match" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxqxm"]
+size = Vector2(150, 180)
+
+[node name="Match" type="Node2D"]
 script = ExtResource("1_hvu1t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_gsoef")
 
 [node name="Flame" type="Sprite2D" parent="."]
-position = Vector2(56, -116)
+position = Vector2(50, -105)
 texture = ExtResource("2_xeoyr")
+
+[node name="Area2D" type="Area2D" parent="Flame"]
+position = Vector2(-10, -5)
+script = ExtResource("4_wuxnu")
+is_match = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Flame/Area2D"]
+shape = SubResource("RectangleShape2D_yxqxm")
+
+[node name="GPUParticles2D" parent="Flame" instance=ExtResource("4_p0gjp")]

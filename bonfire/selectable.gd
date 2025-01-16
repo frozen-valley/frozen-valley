@@ -24,6 +24,7 @@ func _input(event: InputEvent) -> void:
 
 	if (!_mouse_over):
 		return
+
 	if (event is InputEventMouseButton && event.button_index == 1):
 		if (event.is_pressed()):
 			_mouse_offset = get_global_mouse_position() - global_position

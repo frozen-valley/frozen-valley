@@ -35,8 +35,8 @@ scale_curve = SubResource("CurveTexture_xsxu4")
 color_ramp = SubResource("GradientTexture1D_5hot5")
 alpha_curve = SubResource("CurveTexture_vlm5r")
 
-[node name="GPUParticles2D" type="GPUParticles2D"]
-amount = 300
+[node name="Fire" type="GPUParticles2D"]
+amount = 100
 process_material = SubResource("ParticleProcessMaterial_mue6h")
 texture = ExtResource("1")
 lifetime = 1.5

@@ -1,30 +1,27 @@
 extends Button
+class_name MatchButton
 
-@export var fireplace: Control
-@onready var material_sprite = preload("res://bonfire/sprite_for_material.tscn")
-@onready var match_sprite = preload("res://bonfire/match.tscn")
+@export var fireplace: BonfireFireplace
+@export var matchbox_light_on_fire := preload("res://bonfire/matchbox_light_on_fire.tscn")
+@onready var match_scene := preload("res://bonfire/match.tscn")
 
-var instance
-var spawned = false
-var duration = 0
+var _matchbox: MatchboxLightOnFire
+var _match_item: BonfireMatch
+
+signal match_created(match: BonfireMatch)
 
 func _on_pressed() -> void:
-	spawn()
+	_matchbox = matchbox_light_on_fire.instantiate()
+	_matchbox.global_position = fireplace.global_position
+	_matchbox.connect("match_on_fire", _match_on_fire)
+	fireplace.get_parent().add_child(_matchbox)
+	fireplace.disable_all_selectables()
+	disabled = true
 
-func spawn():
-	spawned = true
-	instance = material_sprite.instantiate()
-	fireplace.add_child(instance)
-	duration = 0.2
-
-func despawn():
-	if not spawned:
-		return
-	spawned = false
-	instance.queue_free()
-
-func _process(delta: float) -> void:
-	if spawned:
-		if duration < 0:
-			despawn()
-		duration -= delta
+func _match_on_fire() -> void:
+	await get_tree().create_timer(0.5).timeout
+	_matchbox.queue_free()
+	_match_item = match_scene.instantiate()
+	_match_item.global_position = fireplace.global_position
+	fireplace.get_parent().add_child(_match_item)
+	match_created.emit(_match_item)
