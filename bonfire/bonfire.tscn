@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://do5pa605qh5no"]
+[gd_scene load_steps=17 format=3 uid="uid://do5pa605qh5no"]
 
 [ext_resource type="Script" path="res://bonfire/bonfire.gd" id="1_mea2b"]
 [ext_resource type="Texture2D" uid="uid://cgthq0ya6gec4" path="res://bonfire/sprites/Matches.png" id="2_lt5p1"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://ckv62wsrinn0q" path="res://bonfire/sprites/FireBG.png" id="9_77qpt"]
 [ext_resource type="PackedScene" uid="uid://dpuvng05xhohw" path="res://bonfire/materials/planks.tscn" id="10_p30y3"]
 [ext_resource type="PackedScene" uid="uid://0njafmprn18g" path="res://bonfire/materials/grass.tscn" id="12_0pdiw"]
+[ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="16_f7ixw"]
 
 [node name="Bonfire" type="Node" node_paths=PackedStringArray("fireplace", "matches")]
 script = ExtResource("1_mea2b")
@@ -79,6 +80,11 @@ layout_mode = 2
 icon = ExtResource("2_lt5p1")
 script = ExtResource("3_n30q7")
 fireplace = NodePath("../../Fireplace")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Book" parent="CanvasLayer" instance=ExtResource("16_f7ixw")]
+visible = false
 
 [connection signal="pressed" from="Materials/Matches" to="." method="_on_matches_pressed"]
 [connection signal="pressed" from="Materials/Matches" to="Materials/Matches" method="_on_pressed"]
