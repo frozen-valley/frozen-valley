@@ -11,14 +11,20 @@ var _top_most := false
 var _mouse_over := false
 var _mouse_offset: Vector2
 
+var selectable_active := true
+
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
 	selection_toggled.connect(_on_selected)
 
 func _input(event: InputEvent) -> void:
+	if (!selectable_active):
+		return
+
 	if (!_mouse_over):
 		return
+
 	if (event is InputEventMouseButton && event.button_index == 1):
 		if (event.is_pressed()):
 			_mouse_offset = get_global_mouse_position() - global_position
@@ -27,6 +33,9 @@ func _input(event: InputEvent) -> void:
 			set_selected(false)
 
 func _process(_delta: float) -> void:
+	if (!selectable_active):
+		return
+
 	if (!get_overlapping_areas().is_empty()):
 		for entity: Area2D in get_overlapping_areas():
 			var my_index = get_index()
@@ -74,7 +83,7 @@ func _on_mouse_exited():
 func _on_selected(selection: bool):
 	# Currently unused but might be useful (e.g. show an outline on the selected material)
 	if (selection):	
-		print("selected")
+		pass
 	else:
-		print("unselected")
+		pass
 
