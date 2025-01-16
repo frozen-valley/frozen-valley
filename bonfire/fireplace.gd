@@ -36,7 +36,7 @@ var _campfire_alpha_start: float = 8
 ## When the campfire be fully present
 var _campfire_alpha_max: float = 12
 ## How long the whole thing should last
-var _campfire_stay_for: float = 16
+var _campfire_stay_for: float = 18
 
 var _won := false
 var _created_small_fire := false
