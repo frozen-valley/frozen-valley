@@ -15,7 +15,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if (_placed):
-		if (flammable.state != Flammable.STATES.ASHED):
+		if (flammable.state != Flammable.States.ASHED):
 			return
 
 		if (_fadeout_timer >= _fadeout_duration):
@@ -36,5 +36,5 @@ func _input(event: InputEvent) -> void:
 	if (event is InputEventMouseButton && event.button_index == 1):
 		if (event.is_pressed()):
 			_placed = true
-			flammable._change_state(Flammable.STATES.IGNITED)
+			flammable._change_state(Flammable.States.IGNITED)
 			match_placed.emit()

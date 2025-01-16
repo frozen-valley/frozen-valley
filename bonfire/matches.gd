@@ -25,3 +25,7 @@ func _match_on_fire() -> void:
 	_match_item.global_position = fireplace.global_position
 	fireplace.get_parent().add_child(_match_item)
 	match_created.emit(_match_item)
+
+func restart() -> void:
+	button_pressed = false
+	disabled = false

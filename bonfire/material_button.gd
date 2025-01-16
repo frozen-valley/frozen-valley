@@ -24,3 +24,7 @@ func _on_toggled(toggled_on: bool) -> void:
 		_fireplace_material.queue_free()
 		_fireplace_material = null
 		icon = _icon
+
+func restart() -> void:
+	button_pressed = false
+	icon = _icon

@@ -36,6 +36,7 @@ color_ramp = SubResource("GradientTexture1D_5hot5")
 alpha_curve = SubResource("CurveTexture_vlm5r")
 
 [node name="Fire" type="GPUParticles2D"]
+z_index = 10
 amount = 100
 process_material = SubResource("ParticleProcessMaterial_mue6h")
 texture = ExtResource("1")

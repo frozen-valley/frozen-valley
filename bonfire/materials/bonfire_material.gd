@@ -7,7 +7,7 @@ class_name Flammable
 ## BURNING = item is currently on fire
 ## BURNT   = item has finished burning and will start decaying
 ## ASHED   = item has burnt to a crisp and is fully decayed
-enum STATES {
+enum States {
 	DORMANT,
 	IGNITED,
 	BURNING,
@@ -26,7 +26,7 @@ enum STATES {
 @export var is_match := false
 
 ## State of the Flammable
-var state: STATES = STATES.DORMANT
+var state: States = States.DORMANT
 
 ## How much heat is on the materal. Used for deciding whether it should light on fire
 var _flames_on_me: float = 0
@@ -58,13 +58,14 @@ var _smoke: GPUParticles2D
 func _ready() -> void:
 	super()
 
-	scale = Vector2(0.5, 0.5)
 	_max_ignition_duration = flammability 
 	_max_burn_duration = flammability * 2
 	_max_smoking_duration = flammability
 	
-	if (!wet):
-		_max_burn_duration /= 2
+	if (wet):
+		_max_ignition_duration /= 2 
+		_max_burn_duration /= 3
+		_max_smoking_duration /= 2
 
 	if (is_match):
 		_max_ignition_duration = 0.5
@@ -75,18 +76,18 @@ func _process(delta: float) -> void:
 	super(delta)
 
 	if (Input.is_action_just_pressed("interact")):
-		_change_state(STATES.IGNITED)
+		_change_state(States.IGNITED)
 
 	match(state):
-		STATES.DORMANT:
+		States.DORMANT:
 			_state_dormant()
-		STATES.IGNITED:
+		States.IGNITED:
 			_state_ignited(delta)
-		STATES.BURNING:
+		States.BURNING:
 			_state_burning(delta)
-		STATES.BURNT:
+		States.BURNT:
 			_state_burnt(delta)
-		STATES.ASHED:
+		States.ASHED:
 			_state_ashed()
 
 func _state_dormant() -> void:
@@ -95,10 +96,10 @@ func _state_dormant() -> void:
 		if (other is not Flammable):
 			continue
 
-		if (other.state == STATES.DORMANT || other.state == STATES.BURNT):
+		if (other.state == States.DORMANT || other.state == States.BURNT):
 			continue
 
-		if (other.state == STATES.IGNITED && other.flammability < flammability):
+		if (other.state == States.IGNITED && other.flammability < flammability):
 			continue
 		
 		if (other.is_match && flammability == 1):
@@ -112,25 +113,24 @@ func _state_dormant() -> void:
 			_flames_on_me += other.flammability
 
 	if (_flames_on_me > 0 && _flames_on_me >= flammability - 1):
-		_change_state(STATES.IGNITED)
+		_change_state(States.IGNITED)
 
 func _state_ignited(delta: float) -> void:
 	if (_ignition_duration >= _max_ignition_duration):
-		_change_state(STATES.BURNING)
+		_change_state(States.BURNING)
 		return
 
 	_ignition_duration += delta
 
 func _state_burning(delta: float) -> void:
-	# print("has burned for ", _has_burned_for, " but needs to burn for ", _max_burn_duration)
 	if (_has_burned_for >= _max_burn_duration):
-		_change_state(STATES.BURNT)
+		_change_state(States.BURNT)
 		return
 	_has_burned_for += delta
 
 func _state_burnt(delta: float) -> void:
 	if (_smoking_duration >= _max_smoking_duration):
-		_change_state(STATES.ASHED)
+		_change_state(States.ASHED)
 		return
 	_smoking_duration += delta
 	if (!is_match):
@@ -140,31 +140,30 @@ func _state_ashed() -> void:
 	# Do nothing :)
 	pass
 
-func _change_state(new_state: STATES) -> void:
-	print("Changing from ", state, " to ", new_state)
+func _change_state(new_state: States) -> void:
 	state = new_state
 	match(new_state):
-		STATES.DORMANT:
+		States.DORMANT:
 			pass
-		STATES.IGNITED when !is_match:
+		States.IGNITED when !is_match:
 			selectable_active = false
 			_fire = fire_scene.instantiate()
 			_fire.global_position.y += fire_y_offset
 			self.add_child(_fire)
-		STATES.BURNING when !is_match:
+		States.BURNING when !is_match:
 			_smoke = smoke_scene.instantiate()
 			_smoke.global_position.y += smoke_y_offset
 			_fire_burning = fire_scene.instantiate()
 			_fire_burning.global_position.y += fire_y_offset
 			self.add_child(_fire_burning)
 			self.add_child(_smoke)
-		STATES.BURNT when !is_match:
+		States.BURNT when !is_match:
 			_fire.emitting = false
 			_fire_burning.emitting = false
 			await get_tree().create_timer(_fire.lifetime).timeout
 			_fire.queue_free()
 			_fire_burning.queue_free()
-		STATES.ASHED when !is_match:
+		States.ASHED when !is_match:
 			_smoke.emitting = false
 			await get_tree().create_timer(_smoke.lifetime).timeout
 			_smoke.queue_free()

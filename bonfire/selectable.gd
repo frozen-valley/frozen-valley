@@ -83,7 +83,7 @@ func _on_mouse_exited():
 func _on_selected(selection: bool):
 	# Currently unused but might be useful (e.g. show an outline on the selected material)
 	if (selection):	
-		print("selected")
+		pass
 	else:
-		print("unselected")
+		pass
 
