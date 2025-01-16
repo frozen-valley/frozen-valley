@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c120b5k3fc0b2"]
+
+[ext_resource type="Script" path="res://bonfire/materials/bonfire_material.gd" id="1_c7spy"]
+[ext_resource type="Texture2D" uid="uid://c78ghc5hbbr2v" path="res://bonfire/sprites/Twigs.png" id="2_8y1dq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w0v8"]
+size = Vector2(200, 180)
+
+[node name="BonfireMaterial" type="Area2D"]
+script = ExtResource("1_c7spy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_8y1dq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6w0v8")

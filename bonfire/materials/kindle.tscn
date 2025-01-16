@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cirbx11lxavnx"]
+
+[ext_resource type="Script" path="res://bonfire/materials/bonfire_material.gd" id="1_5ehx6"]
+[ext_resource type="Texture2D" uid="uid://b2qukm537hi50" path="res://bonfire/sprites/Kindle.png" id="2_2hc7c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w0v8"]
+size = Vector2(175, 175)
+
+[node name="BonfireMaterial" type="Area2D"]
+script = ExtResource("1_5ehx6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_2hc7c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6w0v8")

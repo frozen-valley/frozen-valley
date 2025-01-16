@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://0njafmprn18g"]
+
+[ext_resource type="Script" path="res://bonfire/materials/bonfire_material.gd" id="1_iwg6j"]
+[ext_resource type="Texture2D" uid="uid://fxedoaux7od5" path="res://bonfire/sprites/Grass.png" id="2_wva7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w0v8"]
+size = Vector2(200, 200)
+
+[node name="BonfireMaterial" type="Area2D"]
+script = ExtResource("1_iwg6j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wva7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6w0v8")

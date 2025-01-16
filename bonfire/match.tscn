@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cln72ssgkuyw8"]
+
+[ext_resource type="Texture2D" uid="uid://d38laty5hsfnn" path="res://bonfire/sprites/Match.png" id="1_gsoef"]
+[ext_resource type="Script" path="res://bonfire/match.gd" id="1_hvu1t"]
+[ext_resource type="Texture2D" uid="uid://dn75ctdvtbldp" path="res://bonfire/sprites/Flame.png" id="2_xeoyr"]
+
+[node name="Match" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_hvu1t")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gsoef")
+
+[node name="Flame" type="Sprite2D" parent="."]
+position = Vector2(56, -116)
+texture = ExtResource("2_xeoyr")
