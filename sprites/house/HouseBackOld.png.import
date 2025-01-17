@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://f8cjr0onwxwa"
-path="res://.godot/imported/HouseBack.png-231e8bc070cb05ceed29fff12677d399.ctex"
+uid="uid://cc8n8vf5m2vva"
+path="res://.godot/imported/HouseBackOld.png-a6fbb3d3f45872a09b39b8f58440c7e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/house/HouseBack.png"
-dest_files=["res://.godot/imported/HouseBack.png-231e8bc070cb05ceed29fff12677d399.ctex"]
+source_file="res://sprites/house/HouseBackOld.png"
+dest_files=["res://.godot/imported/HouseBackOld.png-a6fbb3d3f45872a09b39b8f58440c7e7.ctex"]
 
 [params]
 
