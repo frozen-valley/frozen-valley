@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=27 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="Script" path="res://map_levels/level1/map_level1.gd" id="1_j1dqv"]
 [ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map_levels/river_tilemap_atlas.tres" id="2_rxlgl"]
@@ -11,9 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="9_ovmc0"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="10_p54oi"]
 [ext_resource type="PackedScene" uid="uid://cxlf3tjnfbjtb" path="res://map_levels/sub_scenes/border.tscn" id="11_i65b4"]
+[ext_resource type="Texture2D" uid="uid://cxcxo1ej4pkt7" path="res://sprites/house/HouseFrontOnly.png" id="11_m61sf"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map_levels/sub_scenes/tree.tscn" id="12_2duby"]
-[ext_resource type="Texture2D" uid="uid://cc8n8vf5m2vva" path="res://sprites/house/HouseBack.png" id="12_rlxni"]
-[ext_resource type="Texture2D" uid="uid://da3xw8x4wq3s1" path="res://sprites/house/HouseFront.png" id="13_e6qic"]
+[ext_resource type="Texture2D" uid="uid://cgy54giy3sbrc" path="res://sprites/house/HouseSideWall.png" id="12_ipsgj"]
+[ext_resource type="Texture2D" uid="uid://f8cjr0onwxwa" path="res://sprites/house/HouseBack.png" id="12_rlxni"]
+[ext_resource type="Texture2D" uid="uid://c77be8cuwa4il" path="res://sprites/house/HouseRightWall.png" id="13_enobw"]
 [ext_resource type="PackedScene" uid="uid://cc2bvnlef8n01" path="res://tree_chop_game/dead_tree.tscn" id="13_juv8s"]
 [ext_resource type="Script" path="res://map_levels/scripts/house_area.gd" id="14_n7yhf"]
 [ext_resource type="Script" path="res://map_levels/scripts/cross_river_button.gd" id="15_34xsh"]
@@ -179,11 +181,24 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_rlxni")
 
 [node name="HouseFront" type="Sprite2D" parent="NavigationRegion2D"]
+position = Vector2(450, -406)
+scale = Vector2(2, 2)
+texture = ExtResource("11_m61sf")
+offset = Vector2(0, -100)
+
+[node name="HouseLeftWall" type="Sprite2D" parent="NavigationRegion2D"]
+position = Vector2(450, -426)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ipsgj")
+offset = Vector2(0, -90)
+
+[node name="HouseRightWall" type="Sprite2D" parent="NavigationRegion2D"]
 position = Vector2(450, -606)
 scale = Vector2(2, 2)
-texture = ExtResource("13_e6qic")
+texture = ExtResource("13_enobw")
 
 [node name="HouseArea" type="Area2D" parent="NavigationRegion2D"]
+visible = false
 position = Vector2(450, -606)
 script = ExtResource("14_n7yhf")
 
