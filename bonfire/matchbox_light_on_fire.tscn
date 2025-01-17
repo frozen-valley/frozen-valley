@@ -1,0 +1,24 @@
+[gd_scene load_steps=7 format=3 uid="uid://bikvkphusmgxt"]
+
+[ext_resource type="Script" path="res://bonfire/matchbox_light_on_fire.gd" id="1_y6ss3"]
+[ext_resource type="Curve" uid="uid://b1nun830bvqj2" path="res://bonfire/matchbox_light_on_fire_velocity.tres" id="2_7fw6x"]
+[ext_resource type="Texture2D" uid="uid://bmuxphk7ub002" path="res://bonfire/sprites/Matchbox.png" id="3_pqr3p"]
+[ext_resource type="Texture2D" uid="uid://d38laty5hsfnn" path="res://bonfire/sprites/Match.png" id="4_ri01a"]
+[ext_resource type="Script" path="res://bonfire/matcbox_light_on_fire_match.gd" id="5_j6sv4"]
+[ext_resource type="Texture2D" uid="uid://dn75ctdvtbldp" path="res://bonfire/sprites/Flame.png" id="6_2uaeh"]
+
+[node name="MatchboxLightOnFire" type="Node2D"]
+script = ExtResource("1_y6ss3")
+_velocity_curve = ExtResource("2_7fw6x")
+
+[node name="Matchbox" type="Sprite2D" parent="."]
+texture = ExtResource("3_pqr3p")
+
+[node name="Match" type="Sprite2D" parent="."]
+position = Vector2(-210, 155)
+texture = ExtResource("4_ri01a")
+script = ExtResource("5_j6sv4")
+
+[node name="Flame" type="Sprite2D" parent="Match"]
+position = Vector2(58, -111)
+texture = ExtResource("6_2uaeh")

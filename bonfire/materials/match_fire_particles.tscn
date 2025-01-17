@@ -1,0 +1,45 @@
+[gd_scene load_steps=9 format=3 uid="uid://drnb4xc3j5o2w"]
+
+[ext_resource type="Texture2D" uid="uid://dqytqomrbtwel" path="res://bonfire/sprites/white_circle.png" id="1_88irq"]
+
+[sub_resource type="Curve" id="Curve_gk0ls"]
+_data = [Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_vlm5r"]
+curve = SubResource("Curve_gk0ls")
+
+[sub_resource type="Gradient" id="Gradient_u2qol"]
+colors = PackedColorArray(0.736653, 0.202679, 0, 1, 0.722467, 0.393098, 1.92523e-07, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5hot5"]
+gradient = SubResource("Gradient_u2qol")
+
+[sub_resource type="Curve" id="Curve_7anj2"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.4, 0.5), 0.0, 0.0, 0, 0, Vector2(0.8, 0.2), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="CurveTexture" id="CurveTexture_xsxu4"]
+curve = SubResource("Curve_7anj2")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mue6h"]
+emission_shape = 3
+emission_box_extents = Vector3(30, 50, 1)
+direction = Vector3(0, -1, 0)
+spread = 80.0
+initial_velocity_min = 70.0
+initial_velocity_max = 90.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.0
+scale_max = 0.5
+scale_curve = SubResource("CurveTexture_xsxu4")
+color_ramp = SubResource("GradientTexture1D_5hot5")
+alpha_curve = SubResource("CurveTexture_vlm5r")
+
+[node name="MatchFire" type="GPUParticles2D"]
+z_index = 8
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_mue6h")
+texture = ExtResource("1_88irq")
+lifetime = 1.5
+explosiveness = 0.05

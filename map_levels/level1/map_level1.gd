@@ -5,7 +5,6 @@ extends Level
 func _on_cross_river_button_pressed() -> void:
 	finish()
 
-
 var tree_chop
 
 func _ready() -> void:

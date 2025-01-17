@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgwvob8lxa5lp"]
+
+[ext_resource type="Script" path="res://bonfire/materials/bonfire_material.gd" id="1_m232v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6w0v8"]
+
+[node name="BonfireMaterial" type="Area2D"]
+script = ExtResource("1_m232v")
+flammability = null
+wet = null
+fire_scene = null
+fire_y_offset = null
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6w0v8")

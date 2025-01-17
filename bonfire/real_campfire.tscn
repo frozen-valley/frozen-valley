@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlo41ykqr3msh"]
+
+[ext_resource type="Texture2D" uid="uid://cx3sd2gccy07n" path="res://bonfire/sprites/Campfire1.png" id="1_mcraw"]
+[ext_resource type="Texture2D" uid="uid://drrb06nxgtybj" path="res://bonfire/sprites/Campfire2.png" id="2_tnvft"]
+[ext_resource type="Texture2D" uid="uid://bh7ivbwalhrr6" path="res://bonfire/sprites/Campfire3.png" id="3_r537t"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nw7bk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mcraw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tnvft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_r537t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[node name="RealCampfire" type="AnimatedSprite2D"]
+position = Vector2(0, -25)
+scale = Vector2(0.175, 0.175)
+sprite_frames = SubResource("SpriteFrames_nw7bk")
+frame_progress = 0.144009
