@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3brr82dyccfc"]
 
-[ext_resource type="Texture2D" uid="uid://cc8n8vf5m2vva" path="res://sprites/house/HouseBack.png" id="1_ccge6"]
+[ext_resource type="Texture2D" uid="uid://cc8n8vf5m2vva" path="res://sprites/house/HouseBackOld.png" id="1_ccge6"]
 [ext_resource type="Texture2D" uid="uid://da3xw8x4wq3s1" path="res://sprites/house/HouseFront.png" id="2_tm0q6"]
 [ext_resource type="Script" path="res://map_levels/scripts/house_area.gd" id="3_p2i1u"]
 
