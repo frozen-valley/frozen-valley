@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cc2bvnlef8n01"]
 
 [ext_resource type="Script" path="res://tree_chop_game/scripts/dead_tree.gd" id="1_u6fak"]
-[ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/trees/DeadTree.png" id="2_wg4df"]
+[ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/world_environment/trees/DeadTree.png" id="2_wg4df"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8o0lj"]
 radius = 16.0312

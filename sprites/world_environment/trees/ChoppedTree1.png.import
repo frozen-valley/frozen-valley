@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5pgttapedfmq"
-path="res://.godot/imported/ChoppedTree3.png-e9ac9eacfa20bc9c2274d2621aa9bc61.ctex"
+uid="uid://bln1bnqqa8s2k"
+path="res://.godot/imported/ChoppedTree1.png-b568897667e9f0b193e2722226da24fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/trees/ChoppedTree3.png"
-dest_files=["res://.godot/imported/ChoppedTree3.png-e9ac9eacfa20bc9c2274d2621aa9bc61.ctex"]
+source_file="res://sprites/world_environment/trees/ChoppedTree1.png"
+dest_files=["res://.godot/imported/ChoppedTree1.png-b568897667e9f0b193e2722226da24fa.ctex"]
 
 [params]
 

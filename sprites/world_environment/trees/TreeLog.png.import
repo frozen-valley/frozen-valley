@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d24ygkoekf5o6"
-path="res://.godot/imported/River.png-d4471f7c178e4ff1cf98dd64a2585cc9.ctex"
+uid="uid://ct6hnqw37dwob"
+path="res://.godot/imported/TreeLog.png-a850d0316cd58f958eb7982419ce43f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/River.png"
-dest_files=["res://.godot/imported/River.png-d4471f7c178e4ff1cf98dd64a2585cc9.ctex"]
+source_file="res://sprites/world_environment/trees/TreeLog.png"
+dest_files=["res://.godot/imported/TreeLog.png-a850d0316cd58f958eb7982419ce43f2.ctex"]
 
 [params]
 

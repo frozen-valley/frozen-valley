@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bxb04lv3lejuq"]
 
-[ext_resource type="Texture2D" uid="uid://ct6hnqw37dwob" path="res://sprites/trees/TreeLog.png" id="1_4q3y4"]
-[ext_resource type="Texture2D" uid="uid://bfkidud4yiaw1" path="res://sprites/trees/Stump.png" id="2_1t7u6"]
+[ext_resource type="Texture2D" uid="uid://ct6hnqw37dwob" path="res://sprites/world_environment/trees/TreeLog.png" id="1_4q3y4"]
+[ext_resource type="Texture2D" uid="uid://bfkidud4yiaw1" path="res://sprites/world_environment/trees/Stump.png" id="2_1t7u6"]
 
 [node name="LogAndStump" type="Node2D"]
 scale = Vector2(0.5, 0.5)

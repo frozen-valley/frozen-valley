@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://btq4l7wgg1jo0"]
+
+[ext_resource type="Texture2D" uid="uid://bhjj0af0xwnwa" path="res://sprites/world_environment/Hill1.png" id="1_25f0c"]
+
+[node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(10, -174)
+texture = ExtResource("1_25f0c")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+build_mode = 1
+polygon = PackedVector2Array(-179, 325, 245, 311, 649, 151, -683, 149, -526, 287)

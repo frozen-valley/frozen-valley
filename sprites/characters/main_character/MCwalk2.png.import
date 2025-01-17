@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfkidud4yiaw1"
-path="res://.godot/imported/Stump.png-11e02b109a68cc3b8f863a7459c9d950.ctex"
+uid="uid://cwec80ccc37uu"
+path="res://.godot/imported/MCwalk2.png-bf4f3e9553f179a9f93c85c039f4a8e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/trees/Stump.png"
-dest_files=["res://.godot/imported/Stump.png-11e02b109a68cc3b8f863a7459c9d950.ctex"]
+source_file="res://sprites/characters/main_character/MCwalk2.png"
+dest_files=["res://.godot/imported/MCwalk2.png-bf4f3e9553f179a9f93c85c039f4a8e9.ctex"]
 
 [params]
 

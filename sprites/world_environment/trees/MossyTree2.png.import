@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8sxjxs6oljoi"
-path="res://.godot/imported/ChoppedTree4.png-e606c43b9b11d66ac008531854c7ad31.ctex"
+uid="uid://oedhqx3o0bht"
+path="res://.godot/imported/MossyTree2.png-4f8b05d654531e7393e3b6f86b5ca54c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/trees/ChoppedTree4.png"
-dest_files=["res://.godot/imported/ChoppedTree4.png-e606c43b9b11d66ac008531854c7ad31.ctex"]
+source_file="res://sprites/world_environment/trees/MossyTree2.png"
+dest_files=["res://.godot/imported/MossyTree2.png-4f8b05d654531e7393e3b6f86b5ca54c.ctex"]
 
 [params]
 

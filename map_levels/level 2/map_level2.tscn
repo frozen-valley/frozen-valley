@@ -1,0 +1,1291 @@
+[gd_scene load_steps=20 format=4 uid="uid://dhcfrq08bxrux"]
+
+[ext_resource type="Texture2D" uid="uid://bekap8p1rfd6n" path="res://sprites/tiles/TileSetNew.png" id="1_xo6td"]
+[ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map_levels/sub_scenes/player.tscn" id="2_3x33r"]
+[ext_resource type="PackedScene" uid="uid://d3x8867t5rqt1" path="res://rock.tscn" id="4_bpa67"]
+[ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map_levels/sub_scenes/tree.tscn" id="4_jrj26"]
+[ext_resource type="PackedScene" uid="uid://buvdefihipgne" path="res://map_levels/sub_scenes/MossyTree1.tscn" id="5_lb1n4"]
+[ext_resource type="PackedScene" uid="uid://cbjkqesjrufv1" path="res://map_levels/sub_scenes/bush1.tscn" id="5_u0654"]
+[ext_resource type="PackedScene" uid="uid://c4ss8555cbru0" path="res://map_levels/sub_scenes/bush2.tscn" id="6_0mkpf"]
+[ext_resource type="PackedScene" uid="uid://bykbxes4jugs2" path="res://map_levels/sub_scenes/MossyTree2.tscn" id="6_wli5l"]
+[ext_resource type="Texture2D" uid="uid://boc2wm8rsngy0" path="res://sprites/world_environment/trees/Tree.png" id="6_wvb8y"]
+[ext_resource type="PackedScene" uid="uid://btq4l7wgg1jo0" path="res://map_levels/sub_scenes/hill1.tscn" id="7_f524a"]
+[ext_resource type="PackedScene" uid="uid://my0v7frwgcw6" path="res://map_levels/sub_scenes/dead_tree.tscn" id="7_p13e1"]
+[ext_resource type="Texture2D" uid="uid://bqu14pd4m7asp" path="res://sprites/characters/fox/FoxDead.png" id="8_jeojd"]
+[ext_resource type="PackedScene" uid="uid://de1xjjlunygjm" path="res://map_levels/sub_scenes/hill2.tscn" id="8_vs2na"]
+[ext_resource type="Script" path="res://map_levels/level 2/crossing_detector_1.gd" id="12_o3xgs"]
+[ext_resource type="Script" path="res://map_levels/level 2/crossing_detector_2.gd" id="13_a6nou"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l2ujj"]
+texture = ExtResource("1_xo6td")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_44fwa"]
+tile_size = Vector2i(256, 256)
+sources/0 = SubResource("TileSetAtlasSource_l2ujj")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dksyn"]
+radius = 19.4165
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_084t4"]
+a = Vector2(-68, -3)
+b = Vector2(370, -3)
+
+[node name="MapLevel2" type="Node2D"]
+y_sort_enabled = true
+position = Vector2(1, 1)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAEAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAMAAAABAAAAAAABAAAAAAABAAEAAAABAAEAAAABAAIAAAABAAIAAAABAAMAAAABAAMAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAACAAIAAAACAAIAAAACAAMAAAACAAMAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAADAAMAAAADAAMAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAAAEAAMAAAAEAAMAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAEAAAAFAAIAAAAAAAIAAAAFAAMAAAAAAAMAAAAGAAAAAAABAAAAAAAGAAEAAAABAAEAAAAGAAIAAAABAAIAAAAGAAMAAAABAAMAAAAHAAAAAAACAAAAAAAHAAEAAAACAAEAAAAHAAIAAAACAAIAAAAHAAMAAAACAAMAAAAIAAAAAAADAAAAAAAIAAEAAAADAAEAAAAIAAIAAAADAAIAAAAIAAMAAAADAAMAAAAJAAAAAAAEAAAAAAAJAAEAAAAEAAEAAAAJAAIAAAAEAAIAAAAJAAMAAAAEAAMAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAEAAAAAAAYAAAAAAAIAAAAAAAcAAAAAAAMAAAABAAQAAAABAAAAAAABAAUAAAABAAEAAAABAAYAAAABAAIAAAABAAcAAAABAAMAAAACAAQAAAACAAAAAAACAAUAAAACAAEAAAACAAYAAAACAAIAAAACAAcAAAACAAMAAAADAAQAAAADAAAAAAADAAUAAAADAAEAAAADAAYAAAADAAIAAAADAAcAAAADAAMAAAAEAAQAAAAEAAAAAAAEAAUAAAAEAAEAAAAEAAYAAAAEAAIAAAAEAAcAAAAEAAMAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAEAAAAFAAYAAAAAAAIAAAAFAAcAAAAAAAMAAAAGAAQAAAABAAAAAAAGAAUAAAABAAEAAAAGAAYAAAABAAIAAAAGAAcAAAABAAMAAAAHAAQAAAACAAAAAAAHAAUAAAACAAEAAAAHAAYAAAACAAIAAAAHAAcAAAACAAMAAAAIAAQAAAADAAAAAAAIAAUAAAADAAEAAAAIAAYAAAADAAIAAAAIAAcAAAADAAMAAAAJAAQAAAAEAAAAAAAJAAUAAAAEAAEAAAAJAAYAAAAEAAIAAAAJAAcAAAAEAAMAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAEAAAAKAAYAAAAAAAIAAAAKAAcAAAAAAAMAAAALAAQAAAABAAAAAAALAAUAAAABAAEAAAALAAYAAAABAAIAAAALAAcAAAABAAMAAAAMAAQAAAACAAAAAAAMAAUAAAACAAEAAAAMAAYAAAACAAIAAAAMAAcAAAACAAMAAAANAAQAAAADAAAAAAANAAUAAAADAAEAAAANAAYAAAADAAIAAAANAAcAAAADAAMAAAAOAAQAAAAEAAAAAAAOAAUAAAAEAAEAAAAOAAYAAAAEAAIAAAAOAAcAAAAEAAMAAAAKAAAAAAAAAAAAAAAKAAEAAAAAAAEAAAAKAAIAAAAAAAIAAAAKAAMAAAAAAAMAAAALAAAAAAABAAAAAAALAAEAAAABAAEAAAALAAIAAAABAAIAAAALAAMAAAABAAMAAAAMAAAAAAACAAAAAAAMAAEAAAACAAEAAAAMAAIAAAACAAIAAAAMAAMAAAACAAMAAAANAAAAAAADAAAAAAANAAEAAAADAAEAAAANAAIAAAADAAIAAAANAAMAAAADAAMAAAAOAAAAAAAEAAAAAAAOAAEAAAAEAAEAAAAOAAIAAAAEAAIAAAAOAAMAAAAEAAMAAAAAAPz/AAAAAAAAAAAAAP3/AAAAAAEAAAAAAP7/AAAAAAIAAAAAAP//AAAAAAMAAAABAPz/AAABAAAAAAABAP3/AAABAAEAAAABAP7/AAABAAIAAAABAP//AAABAAMAAAACAPz/AAACAAAAAAACAP3/AAACAAEAAAACAP7/AAACAAIAAAACAP//AAACAAMAAAADAPz/AAADAAAAAAADAP3/AAADAAEAAAADAP7/AAADAAIAAAADAP//AAADAAMAAAAEAPz/AAAEAAAAAAAEAP3/AAAEAAEAAAAEAP7/AAAEAAIAAAAEAP//AAAEAAMAAAAFAPz/AAAAAAAAAAAFAP3/AAAAAAEAAAAFAP7/AAAAAAIAAAAFAP//AAAAAAMAAAAGAPz/AAABAAAAAAAGAP3/AAABAAEAAAAGAP7/AAABAAIAAAAGAP//AAABAAMAAAAHAPz/AAACAAAAAAAHAP3/AAACAAEAAAAHAP7/AAACAAIAAAAHAP//AAACAAMAAAAIAPz/AAADAAAAAAAIAP3/AAADAAEAAAAIAP7/AAADAAIAAAAIAP//AAADAAMAAAAJAPz/AAAEAAAAAAAJAP3/AAAEAAEAAAAJAP7/AAAEAAIAAAAJAP//AAAEAAMAAAD7/wQAAAAAAAAAAAD7/wUAAAAAAAEAAAD7/wYAAAAAAAIAAAD7/wcAAAAAAAMAAAD8/wQAAAABAAAAAAD8/wUAAAABAAEAAAD8/wYAAAABAAIAAAD8/wcAAAABAAMAAAD9/wQAAAACAAAAAAD9/wUAAAACAAEAAAD9/wYAAAACAAIAAAD9/wcAAAACAAMAAAD+/wQAAAADAAAAAAD+/wUAAAADAAEAAAD+/wYAAAADAAIAAAD+/wcAAAADAAMAAAD//wQAAAAEAAAAAAD//wUAAAAEAAEAAAD//wYAAAAEAAIAAAD//wcAAAAEAAMAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAEAAAD7/wIAAAAAAAIAAAD7/wMAAAAAAAMAAAD8/wAAAAABAAAAAAD8/wEAAAABAAEAAAD8/wIAAAABAAIAAAD8/wMAAAABAAMAAAD9/wAAAAACAAAAAAD9/wEAAAACAAEAAAD9/wIAAAACAAIAAAD9/wMAAAACAAMAAAD+/wAAAAADAAAAAAD+/wEAAAADAAEAAAD+/wIAAAADAAIAAAD+/wMAAAADAAMAAAD//wAAAAAEAAAAAAD//wEAAAAEAAEAAAD//wIAAAAEAAIAAAD//wMAAAAEAAMAAAD7//z/AAAAAAAAAAD7//3/AAAAAAEAAAD7//7/AAAAAAIAAAD7////AAAAAAMAAAD8//z/AAABAAAAAAD8//3/AAABAAEAAAD8//7/AAABAAIAAAD8////AAABAAMAAAD9//z/AAACAAAAAAD9//3/AAACAAEAAAD9//7/AAACAAIAAAD9////AAACAAMAAAD+//z/AAADAAAAAAD+//3/AAADAAEAAAD+//7/AAADAAIAAAD+////AAADAAMAAAD///z/AAAEAAAAAAD///3/AAAEAAEAAAD///7/AAAEAAIAAAD/////AAAEAAMAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAEAAAAGAAoAAAAAAAIAAAAGAAsAAAAAAAMAAAAHAAgAAAABAAAAAAAHAAkAAAABAAEAAAAHAAoAAAABAAIAAAAHAAsAAAABAAMAAAAIAAgAAAACAAAAAAAIAAkAAAACAAEAAAAIAAoAAAACAAIAAAAIAAsAAAACAAMAAAAJAAgAAAADAAAAAAAJAAkAAAADAAEAAAAJAAoAAAADAAIAAAAJAAsAAAADAAMAAAAKAAgAAAAEAAAAAAAKAAkAAAAEAAEAAAAKAAoAAAAEAAIAAAAKAAsAAAAEAAMAAAABAAgAAAAAAAAAAAABAAkAAAAAAAEAAAABAAoAAAAAAAIAAAABAAsAAAAAAAMAAAACAAgAAAABAAAAAAACAAkAAAABAAEAAAACAAoAAAABAAIAAAACAAsAAAABAAMAAAADAAgAAAACAAAAAAADAAkAAAACAAEAAAADAAoAAAACAAIAAAADAAsAAAACAAMAAAAEAAgAAAADAAAAAAAEAAkAAAADAAEAAAAEAAoAAAADAAIAAAAEAAsAAAADAAMAAAAFAAgAAAAEAAAAAAAFAAkAAAAEAAEAAAAFAAoAAAAEAAIAAAAFAAsAAAAEAAMAAAD8/wgAAAAAAAAAAAD8/wkAAAAAAAEAAAD8/woAAAAAAAIAAAD8/wsAAAAAAAMAAAD9/wgAAAABAAAAAAD9/wkAAAABAAEAAAD9/woAAAABAAIAAAD9/wsAAAABAAMAAAD+/wgAAAACAAAAAAD+/wkAAAACAAEAAAD+/woAAAACAAIAAAD+/wsAAAACAAMAAAD//wgAAAADAAAAAAD//wkAAAADAAEAAAD//woAAAADAAIAAAD//wsAAAADAAMAAAAAAAgAAAAEAAAAAAAAAAkAAAAEAAEAAAAAAAoAAAAEAAIAAAAAAAsAAAAEAAMAAAALAAgAAAAAAAAAAAALAAkAAAAAAAEAAAALAAoAAAAAAAIAAAALAAsAAAAAAAMAAAAMAAgAAAABAAAAAAAMAAkAAAABAAEAAAAMAAoAAAABAAIAAAAMAAsAAAABAAMAAAANAAgAAAACAAAAAAANAAkAAAACAAEAAAANAAoAAAACAAIAAAANAAsAAAACAAMAAAAOAAgAAAADAAAAAAAOAAkAAAADAAEAAAAOAAoAAAADAAIAAAAOAAsAAAADAAMAAAAPAAgAAAAEAAAAAAAPAAkAAAAEAAEAAAAPAAoAAAAEAAIAAAAPAAsAAAAEAAMAAAAKAPz/AAAAAAAAAAAKAP3/AAAAAAEAAAAKAP7/AAAAAAIAAAAKAP//AAAAAAMAAAALAPz/AAABAAAAAAALAP3/AAABAAEAAAALAP7/AAABAAIAAAALAP//AAABAAMAAAAMAPz/AAACAAAAAAAMAP3/AAACAAEAAAAMAP7/AAACAAIAAAAMAP//AAACAAMAAAANAPz/AAADAAAAAAANAP3/AAADAAEAAAANAP7/AAADAAIAAAANAP//AAADAAMAAAAOAPz/AAAEAAAAAAAOAP3/AAAEAAEAAAAOAP7/AAAEAAIAAAAOAP//AAAEAAMAAAAPAAAAAAAAAAAAAAAPAAEAAAAAAAEAAAAPAAIAAAAAAAIAAAAPAAMAAAAAAAMAAAAQAAAAAAABAAAAAAAQAAEAAAABAAEAAAAQAAIAAAABAAIAAAAQAAMAAAABAAMAAAARAAAAAAACAAAAAAARAAEAAAACAAEAAAARAAIAAAACAAIAAAARAAMAAAACAAMAAAASAAAAAAADAAAAAAASAAEAAAADAAEAAAASAAIAAAADAAIAAAASAAMAAAADAAMAAAATAAAAAAAEAAAAAAATAAEAAAAEAAEAAAATAAIAAAAEAAIAAAATAAMAAAAEAAMAAAAPAPz/AAAAAAAAAAAPAP3/AAAAAAEAAAAPAP7/AAAAAAIAAAAPAP//AAAAAAMAAAAQAPz/AAABAAAAAAAQAP3/AAABAAEAAAAQAP7/AAABAAIAAAAQAP//AAABAAMAAAARAPz/AAACAAAAAAARAP3/AAACAAEAAAARAP7/AAACAAIAAAARAP//AAACAAMAAAASAPz/AAADAAAAAAASAP3/AAADAAEAAAASAP7/AAADAAIAAAASAP//AAADAAMAAAATAPz/AAAEAAAAAAATAP3/AAAEAAEAAAATAP7/AAAEAAIAAAATAP//AAAEAAMAAAAPAAQAAAAAAAAAAAAPAAUAAAAAAAEAAAAPAAYAAAAAAAIAAAAPAAcAAAAAAAMAAAAQAAQAAAABAAAAAAAQAAUAAAABAAEAAAAQAAYAAAABAAIAAAAQAAcAAAABAAMAAAARAAQAAAACAAAAAAARAAUAAAACAAEAAAARAAYAAAACAAIAAAARAAcAAAACAAMAAAASAAQAAAADAAAAAAASAAUAAAADAAEAAAASAAYAAAADAAIAAAASAAcAAAADAAMAAAATAAQAAAAEAAAAAAATAAUAAAAEAAEAAAATAAYAAAAEAAIAAAATAAcAAAAEAAMAAAAUAPz/AAAAAAAAAAAUAP3/AAAAAAEAAAAUAP7/AAAAAAIAAAAUAP//AAAAAAMAAAAVAPz/AAABAAAAAAAVAP3/AAABAAEAAAAVAP7/AAABAAIAAAAVAP//AAABAAMAAAAWAPz/AAACAAAAAAAWAP3/AAACAAEAAAAWAP7/AAACAAIAAAAWAP//AAACAAMAAAAXAPz/AAADAAAAAAAXAP3/AAADAAEAAAAXAP7/AAADAAIAAAAXAP//AAADAAMAAAAYAPz/AAAAAAAAAAAYAP3/AAAAAAEAAAAYAP7/AAAAAAIAAAAYAP//AAAAAAMAAAAZAPz/AAABAAAAAAAZAP3/AAABAAEAAAAZAP7/AAABAAIAAAAZAP//AAABAAMAAAAaAPz/AAACAAAAAAAaAP3/AAACAAEAAAAaAP7/AAACAAIAAAAaAP//AAACAAMAAAAbAPz/AAADAAAAAAAbAP3/AAADAAEAAAAbAP7/AAADAAIAAAAbAP//AAADAAMAAAAcAPz/AAAEAAAAAAAcAP3/AAAEAAEAAAAcAP7/AAAEAAIAAAAcAP//AAAEAAMAAAAdAPz/AAAEAAAAAAAdAP3/AAAEAAEAAAAdAP7/AAAEAAIAAAAdAP//AAAEAAMAAAAYAPj/AAAAAAAAAAAYAPn/AAAAAAEAAAAYAPr/AAAAAAIAAAAYAPv/AAAAAAMAAAAZAPj/AAAAAAAAAAAZAPn/AAAAAAEAAAAZAPr/AAAAAAIAAAAZAPv/AAAAAAMAAAAaAPj/AAABAAAAAAAaAPn/AAABAAEAAAAaAPr/AAABAAIAAAAaAPv/AAABAAMAAAAbAPj/AAACAAAAAAAbAPn/AAACAAEAAAAbAPr/AAACAAIAAAAbAPv/AAACAAMAAAAcAPj/AAADAAAAAAAcAPn/AAADAAEAAAAcAPr/AAADAAIAAAAcAPv/AAADAAMAAAATAPj/AAAAAAAAAAATAPn/AAAAAAEAAAATAPr/AAAAAAIAAAATAPv/AAAAAAMAAAAUAPj/AAABAAAAAAAUAPn/AAABAAEAAAAUAPr/AAABAAIAAAAUAPv/AAABAAMAAAAVAPj/AAACAAAAAAAVAPn/AAACAAEAAAAVAPr/AAACAAIAAAAVAPv/AAACAAMAAAAWAPj/AAADAAAAAAAWAPn/AAADAAEAAAAWAPr/AAADAAIAAAAWAPv/AAADAAMAAAAXAPj/AAAEAAAAAAAXAPn/AAAEAAEAAAAXAPr/AAAEAAIAAAAXAPv/AAAEAAMAAAAdAPj/AAAEAAAAAAAdAPn/AAAEAAEAAAAdAPr/AAAEAAIAAAAdAPv/AAAEAAMAAAAeAPj/AAABAAAAAAAeAPn/AAABAAEAAAAeAPr/AAABAAIAAAAeAPv/AAABAAMAAAAfAPj/AAACAAAAAAAfAPn/AAACAAEAAAAfAPr/AAACAAIAAAAfAPv/AAACAAMAAAAgAPj/AAADAAAAAAAgAPn/AAADAAEAAAAgAPr/AAADAAIAAAAgAPv/AAADAAMAAAAhAPj/AAAEAAAAAAAhAPn/AAAEAAEAAAAhAPr/AAAEAAIAAAAhAPv/AAAEAAMAAAAeAPz/AAAAAAAAAAAeAP3/AAAAAAEAAAAeAP7/AAAAAAIAAAAeAP//AAAAAAMAAAAfAPz/AAABAAAAAAAfAP3/AAABAAEAAAAfAP7/AAABAAIAAAAfAP//AAABAAMAAAAgAPz/AAACAAAAAAAgAP3/AAACAAEAAAAgAP7/AAACAAIAAAAgAP//AAACAAMAAAAhAPz/AAADAAAAAAAhAP3/AAADAAEAAAAhAP7/AAADAAIAAAAhAP//AAADAAMAAAAiAPz/AAAEAAAAAAAiAP3/AAAEAAEAAAAiAP7/AAAEAAIAAAAiAP//AAAEAAMAAAAUAAAAAAAAAAAAAAAUAAEAAAAAAAEAAAAUAAIAAAAAAAIAAAAUAAMAAAAAAAMAAAAVAAAAAAABAAAAAAAVAAEAAAABAAEAAAAVAAIAAAABAAIAAAAVAAMAAAABAAMAAAAWAAAAAAACAAAAAAAWAAEAAAACAAEAAAAWAAIAAAACAAIAAAAWAAMAAAACAAMAAAAXAAAAAAADAAAAAAAXAAEAAAADAAEAAAAXAAIAAAADAAIAAAAXAAMAAAADAAMAAAAYAAAAAAAEAAAAAAAYAAEAAAAEAAEAAAAYAAIAAAAEAAIAAAAYAAMAAAAEAAMAAAAZAAAAAAAAAAAAAAAZAAEAAAAAAAEAAAAZAAIAAAAAAAIAAAAZAAMAAAAAAAMAAAAaAAAAAAABAAAAAAAaAAEAAAABAAEAAAAaAAIAAAABAAIAAAAaAAMAAAABAAMAAAAbAAAAAAACAAAAAAAbAAEAAAACAAEAAAAbAAIAAAACAAIAAAAbAAMAAAACAAMAAAAcAAAAAAADAAAAAAAcAAEAAAADAAEAAAAcAAIAAAADAAIAAAAcAAMAAAADAAMAAAAdAAAAAAAEAAAAAAAdAAEAAAAEAAEAAAAdAAIAAAAEAAIAAAAdAAMAAAAEAAMAAAAeAAAAAAAAAAAAAAAeAAEAAAAAAAEAAAAeAAIAAAAAAAIAAAAeAAMAAAAAAAMAAAAfAAAAAAABAAAAAAAfAAEAAAABAAEAAAAfAAIAAAABAAIAAAAfAAMAAAABAAMAAAAgAAAAAAACAAAAAAAgAAEAAAACAAEAAAAgAAIAAAACAAIAAAAgAAMAAAACAAMAAAAhAAAAAAADAAAAAAAhAAEAAAADAAEAAAAhAAIAAAADAAIAAAAhAAMAAAADAAMAAAAiAAAAAAAEAAAAAAAiAAEAAAAEAAEAAAAiAAIAAAAEAAIAAAAiAAMAAAAEAAMAAAAjAPz/AAAAAAAAAAAjAP3/AAAAAAEAAAAjAP7/AAAAAAIAAAAjAP//AAAAAAMAAAAkAPz/AAABAAAAAAAkAP3/AAABAAEAAAAkAP7/AAABAAIAAAAkAP//AAABAAMAAAAlAPz/AAACAAAAAAAlAP3/AAACAAEAAAAlAP7/AAACAAIAAAAlAP//AAACAAMAAAAmAPz/AAADAAAAAAAmAP3/AAADAAEAAAAmAP7/AAADAAIAAAAmAP//AAADAAMAAAAnAPz/AAAEAAAAAAAnAP3/AAAEAAEAAAAnAP7/AAAEAAIAAAAnAP//AAAEAAMAAAAiAPj/AAAAAAAAAAAiAPn/AAAAAAEAAAAiAPr/AAAAAAIAAAAiAPv/AAAAAAMAAAAjAPj/AAABAAAAAAAjAPn/AAABAAEAAAAjAPr/AAABAAIAAAAjAPv/AAABAAMAAAAkAPj/AAACAAAAAAAkAPn/AAACAAEAAAAkAPr/AAACAAIAAAAkAPv/AAACAAMAAAAlAPj/AAADAAAAAAAlAPn/AAADAAEAAAAlAPr/AAADAAIAAAAlAPv/AAADAAMAAAAmAPj/AAAEAAAAAAAmAPn/AAAEAAEAAAAmAPr/AAAEAAIAAAAmAPv/AAAEAAMAAAAjAAAAAAAAAAAAAAAjAAEAAAAAAAEAAAAjAAIAAAAAAAIAAAAjAAMAAAAAAAMAAAAkAAAAAAABAAAAAAAkAAEAAAABAAEAAAAkAAIAAAABAAIAAAAkAAMAAAABAAMAAAAlAAAAAAACAAAAAAAlAAEAAAACAAEAAAAlAAIAAAACAAIAAAAlAAMAAAACAAMAAAAmAAAAAAADAAAAAAAmAAEAAAADAAEAAAAmAAIAAAADAAIAAAAmAAMAAAADAAMAAAAnAAAAAAAEAAAAAAAnAAEAAAAEAAEAAAAnAAIAAAAEAAIAAAAnAAMAAAAEAAMAAAAeAAQAAAAAAAAAAAAeAAUAAAAAAAEAAAAeAAYAAAAAAAIAAAAeAAcAAAAAAAMAAAAfAAQAAAABAAAAAAAfAAUAAAABAAEAAAAfAAYAAAABAAIAAAAfAAcAAAABAAMAAAAgAAQAAAACAAAAAAAgAAUAAAACAAEAAAAgAAYAAAACAAIAAAAgAAcAAAACAAMAAAAhAAQAAAADAAAAAAAhAAUAAAADAAEAAAAhAAYAAAADAAIAAAAhAAcAAAADAAMAAAAiAAQAAAAEAAAAAAAiAAUAAAAEAAEAAAAiAAYAAAAEAAIAAAAiAAcAAAAEAAMAAAAjAAQAAAAAAAAAAAAjAAUAAAAAAAEAAAAjAAYAAAAAAAIAAAAjAAcAAAAAAAMAAAAkAAQAAAABAAAAAAAkAAUAAAABAAEAAAAkAAYAAAABAAIAAAAkAAcAAAABAAMAAAAlAAQAAAACAAAAAAAlAAUAAAACAAEAAAAlAAYAAAACAAIAAAAlAAcAAAACAAMAAAAmAAQAAAADAAAAAAAmAAUAAAADAAEAAAAmAAYAAAADAAIAAAAmAAcAAAADAAMAAAAnAAQAAAAEAAAAAAAnAAUAAAAEAAEAAAAnAAYAAAAEAAIAAAAnAAcAAAAEAAMAAAAZAAQAAAAAAAAAAAAZAAUAAAAAAAEAAAAZAAYAAAAAAAIAAAAZAAcAAAAAAAMAAAAaAAQAAAABAAAAAAAaAAUAAAABAAEAAAAaAAYAAAABAAIAAAAaAAcAAAABAAMAAAAbAAQAAAACAAAAAAAbAAUAAAACAAEAAAAbAAYAAAACAAIAAAAbAAcAAAACAAMAAAAcAAQAAAADAAAAAAAcAAUAAAADAAEAAAAcAAYAAAADAAIAAAAcAAcAAAADAAMAAAAdAAQAAAAEAAAAAAAdAAUAAAAEAAEAAAAdAAYAAAAEAAIAAAAdAAcAAAAEAAMAAAA=")
+tile_set = SubResource("TileSet_44fwa")
+
+[node name="Player" parent="." instance=ExtResource("2_3x33r")]
+position = Vector2(2290, 1807)
+collision_mask = 3
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(1.5, 1.5)
+
+[node name="Bushes" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Bush3" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(856, 1467)
+
+[node name="Bush51" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(1057, 1218)
+
+[node name="Bush5" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(215, 1553)
+scale = Vector2(0.5, 0.5)
+
+[node name="Bush54" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(823, 1852)
+scale = Vector2(0.5, 0.5)
+
+[node name="Bush2" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(1950, 1941)
+
+[node name="Bush53" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(2571, 1650)
+
+[node name="Bush55" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(1955, 2077)
+
+[node name="Bush56" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(846, 1983)
+
+[node name="Bush52" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(1562, 1229)
+
+[node name="Bush4" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(238, 1805)
+scale = Vector2(0.6, 0.6)
+
+[node name="Bush9" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(741, 1027)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush50" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(376, 996)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush16" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(3404, 1175)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush34" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(6638, -811)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush36" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(7470, -682)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush38" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(8282, -729)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush39" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(8620, -442)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush40" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(8931, -769)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush41" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(8947, -138)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush42" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(9203, -333)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush31" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(3085, 1612)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush17" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(2877, 335)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush21" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(2877, 335)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush22" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(3415, 213)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush23" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(3825, 1119)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush24" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(3850, 1550)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush27" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(3850, 1550)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush28" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(3765, 1578)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush10" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(610, 549)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush20" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(2697, 579)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush12" parent="Bushes" instance=ExtResource("6_0mkpf")]
+position = Vector2(284, 667)
+scale = Vector2(0.4, 0.4)
+
+[node name="Bush" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(1716, 1599)
+
+[node name="Bush15" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(2561, 1118)
+scale = Vector2(1, 1)
+
+[node name="Bush47" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(8523, -95)
+scale = Vector2(1, 1)
+
+[node name="Bush48" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(8666, -1094)
+scale = Vector2(1, 1)
+
+[node name="Bush49" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(9657, 29)
+scale = Vector2(1, 1)
+
+[node name="Bush6" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(1702, 1505)
+
+[node name="Bush18" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(3383, 442)
+
+[node name="Bush19" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(3644, 609)
+
+[node name="Bush32" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(6926, -355)
+
+[node name="Bush35" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(7199, -735)
+
+[node name="Bush43" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(8970, 231)
+
+[node name="Bush44" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(9262, 28)
+
+[node name="Bush46" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(9606, -176)
+
+[node name="Bush45" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(9452, 442)
+
+[node name="Bush29" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(4532, 421)
+scale = Vector2(0.5, 0.5)
+
+[node name="Bush37" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(4234, -378)
+scale = Vector2(0.5, 0.5)
+
+[node name="Bush33" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(5390, -1061)
+scale = Vector2(0.5, 0.5)
+
+[node name="Bush30" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(4645, 474)
+
+[node name="Bush25" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(3598, 1453)
+
+[node name="Bush26" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(3591, 1598)
+
+[node name="Bush7" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(1603, 957)
+scale = Vector2(-0.3, 0.3)
+
+[node name="Bush11" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(1736, 451)
+scale = Vector2(-0.3, 0.3)
+
+[node name="Bush13" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(1075, 194)
+scale = Vector2(-0.3, 0.3)
+
+[node name="Bush14" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(1464, 213)
+scale = Vector2(-0.3, 0.3)
+
+[node name="Bush8" parent="Bushes" instance=ExtResource("5_u0654")]
+position = Vector2(1140, 555)
+scale = Vector2(-0.3, 0.3)
+
+[node name="MossTree1" parent="Bushes" instance=ExtResource("5_lb1n4")]
+position = Vector2(1041, 1458)
+scale = Vector2(-0.6, 0.6)
+
+[node name="MossTree2" parent="Bushes" instance=ExtResource("5_lb1n4")]
+position = Vector2(1051, 1256)
+scale = Vector2(-0.6, 0.6)
+
+[node name="MossTree3" parent="Bushes" instance=ExtResource("5_lb1n4")]
+position = Vector2(1051, 1256)
+scale = Vector2(-0.6, 0.6)
+
+[node name="MossTree4" parent="Bushes" instance=ExtResource("5_lb1n4")]
+position = Vector2(1689, 893)
+scale = Vector2(-0.6, 0.6)
+
+[node name="MossTree5" parent="Bushes" instance=ExtResource("5_lb1n4")]
+position = Vector2(1568, 584)
+scale = Vector2(-0.6, 0.6)
+
+[node name="MossTree6" parent="Bushes" instance=ExtResource("5_lb1n4")]
+position = Vector2(3656, 214)
+scale = Vector2(-0.6, 0.6)
+
+[node name="MossTree7" parent="Bushes" instance=ExtResource("5_lb1n4")]
+position = Vector2(4227, -356)
+scale = Vector2(-0.6, 0.6)
+
+[node name="MossTree8" parent="Bushes" instance=ExtResource("5_lb1n4")]
+position = Vector2(7536, -581)
+scale = Vector2(-0.6, 0.6)
+
+[node name="StaticBody2D" parent="Bushes" instance=ExtResource("6_wli5l")]
+position = Vector2(1627, 1509)
+
+[node name="StaticBody2D2" parent="Bushes" instance=ExtResource("6_wli5l")]
+position = Vector2(1519, 967)
+scale = Vector2(-0.6, 0.6)
+
+[node name="StaticBody2D3" parent="Bushes" instance=ExtResource("6_wli5l")]
+position = Vector2(3844, 456)
+scale = Vector2(-0.6, 0.6)
+
+[node name="StaticBody2D4" parent="Bushes" instance=ExtResource("6_wli5l")]
+position = Vector2(4408, 69)
+scale = Vector2(-0.6, 0.6)
+
+[node name="Trees" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tree" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(975, 1385)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(855, 1400)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(946, 1283)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree22" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1044, 512)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree28" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1580, 327)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree23" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(951, 380)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree26" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1802, 1030)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree29" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2109, 1053)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree30" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1952, 1072)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree168" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2011, 2034)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree31" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2147, 661)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree34" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2433, 650)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree32" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2223, 1171)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree33" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2312, 698)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree24" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1969, 635)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree35" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2725, 1029)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree55" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2826, 1649)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree68" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2962, 1708)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree56" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3357, 1740)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree57" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2914, 1556)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree58" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3476, 1671)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree36" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3698, 190)
+scale = Vector2(2, 2)
+
+[node name="Tree59" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4160, 1461)
+scale = Vector2(2, 2)
+
+[node name="Tree64" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4944, 728)
+scale = Vector2(2, 2)
+
+[node name="Tree77" type="StaticBody2D" parent="Trees"]
+position = Vector2(7064, -781)
+scale = Vector2(2, 2)
+collision_layer = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees/Tree77"]
+position = Vector2(1, -94)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_wvb8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree77"]
+position = Vector2(-0.5, 0)
+shape = SubResource("CircleShape2D_dksyn")
+
+[node name="Tree78" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6951, -922)
+scale = Vector2(2, 2)
+
+[node name="Tree79" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6738, -873)
+scale = Vector2(2, 2)
+
+[node name="Tree96" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6369, -880)
+scale = Vector2(2, 2)
+
+[node name="Tree97" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6723, -78)
+scale = Vector2(2, 2)
+
+[node name="Tree80" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7356, -726)
+scale = Vector2(2, 2)
+
+[node name="Tree81" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7288, -879)
+scale = Vector2(2, 2)
+
+[node name="Tree82" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7658, -645)
+scale = Vector2(2, 2)
+
+[node name="Tree83" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7681, -401)
+scale = Vector2(2, 2)
+
+[node name="Tree98" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8068, -693)
+scale = Vector2(2, 2)
+
+[node name="Tree99" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8057, -397)
+scale = Vector2(2, 2)
+
+[node name="Tree145" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7866, -285)
+scale = Vector2(2, 2)
+
+[node name="Tree146" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8091, -166)
+scale = Vector2(2, 2)
+
+[node name="Tree100" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8406, -755)
+scale = Vector2(2, 2)
+
+[node name="Tree101" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8477, -343)
+scale = Vector2(2, 2)
+
+[node name="Tree102" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8753, -762)
+scale = Vector2(2, 2)
+
+[node name="Tree103" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8791, -349)
+scale = Vector2(2, 2)
+
+[node name="Tree104" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8776, -46)
+scale = Vector2(2, 2)
+
+[node name="Tree105" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9422, -59)
+scale = Vector2(2, 2)
+
+[node name="Tree106" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9394, -356)
+scale = Vector2(2, 2)
+
+[node name="Tree107" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9400, -691)
+scale = Vector2(2, 2)
+
+[node name="Tree108" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9074, -818)
+scale = Vector2(2, 2)
+
+[node name="Tree109" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8811, 201)
+scale = Vector2(2, 2)
+
+[node name="Tree110" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8827, 431)
+scale = Vector2(2, 2)
+
+[node name="Tree111" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9428, 111)
+scale = Vector2(2, 2)
+
+[node name="Tree112" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9441, 338)
+scale = Vector2(2, 2)
+
+[node name="Tree147" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9692, 261)
+scale = Vector2(2, 2)
+
+[node name="Tree148" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9708, 637)
+scale = Vector2(2, 2)
+
+[node name="Tree149" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9275, 1139)
+scale = Vector2(2, 2)
+
+[node name="Tree113" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8656, 650)
+scale = Vector2(2, 2)
+
+[node name="Tree150" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8389, 183)
+scale = Vector2(2, 2)
+
+[node name="Tree136" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9112, 897)
+scale = Vector2(2, 2)
+
+[node name="Tree137" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8623, 1308)
+scale = Vector2(2, 2)
+
+[node name="Tree114" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8397, 805)
+scale = Vector2(2, 2)
+
+[node name="Tree115" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8886, 1265)
+scale = Vector2(2, 2)
+
+[node name="Tree116" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9061, 1180)
+scale = Vector2(2, 2)
+
+[node name="Tree117" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9318, 929)
+scale = Vector2(2, 2)
+
+[node name="Tree118" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9318, 929)
+scale = Vector2(2, 2)
+
+[node name="Tree119" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9508, 777)
+scale = Vector2(2, 2)
+
+[node name="Tree84" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7469, -270)
+scale = Vector2(2, 2)
+
+[node name="Tree85" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7210, -207)
+scale = Vector2(2, 2)
+
+[node name="Tree48" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2101, 534)
+scale = Vector2(2, 2)
+
+[node name="Tree49" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2037, 1321)
+scale = Vector2(2, 2)
+
+[node name="Tree162" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2758, 1855)
+scale = Vector2(2, 2)
+
+[node name="Tree169" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2465, 2273)
+scale = Vector2(2, 2)
+
+[node name="Tree47" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4020, 1340)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree54" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3911, 1259)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree37" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4096, 472)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree52" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4202, 405)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree53" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4255, 539)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree65" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4687, 389)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree62" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4632, 936)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree63" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4765, 909)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree61" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4467, 946)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree66" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4049, 1047)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree67" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4225, 1029)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree38" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3469, 379)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree39" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3582, 304)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree69" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3825, 8)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree70" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4381, 215)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree71" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4500, 122)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree86" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7051, -285)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree120" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8276, -318)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree144" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8279, -124)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree121" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8590, -737)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree140" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8558, -919)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree141" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8225, -885)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree142" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8915, -1025)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree143" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9240, -971)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree138" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7868, -753)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree139" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7883, -507)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree122" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8882, -841)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree123" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9299, -817)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree124" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9527, -584)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree125" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9567, -246)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree126" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8663, 77)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree127" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8651, -151)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree128" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9317, -232)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree129" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8944, -203)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree130" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(8973, 92)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree131" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9256, -124)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree132" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9248, -407)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree133" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9091, -654)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree134" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9193, -699)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree135" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(9229, -594)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree91" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6992, -139)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree92" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7402, -191)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree93" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(7525, -781)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree94" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6274, -810)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree87" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6845, -194)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree88" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6629, -228)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree89" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6517, -794)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree95" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(6557, -931)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree90" type="StaticBody2D" parent="Trees"]
+position = Vector2(6412, -760)
+scale = Vector2(1.2, 1.2)
+collision_layer = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees/Tree90"]
+position = Vector2(1, -94)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_wvb8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree90"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_dksyn")
+
+[node name="Tree72" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4655, 29)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree73" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3990, -94)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree74" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4175, -192)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree75" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4075, -226)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree76" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(4804, -89)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree40" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3913, 1115)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree41" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3753, 1060)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree60" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3885, 1018)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree42" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3478, 1534)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree43" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2778, 1309)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree44" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2886, 1406)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree45" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2733, 1476)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree163" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2653, 1592)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree46" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2849, 267)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree50" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(3492, 167)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree51" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2825, 21)
+scale = Vector2(1.2, 1.2)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(853, 1209)
+
+[node name="Tree152" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(494, 1069)
+
+[node name="Tree153" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(418, 1127)
+
+[node name="Tree154" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(253, 1015)
+
+[node name="Tree155" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(396, 653)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1987, 1472)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1817, 1292)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1623, 1357)
+
+[node name="Tree156" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1575, 1488)
+
+[node name="Tree157" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1080, 1874)
+
+[node name="Tree174" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1001, 2129)
+
+[node name="Tree170" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1125, 2022)
+
+[node name="Tree158" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(953, 1534)
+
+[node name="Tree16" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1549, 1175)
+
+[node name="Tree17" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1706, 1143)
+
+[node name="Tree18" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1487, 1113)
+
+[node name="Tree27" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1631, 696)
+scale = Vector2(0.7, 0.7)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1554, 479)
+
+[node name="Tree21" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1666, 411)
+
+[node name="Tree25" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1831, 535)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(995, 1184)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(545, 1516)
+
+[node name="Tree173" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(302, 1993)
+
+[node name="Tree171" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(470, 1468)
+
+[node name="Tree172" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(308, 1520)
+
+[node name="Tree9" type="StaticBody2D" parent="Trees"]
+position = Vector2(423, 1566)
+collision_layer = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees/Tree9"]
+position = Vector2(-16, -98)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_wvb8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree9"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_dksyn")
+
+[node name="Tree151" type="StaticBody2D" parent="Trees"]
+position = Vector2(423, 1566)
+collision_layer = 7
+
+[node name="Sprite2D" type="Sprite2D" parent="Trees/Tree151"]
+position = Vector2(176, -564)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_wvb8y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trees/Tree151"]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_dksyn")
+
+[node name="BigTree" parent="Trees" instance=ExtResource("4_jrj26")]
+z_index = 1
+position = Vector2(937, 1917)
+scale = Vector2(1.5, 1.5)
+
+[node name="BigTree2" parent="Trees" instance=ExtResource("4_jrj26")]
+z_index = 1
+position = Vector2(684, 1521)
+scale = Vector2(1.5, 1.5)
+
+[node name="BigTree6" parent="Trees" instance=ExtResource("4_jrj26")]
+z_index = 1
+position = Vector2(729, 1410)
+scale = Vector2(1.5, 1.5)
+
+[node name="BigTree7" parent="Trees" instance=ExtResource("4_jrj26")]
+z_index = 1
+position = Vector2(135, 1959)
+scale = Vector2(1.5, 1.5)
+
+[node name="BigTree4" parent="Trees" instance=ExtResource("4_jrj26")]
+z_index = 1
+position = Vector2(3465, 1391)
+scale = Vector2(1.5, 1.5)
+
+[node name="BigTree5" parent="Trees" instance=ExtResource("4_jrj26")]
+z_index = 1
+position = Vector2(3158, 1781)
+scale = Vector2(1.5, 1.5)
+
+[node name="BigTree3" parent="Trees" instance=ExtResource("4_jrj26")]
+z_index = 1
+position = Vector2(518, 730)
+scale = Vector2(1.5, 1.5)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2120, 2007)
+
+[node name="Tree166" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2277, 2072)
+
+[node name="Tree167" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2159, 2084)
+
+[node name="Tree175" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2066, 2142)
+
+[node name="Tree176" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2241, 2211)
+
+[node name="Tree177" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1559, 2055)
+
+[node name="Tree159" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2536, 2031)
+
+[node name="Tree164" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2580, 1953)
+
+[node name="Tree165" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2411, 2018)
+
+[node name="Tree160" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2693, 1922)
+
+[node name="Tree161" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2667, 1732)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1647, 1922)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("4_jrj26")]
+z_index = 1
+position = Vector2(1755, 1988)
+scale = Vector2(1.5, 1.5)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(2275, 1061)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1841, 1579)
+
+[node name="Tree2" parent="Trees" instance=ExtResource("4_jrj26")]
+position = Vector2(1915, 1637)
+
+[node name="DeadTree" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(1742, 1367)
+
+[node name="DeadTree14" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(770, 484)
+
+[node name="DeadTree4" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(2367, 1022)
+
+[node name="DeadTree15" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(2828, 518)
+
+[node name="DeadTree2" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(920, 1033)
+
+[node name="DeadTree18" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(420, 1838)
+
+[node name="DeadTree5" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(2761, 66)
+
+[node name="DeadTree7" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(3949, 411)
+
+[node name="DeadTree9" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(4328, 920)
+
+[node name="DeadTree10" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(4346, 390)
+
+[node name="DeadTree6" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(3408, 1049)
+
+[node name="DeadTree16" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(2956, 1250)
+
+[node name="DeadTree17" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(1888, 1984)
+
+[node name="DeadTree11" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(6006, -1093)
+
+[node name="DeadTree12" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(6867, -844)
+
+[node name="DeadTree13" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(7355, -356)
+
+[node name="DeadTree8" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(3655, 1499)
+
+[node name="DeadTree3" parent="Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(191, 730)
+scale = Vector2(1.5, 1.5)
+
+[node name="FoxDead" type="Sprite2D" parent="Trees"]
+position = Vector2(3326, 496)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_jeojd")
+
+[node name="Rocks" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Rock" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(2284, 1444)
+
+[node name="Rock9" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(5976, -802)
+
+[node name="Rock4" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(2583, 361)
+
+[node name="Rock3" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(1700, 542)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock5" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(2914, 1138)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock14" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(2738, 1940)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock6" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(4032, 1465)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock7" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(4806, 498)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock10" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(8492, -294)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock13" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(8486, 427)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock11" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(9605, -543)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock12" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(9612, 371)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock8" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(6495, -226)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Rock2" parent="Rocks" instance=ExtResource("4_bpa67")]
+position = Vector2(578, 1854)
+scale = Vector2(1.5, 1.5)
+
+[node name="Hills" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Hill" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(1310, 1883)
+
+[node name="Hill5" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(3949, 522)
+
+[node name="Hill7" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(5087, -288)
+
+[node name="Hill14" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(5821, -562)
+
+[node name="Hill8" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(4916, -506)
+
+[node name="Hill9" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(5179, -599)
+
+[node name="Hill15" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(5272, -192)
+
+[node name="Hill17" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(8555, 240)
+
+[node name="Hill20" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(9463, -676)
+
+[node name="Hill18" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(9332, 583)
+
+[node name="Hill19" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(8355, 619)
+
+[node name="Hill16" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(4772, -652)
+
+[node name="Hill3" parent="Hills" instance=ExtResource("7_f524a")]
+position = Vector2(882, 561)
+
+[node name="Hill2" parent="Hills" instance=ExtResource("8_vs2na")]
+position = Vector2(-102, 1614)
+
+[node name="Hill4" parent="Hills" instance=ExtResource("8_vs2na")]
+position = Vector2(1250, 57)
+
+[node name="Hill6" parent="Hills" instance=ExtResource("8_vs2na")]
+position = Vector2(3183, -129)
+
+[node name="Hill10" parent="Hills" instance=ExtResource("8_vs2na")]
+position = Vector2(4408, -540)
+
+[node name="Hill11" parent="Hills" instance=ExtResource("8_vs2na")]
+position = Vector2(5545, -298)
+
+[node name="Hill12" parent="Hills" instance=ExtResource("8_vs2na")]
+position = Vector2(5636, -665)
+
+[node name="Hill13" parent="Hills" instance=ExtResource("8_vs2na")]
+position = Vector2(6108, -290)
+scale = Vector2(-0.5, 0.5)
+
+[node name="ForestBorder" type="Area2D" parent="."]
+visible = false
+z_index = -3
+position = Vector2(3130, 310)
+scale = Vector2(100, 100)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForestBorder"]
+z_index = -3
+position = Vector2(17.33, -1.11)
+scale = Vector2(5, 3)
+build_mode = 1
+polygon = PackedVector2Array(-5.646, 6.28, -6.546, 5.98, -9.616, 5.9, -9.882, 4.17333, -8.276, 3.49333, -9.538, 2.55333, -9.424, 1.38333, -7.874, 0.78, -7.806, -0.606667, -6.562, -0.606667, -6.098, 0.59, -4.61, 0.543333, -4.192, -1.12667, -2.614, -1.19, -2.648, -0.03, -1.2, -2.69, 1.102, -2.92667, 2.794, -3.83, 4.536, -3.57667, 7.292, -3.71, 8.978, -3.36, 9.77, 0.6, 8.394, 3.20333, 6.838, 4.00333, 6.11, 2.11667, 7.716, -0.483333, 7.404, -1.82333, 5.192, -1.86, 2.744, -0.9, -0.164001, -0.963333, -1.012, 0.45, 0.396, 1.24, -0.152, 2.61, -1.596, 3.03333, -1.138, 4.38, -3.468, 5.58667, -4.826, 3.27667, -6.406, 3.11667, -6.162, 4.34333, -4.732, 4.95333, -4.782, 6.51)
+
+[node name="CrossingDetector1" type="Area2D" parent="."]
+position = Vector2(1144, 1203)
+script = ExtResource("12_o3xgs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrossingDetector1"]
+position = Vector2(16, 0)
+shape = SubResource("SegmentShape2D_084t4")
+
+[node name="CrossingDetector2" type="Area2D" parent="."]
+position = Vector2(2224, 710)
+rotation = 1.56289
+script = ExtResource("13_a6nou")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrossingDetector2"]
+position = Vector2(-57.0061, 0.549286)
+shape = SubResource("SegmentShape2D_084t4")
+
+[connection signal="body_entered" from="CrossingDetector1" to="CrossingDetector1" method="_on_body_entered"]
+[connection signal="body_entered" from="CrossingDetector2" to="CrossingDetector2" method="_on_body_entered"]
+
+[editable path="Rocks/Rock"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://deah7ry5inqxu"]
 
 [ext_resource type="Script" path="res://stargazing/scripts/stargazing_tree.gd" id="1_trm7r"]
-[ext_resource type="Texture2D" uid="uid://boc2wm8rsngy0" path="res://sprites/trees/Tree.png" id="1_vhpjv"]
+[ext_resource type="Texture2D" uid="uid://boc2wm8rsngy0" path="res://sprites/world_environment/trees/Tree.png" id="1_vhpjv"]
 
 [node name="StargazingTree" type="Sprite3D"]
 modulate = Color(0.222588, 0.222588, 0.222588, 1)
