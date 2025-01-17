@@ -5,7 +5,6 @@ extends Level
 func _on_cross_river_button_pressed() -> void:
 	finish()
 
-
 var tree_chop
 
 func _ready() -> void:
@@ -33,4 +32,4 @@ func do_solved_minigame():
 	log_and_stump_node.scale.x *= -1
 	add_child(log_and_stump_node)
 	$CrossRiverButton.visible = true
-	$Trees/DeadTree.queue_free()
+	$NavigationRegion2D/Trees/DeadTree.queue_free()
