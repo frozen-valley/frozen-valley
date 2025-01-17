@@ -1,17 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://t6eeaf2vdo43"]
+[gd_scene load_steps=2 format=3 uid="uid://t6eeaf2vdo43"]
 
 [ext_resource type="Script" path="res://objectives/objectives_manager.gd" id="1_gs5ki"]
-[ext_resource type="Script" path="res://objectives/objective.gd" id="2_b7nft"]
-
-[sub_resource type="Resource" id="Resource_fxq37"]
-script = ExtResource("2_b7nft")
-tasks = Array[String](["Find 1", "Hello"])
 
 [node name="ObjectivesManager" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_gs5ki")
-objective = SubResource("Resource_fxq37")
 
 [node name="ObjectivesContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
@@ -25,13 +19,3 @@ theme_override_constants/separation = 10
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Objectives"
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 252.0
-offset_top = 284.0
-offset_right = 301.0
-offset_bottom = 315.0
-text = "Solve"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
