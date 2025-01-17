@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://buvdefihipgne"]
+
+[ext_resource type="Texture2D" uid="uid://bwivqwl8ihn5d" path="res://sprites/world_environment/trees/MossyTree.png" id="1_bl5xb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ohkfp"]
+radius = 26.8742
+
+[node name="MossTree1" type="StaticBody2D"]
+position = Vector2(-2, -61)
+scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -69)
+texture = ExtResource("1_bl5xb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.66667, 100)
+shape = SubResource("CircleShape2D_ohkfp")
