@@ -33,10 +33,11 @@ script = ExtResource("1_yisvx")
 inventory = ExtResource("2_5ve6o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -30)
 scale = Vector2(0.33, 0.33)
 sprite_frames = SubResource("SpriteFrames_sssw1")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-5, 20)
+position = Vector2(-5, 2)
 shape = SubResource("CapsuleShape2D_ew5rr")

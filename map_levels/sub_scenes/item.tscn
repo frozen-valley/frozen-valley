@@ -12,10 +12,12 @@ script = ExtResource("1_vjvyv")
 item = ExtResource("2_3ac4f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 45)
 shape = SubResource("CircleShape2D_flr71")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(0, 35)
 texture = ExtResource("3_mttx7")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

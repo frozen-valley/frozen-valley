@@ -18,12 +18,13 @@ func _process(_delta: float) -> void:
 		$Sprite2D.texture = item.texture
 		return
 	if (follow_player):
-		var new_pos := Vector2(player.position.x, player.position.y - 100)
+		var new_pos := Vector2(player.position.x, player.position.y - 135)
 		set_global_position(new_pos)
 
 func pick_me_up(player_ref: Player) -> void:
 	player = player_ref
 	follow_player = true
+	z_index = 100
 	await get_tree().create_timer(1.2).timeout
 	queue_free()
 
