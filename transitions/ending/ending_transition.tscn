@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://oybron8yksgo"]
 
 [ext_resource type="Script" path="res://transitions/ending/ending_transition.gd" id="1_087bd"]
-[ext_resource type="Texture2D" uid="uid://35pi36u1ppnw" path="res://UI/gameBackground.png" id="2_oguk2"]
+[ext_resource type="Texture2D" uid="uid://35pi36u1ppnw" path="res://UI/sprites/gameBackground.png" id="2_oguk2"]
 
 [node name="EndingTransition" type="Node"]
 script = ExtResource("1_087bd")

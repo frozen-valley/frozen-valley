@@ -1,5 +1,8 @@
 extends Control
 
+signal opened
+signal closed
+
 var current_page: int = 0
 var is_open: bool = false
 
@@ -20,10 +23,12 @@ func _process(_delta):
 func close():
 	visible = false
 	is_open = false
+	closed.emit()
 
 func open():
 	visible = true
 	is_open = true
+	opened.emit()
 
 func _on_left_button_pressed():
 	if current_page > 0:

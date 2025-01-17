@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://t6eeaf2vdo43"]
+
+[ext_resource type="Script" path="res://objectives/objectives_manager.gd" id="1_gs5ki"]
+
+[node name="ObjectivesManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gs5ki")
+
+[node name="ObjectivesContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 170.0
+offset_right = 78.0
+offset_bottom = 328.0
+theme_override_constants/separation = 10
+
+[node name="ObjectivesTitle" type="Label" parent="ObjectivesContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Objectives"

@@ -1,0 +1,39 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bquvvaqw4b2ts"]
+
+[ext_resource type="FontFile" uid="uid://ckx1p1y80awcw" path="res://UI/theme/font/TakeOff-YBzo.otf" id="1_f2t5o"]
+[ext_resource type="StyleBox" uid="uid://daenlfggme3sk" path="res://UI/theme/button_texture.tres" id="2_6ms1j"]
+[ext_resource type="StyleBox" uid="uid://b68poeenlxvi3" path="res://UI/theme/button_texture_pressed.tres" id="3_1sujy"]
+[ext_resource type="FontFile" uid="uid://bxn0heivf4x28" path="res://UI/theme/font/TakeOffEh-MwAY.otf" id="3_ufmbu"]
+[ext_resource type="FontFile" uid="uid://fhmsp63fus13" path="res://UI/theme/font/TakeOffMoose-wZo3.otf" id="4_uyjt3"]
+[ext_resource type="FontFile" uid="uid://c2u0jflypylyu" path="res://UI/theme/font/TakeOffHoserYoureDrunk-reg7.otf" id="5_mjc12"]
+
+[resource]
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_f2t5o")
+Button/styles/disabled = ExtResource("2_6ms1j")
+Button/styles/hover = ExtResource("3_1sujy")
+Button/styles/normal = ExtResource("2_6ms1j")
+Button/styles/pressed = ExtResource("3_1sujy")
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_f2t5o")
+RichTextLabel/fonts/bold_font = ExtResource("3_ufmbu")
+RichTextLabel/fonts/bold_italics_font = ExtResource("4_uyjt3")
+RichTextLabel/fonts/italics_font = ExtResource("5_mjc12")
+RichTextLabel/fonts/normal_font = ExtResource("1_f2t5o")
