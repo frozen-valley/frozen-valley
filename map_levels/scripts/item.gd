@@ -24,6 +24,7 @@ func _process(_delta: float) -> void:
 func pick_me_up(player_ref: Player) -> void:
 	player = player_ref
 	follow_player = true
+	$AudioStreamPlayer2D.play()
 	z_index = 100
 	await get_tree().create_timer(1.2).timeout
 	queue_free()

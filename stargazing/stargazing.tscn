@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b7riegut3a8nm"]
+[gd_scene load_steps=25 format=3 uid="uid://b7riegut3a8nm"]
 
 [ext_resource type="Sky" uid="uid://tm16h4yqewq4" path="res://stargazing/skybox/variant2/starry_skybox_treesless.tres" id="1_36b8n"]
 [ext_resource type="Script" path="res://stargazing/stargazing.gd" id="1_fapj7"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://objectives/objective.gd" id="12_apwpf"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="15_i5mt1"]
 [ext_resource type="Script" path="res://stargazing/scripts/stargazing_objectives_manager.gd" id="18_6jitd"]
+[ext_resource type="AudioStream" uid="uid://rgs3i6hbeuhu" path="res://audio/night-ambience-17064.mp3" id="19_p4mbq"]
 
 [sub_resource type="Resource" id="Resource_3mwb8"]
 script = ExtResource("12_apwpf")
@@ -111,6 +112,10 @@ texture = ExtResource("3_g5msl")
 [node name="Book" parent="." instance=ExtResource("15_i5mt1")]
 visible = false
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("19_p4mbq")
+autoplay = true
+
 [connection signal="explanation_dialogue_ended" from="StargazingDialogueManager" to="StargazingObjectivesManager" method="_on_stargazing_dialogue_manager_explanation_dialogue_ended"]
 [connection signal="explanation_dialogue_ended" from="StargazingDialogueManager" to="UI" method="_on_stargazing_dialogue_manager_explanation_dialogue_ended"]
 [connection signal="intro_dialogue_ended" from="StargazingDialogueManager" to="StargazerPerspective" method="_on_stargazing_dialogue_manager_intro_dialogue_ended"]
@@ -118,8 +123,8 @@ visible = false
 [connection signal="all_solved" from="StargazingTutorial" to="." method="_on_stargazing_tutorial_all_solved"]
 [connection signal="load_star_group" from="StargazingTutorial" to="StargazingDialogueManager" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="load_star_group" from="StargazingTutorial" to="StarPickerLogic" method="_on_stargazing_tutorial_load_star_group"]
-[connection signal="load_star_group" from="StargazingTutorial" to="Starcharter" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="load_star_group" from="StargazingTutorial" to="StargazingObjectivesManager" method="_on_stargazing_tutorial_load_star_group"]
+[connection signal="load_star_group" from="StargazingTutorial" to="Starcharter" method="_on_stargazing_tutorial_load_star_group"]
 [connection signal="calibrated" from="StarPickerLogic" to="UI/Crosshair" method="_on_star_picker_logic_calibrated"]
 [connection signal="solved_star" from="StarPickerLogic" to="StargazingTutorial" method="_on_star_picker_logic_solved_star"]
 [connection signal="solved_star" from="StarPickerLogic" to="StarHighlighter" method="_on_star_picker_logic_solved_star"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=28 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="Script" path="res://map_levels/level1/map_level1.gd" id="1_j1dqv"]
 [ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map_levels/river_tilemap_atlas.tres" id="2_rxlgl"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" path="res://map_levels/scripts/house_area.gd" id="14_n7yhf"]
 [ext_resource type="Script" path="res://map_levels/scripts/cross_river_button.gd" id="15_34xsh"]
 [ext_resource type="Script" path="res://map_levels/level1/canyon_notice.gd" id="16_ianfm"]
+[ext_resource type="AudioStream" uid="uid://ddbe0s8uoaknx" path="res://audio/game_soundtrack.wav" id="21_34k76"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugstr"]
 texture = ExtResource("2_rxlgl")
@@ -279,6 +280,10 @@ scale = Vector2(0.5, 0.5)
 item = ExtResource("5_7mr62")
 
 [node name="Items" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_34k76")
+autoplay = true
 
 [connection signal="pressed" from="CrossRiverButton" to="." method="_on_cross_river_button_pressed"]
 [connection signal="body_entered" from="CanyonNotice" to="CanyonNotice" method="_on_body_entered"]

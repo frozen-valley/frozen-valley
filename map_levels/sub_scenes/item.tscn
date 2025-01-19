@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b5qs07i1uh2um"]
+[gd_scene load_steps=6 format=3 uid="uid://b5qs07i1uh2um"]
 
 [ext_resource type="Script" path="res://map_levels/scripts/item.gd" id="1_vjvyv"]
 [ext_resource type="Resource" uid="uid://043jwwnvlhht" path="res://inventory/items/fox.tres" id="2_3ac4f"]
 [ext_resource type="Texture2D" uid="uid://hm1kw0lvrp1m" path="res://sprites/characters/fox/FoxClean.png" id="3_mttx7"]
+[ext_resource type="AudioStream" uid="uid://cc6rmi1rrdqcf" path="res://audio/item-pickup.mp3" id="4_d1qkg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_flr71"]
 radius = 120.0
@@ -19,6 +20,10 @@ shape = SubResource("CircleShape2D_flr71")
 texture_filter = 1
 position = Vector2(0, 35)
 texture = ExtResource("3_mttx7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_d1qkg")
+volume_db = -5.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
