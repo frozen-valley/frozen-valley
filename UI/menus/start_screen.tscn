@@ -46,10 +46,10 @@ text = "Quit"
 
 [node name="OptionsMenu" parent="." instance=ExtResource("4_jtghg")]
 visible = false
-offset_left = 847.0
-offset_top = 435.0
-offset_right = -1073.0
-offset_bottom = -645.0
+offset_left = 796.0
+offset_top = 704.0
+offset_right = -1124.0
+offset_bottom = -376.0
 
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
