@@ -35,6 +35,8 @@ func remove_from_pickup_queue(item: Pickupable) -> void:
 func _process(_delta: float) -> void:
 	if !pickup_queue.is_empty():
 		_listen_for_pickups()	
+	if velocity == Vector2(0,0):
+		$AudioStreamPlayer2D.play()
 
 func _physics_process(_delta: float) -> void:
 	# Get the input directions

@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://de52svsa7v0in"]
+[gd_scene load_steps=9 format=3 uid="uid://de52svsa7v0in"]
 
 [ext_resource type="Script" path="res://map_levels/scripts/player.gd" id="1_yisvx"]
 [ext_resource type="Resource" uid="uid://bhset6bsfxlrw" path="res://inventory/player_inventory.tres" id="2_5ve6o"]
 [ext_resource type="Texture2D" uid="uid://bvx32qqrtbh7o" path="res://sprites/characters/main_character/player.png" id="2_n72h5"]
 [ext_resource type="Texture2D" uid="uid://ql31cdmw5w62" path="res://sprites/characters/main_character/player_walk.png" id="3_cfsha"]
 [ext_resource type="Texture2D" uid="uid://cwec80ccc37uu" path="res://sprites/characters/main_character/MCwalk2.png" id="5_62hgy"]
+[ext_resource type="AudioStream" uid="uid://q7wwi5ejv0km" path="res://audio/walking-on-snow-268442.mp3" id="6_ss3l2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sssw1"]
 animations = [{
@@ -51,3 +52,7 @@ animation = &"walk"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 2)
 shape = SubResource("CapsuleShape2D_ew5rr")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_ss3l2")
+volume_db = -10.0
