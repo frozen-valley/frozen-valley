@@ -2,7 +2,7 @@ extends Area2D
 
 @onready var player = get_parent().get_node("Player")
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	TransitionScreen.transition()
 	await TransitionScreen.on_transition_finished
 	place_player()

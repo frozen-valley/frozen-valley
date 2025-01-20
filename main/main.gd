@@ -8,6 +8,7 @@ extends Node
 	preload("res://transitions/river_cross/river_cross_transition.tscn"),
 	preload("res://bonfire/bonfire.tscn"),
 	preload("res://transitions/bonfire/bonfire_transition.tscn"),
+	preload("res://map_levels/level 2/map_level2.tscn"),
 	preload("res://transitions/ending/ending_transition.tscn")
 ]
 
