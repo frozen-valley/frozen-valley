@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=29 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="Script" path="res://map_levels/level1/map_level1.gd" id="1_j1dqv"]
 [ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map_levels/river_tilemap_atlas.tres" id="2_rxlgl"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://map_levels/sub_scenes/item.tscn" id="4_dapfc"]
 [ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="5_7mr62"]
 [ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://map_levels/sub_scenes/snow.tscn" id="6_fwclf"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="7_43dni"]
 [ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://map_levels/sub_scenes/partner.tscn" id="7_jlq1f"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map_levels/sub_scenes/player.tscn" id="8_mgbvs"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="9_ovmc0"]
@@ -87,7 +88,7 @@ sources/1 = SubResource("TileSetAtlasSource_e87v8")
 sources/0 = SubResource("TileSetAtlasSource_ugstr")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1018v"]
-size = Vector2(328.196, 633.511)
+size = Vector2(632.464, 1077.08)
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_usjpd"]
 vertices = PackedVector2Array(414.07, 14.4063, 648.07, 590.594, 623, 583.867, -97.8672, 330, 389, 21.1328, -241.93, 50.4063, -148, 279.867, -173.07, 286.594, -665.867, 242, -267, 57.1328, 686.68, -345, 801.258, -632.094, 933.109, -932.961, 939.883, 942.039, 673.133, 634, 666.406, 608.93, 597.93, 590.594, 418.617, -345, 439.133, -29, 432.406, -54.0703, 432.406, -3.92969, -216.867, 7, 345.594, -3.92969, 363.93, 14.4063, -104.594, 304.93, -122.93, 286.594, -223.594, 32.0703, -191.406, 304.93, -440, 273.867, 414.07, -72.4063, 666.406, 659.07, -629.844, -795, -636.43, -819.594, 208.961, -630.961, 350.102, -426.75, 190.758, -423.906, 257.953, -561, 688.781, -561, 630.078, -428.75, 464.047, -426.781, 329.438, -351, 579.594, 608.93, -104.594, 355.07, -292.07, 50.4063, -310.406, 32.0703, -672.594, 216.93, -29.8672, 652, 572.867, 634, 579.594, 659.07, -36.5938, 677.07, 72.8594, -351, -636.43, -770.406, 389, -79.1328, 338.867, -29, -223.594, -18.0703, 648.07, 677.406, 404.406, 803.07, 411.133, 778, 623, 684.133, 597.93, 677.406, 404.406, 752.93, 363.93, -72.4063, -36.5938, 626.93, -54.9297, 608.594, -122.93, 373.406, -80, 601.867, -148, 380.133, -105.07, 608.594, -173.07, 373.406, 345.594, -54.0703, -241.93, -36.4063, -654.406, -752.43, -317.133, 7, -690.93, 198.594, -389.867, 324, -198.133, 330, -396.594, 349.07, -396.594, 298.93, -191.406, 355.07, -566.594, 626.93, -414.93, 367.406, -559.867, 652, -123.406, 626.93, -130.133, 652, -566.594, 677.07, -123.406, 677.07, -584.93, 695.406, -267, -43.1328, -292.07, -36.4063, -679, -745.844, -310.406, -18.0703, -716, 191.867, 386.07, 734.594, -440, 374.133, -584.93, 608.594, -465.07, 367.406, -610, 601.867, -483.406, 349.07, -635.07, 608.594, 386.07, 821.406, -654.406, -837.57, -933.094, -931.031, -679, -844.156, -703.594, -837.57, -721.57, -819.594, -728.156, -795, -938.898, 944.953, -721.57, -770.406, -703.594, -752.43, -766.133, 242, -741.07, 198.594, -490.133, 324, -653.406, 626.93, -105.07, 695.406, -610, 702.133, -54.9297, 695.406, 361, 727.867, 335.93, 734.594, -414.93, 280.594, -759.406, 216.93, 317.594, 752.93, 310.867, 778, 317.594, 803.07, -80, 702.133, 335.93, 821.406, 361, 828.133, -635.07, 695.406, -653.406, 677.07, -660.133, 652, -483.406, 298.93, -716, 292.133, -690.93, 285.406, -759.406, 267.07, -741.07, 285.406, -672.594, 267.07, -465.07, 280.594)
@@ -132,10 +133,12 @@ scale = Vector2(0.7, 0.7)
 
 [node name="CrossRiverButton" type="Button" parent="."]
 visible = false
-offset_left = -913.0
-offset_top = -916.0
-offset_right = -792.0
-offset_bottom = -880.0
+offset_left = -958.0
+offset_top = -950.0
+offset_right = -496.0
+offset_bottom = -852.0
+scale = Vector2(0.5, 0.5)
+theme = ExtResource("7_43dni")
 text = "Cross the river"
 script = ExtResource("15_34xsh")
 
@@ -144,8 +147,9 @@ position = Vector2(-791, -824)
 script = ExtResource("16_ianfm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanyonNotice"]
-position = Vector2(93.2256, 31.5257)
+position = Vector2(212.665, 134.814)
 rotation = 0.984219
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1018v")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]

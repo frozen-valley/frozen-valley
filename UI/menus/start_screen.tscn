@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://UI/menus/start_screen.gd" id="1_bwfsw"]
 [ext_resource type="Texture2D" uid="uid://cwo7cdjb4hvuv" path="res://UI/TitlePage.png" id="2_m2v62"]
-[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="3_5cpkr"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="3_5cpkr"]
 [ext_resource type="PackedScene" uid="uid://boadmbbqicjnd" path="res://UI/menus/options_menu.tscn" id="4_jtghg"]
 
 [node name="StartScreen" type="Node"]
@@ -18,10 +18,10 @@ scale = Vector2(1.00438, 1.00419)
 texture = ExtResource("2_m2v62")
 
 [node name="VBoxContainer" type="HBoxContainer" parent="."]
-offset_left = 488.0
-offset_top = 957.0
-offset_right = 1440.0
-offset_bottom = 1040.0
+offset_left = 452.0
+offset_top = 802.0
+offset_right = 1511.0
+offset_bottom = 921.0
 theme = ExtResource("3_5cpkr")
 theme_override_constants/separation = 50
 alignment = 1
