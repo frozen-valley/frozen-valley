@@ -1,54 +1,58 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcv6o4gblvict"]
+[gd_scene load_steps=6 format=3 uid="uid://bcv6o4gblvict"]
 
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="1_6ojg2"]
 [ext_resource type="Script" path="res://inventory/inv_scripts/inventory_ui.gd" id="1_xfc1t"]
-[ext_resource type="Texture2D" uid="uid://dg5df1op5xgkf" path="res://inventory/inventory-background.png" id="2_163al"]
+[ext_resource type="Texture2D" uid="uid://p5kutbgqkpei" path="res://inventory/Inventory.png" id="2_4w0yt"]
+[ext_resource type="Texture2D" uid="uid://bp28pp04lxfk8" path="res://inventory/InventoryJournal.png" id="3_q17pj"]
 [ext_resource type="PackedScene" uid="uid://dutisekfc2hxa" path="res://inventory/inv_scenes/inventory_slot.tscn" id="3_tihps"]
 
 [node name="Inventory_UI" type="Control"]
-custom_minimum_size = Vector2(101, 23)
 layout_mode = 3
 anchors_preset = 0
-offset_right = 101.0
-offset_bottom = 23.0
+offset_right = 480.0
+offset_bottom = 270.0
+theme = ExtResource("1_6ojg2")
 script = ExtResource("1_xfc1t")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-texture_filter = 1
+[node name="JournalTexture" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 101.0
-offset_bottom = 23.0
-texture = ExtResource("2_163al")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_q17pj")
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="InventoryTexture" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_4w0yt")
+
+[node name="GridContainer" type="GridContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -48.5
-offset_top = -8.5
-offset_right = 47.5
-offset_bottom = 31.5
+offset_left = -217.0
+offset_top = 21.0
+offset_right = 214.0
+offset_bottom = 94.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/h_separation = 15
 columns = 5
 
-[node name="Inventory_Slot" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tihps")]
+[node name="Inventory_Slot" parent="GridContainer" instance=ExtResource("3_tihps")]
 layout_mode = 2
 
-[node name="Inventory_Slot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tihps")]
+[node name="Inventory_Slot2" parent="GridContainer" instance=ExtResource("3_tihps")]
 layout_mode = 2
 
-[node name="Inventory_Slot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tihps")]
+[node name="Inventory_Slot3" parent="GridContainer" instance=ExtResource("3_tihps")]
 layout_mode = 2
 
-[node name="Inventory_Slot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tihps")]
+[node name="Inventory_Slot4" parent="GridContainer" instance=ExtResource("3_tihps")]
 layout_mode = 2
 
-[node name="Inventory_Slot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_tihps")]
+[node name="Inventory_Slot5" parent="GridContainer" instance=ExtResource("3_tihps")]
 layout_mode = 2

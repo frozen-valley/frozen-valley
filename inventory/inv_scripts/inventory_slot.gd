@@ -1,7 +1,7 @@
 extends Panel
 
-@onready var item_visual : Sprite2D = $CenterContainer/Panel/item_display
-@onready var amount_text: Label = $CenterContainer/Panel/Label
+@onready var item_visual : Sprite2D = $item_display
+@onready var amount_text: Label = $Label
 
 func update(slot: InventorySlot):
 	if !slot.item:

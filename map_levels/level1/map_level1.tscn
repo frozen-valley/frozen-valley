@@ -117,19 +117,25 @@ amount = 1200
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Inventory_UI" parent="CanvasLayer" instance=ExtResource("9_ovmc0")]
-offset_left = 1380.0
-offset_top = 940.0
-offset_right = 1481.0
-offset_bottom = 963.0
-scale = Vector2(5, 5)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -480.0
+offset_top = -270.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="Book" parent="CanvasLayer" instance=ExtResource("10_p54oi")]
 visible = false
-offset_left = 350.0
-offset_top = 151.0
-offset_right = 177.0
-offset_bottom = 81.0
-scale = Vector2(0.7, 0.7)
+offset_left = 192.0
+offset_top = 108.0
+offset_right = 192.0
+offset_bottom = 108.0
+scale = Vector2(0.8, 0.8)
 
 [node name="CrossRiverButton" type="Button" parent="."]
 visible = false

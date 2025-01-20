@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://davqj3l78lli2"]
+[gd_scene load_steps=7 format=3 uid="uid://davqj3l78lli2"]
 
 [ext_resource type="Script" path="res://journal/journal.gd" id="1_8yidi"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="1_ocvud"]
 [ext_resource type="Texture2D" uid="uid://bcbrhkp6fxq8k" path="res://journal/sprites/Journal.png" id="2_xainj"]
 [ext_resource type="PackedScene" uid="uid://ca3p7qid8y0u4" path="res://journal/pages/journal_page1.tscn" id="3_tp6me"]
 [ext_resource type="PackedScene" uid="uid://4f5cq5tdx1lk" path="res://journal/pages/journal_page2.tscn" id="4_uux8f"]
@@ -13,62 +14,56 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ocvud")
 script = ExtResource("1_8yidi")
 
 [node name="JournalBackground" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_xainj")
 
 [node name="Pages" type="Control" parent="JournalBackground"]
 anchors_preset = 0
 
 [node name="JournalPage1" parent="JournalBackground/Pages" instance=ExtResource("3_tp6me")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
 
 [node name="JournalPage2" parent="JournalBackground/Pages" instance=ExtResource("4_uux8f")]
 visible = false
 layout_mode = 1
-offset_left = 29.0
-offset_top = 34.0
-offset_right = 29.0
-offset_bottom = 34.0
 
 [node name="JournalPage3" parent="JournalBackground/Pages" instance=ExtResource("5_527f6")]
 visible = false
 layout_mode = 1
 
-[node name="LeftButton" type="Button" parent="."]
+[node name="LeftButton" type="Button" parent="JournalBackground"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -25.0001
-offset_right = 69.0
-offset_bottom = 24.9999
+offset_top = -41.5
+offset_right = 121.0
+offset_bottom = 41.5
 grow_vertical = 2
-text = "<"
+text = "<-"
 
-[node name="RightButton" type="Button" parent="."]
+[node name="RightButton" type="Button" parent="JournalBackground"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -69.0001
-offset_top = -25.0001
-offset_right = -0.00012207
-offset_bottom = 24.9999
+offset_left = -122.0
+offset_top = -41.5
+offset_bottom = 41.5
 grow_horizontal = 0
 grow_vertical = 2
-text = ">"
+text = "->"
 
-[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
-[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="JournalBackground/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="JournalBackground/RightButton" to="." method="_on_right_button_pressed"]
