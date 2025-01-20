@@ -1,14 +1,18 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bquvvaqw4b2ts"]
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://bquvvaqw4b2ts"]
 
+[ext_resource type="FontFile" uid="uid://b1c4myovwkg6e" path="res://UI/theme/font/CoolIce-PKJaB.otf" id="1_1giau"]
 [ext_resource type="FontFile" uid="uid://ckx1p1y80awcw" path="res://UI/theme/font/TakeOff-YBzo.otf" id="1_f2t5o"]
-[ext_resource type="StyleBox" uid="uid://daenlfggme3sk" path="res://UI/theme/button_texture.tres" id="2_6ms1j"]
-[ext_resource type="StyleBox" uid="uid://b68poeenlxvi3" path="res://UI/theme/button_texture_pressed.tres" id="3_1sujy"]
+[ext_resource type="StyleBox" uid="uid://daenlfggme3sk" path="res://UI/theme/button_normal_texture.tres" id="2_1n4gc"]
+[ext_resource type="StyleBox" uid="uid://cr3p56havwgtq" path="res://UI/theme/button_hovered_texture.tres" id="3_a5gan"]
 [ext_resource type="FontFile" uid="uid://bxn0heivf4x28" path="res://UI/theme/font/TakeOffEh-MwAY.otf" id="3_ufmbu"]
+[ext_resource type="StyleBox" uid="uid://b68poeenlxvi3" path="res://UI/theme/button_pressed_texture.tres" id="4_curnr"]
 [ext_resource type="FontFile" uid="uid://fhmsp63fus13" path="res://UI/theme/font/TakeOffMoose-wZo3.otf" id="4_uyjt3"]
 [ext_resource type="FontFile" uid="uid://c2u0jflypylyu" path="res://UI/theme/font/TakeOffHoserYoureDrunk-reg7.otf" id="5_mjc12"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sf1ci"]
+
 [resource]
-Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_color = Color(0.14902, 0.207843, 0.294118, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
 Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
@@ -26,11 +30,12 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 40
-Button/fonts/font = ExtResource("1_f2t5o")
-Button/styles/disabled = ExtResource("2_6ms1j")
-Button/styles/hover = ExtResource("3_1sujy")
-Button/styles/normal = ExtResource("2_6ms1j")
-Button/styles/pressed = ExtResource("3_1sujy")
+Button/fonts/font = ExtResource("1_1giau")
+Button/styles/disabled = ExtResource("2_1n4gc")
+Button/styles/focus = SubResource("StyleBoxEmpty_sf1ci")
+Button/styles/hover = ExtResource("3_a5gan")
+Button/styles/normal = ExtResource("2_1n4gc")
+Button/styles/pressed = ExtResource("4_curnr")
 Label/font_sizes/font_size = 25
 Label/fonts/font = ExtResource("1_f2t5o")
 RichTextLabel/fonts/bold_font = ExtResource("3_ufmbu")

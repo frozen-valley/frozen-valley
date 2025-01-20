@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyb1ltl3qvtru"]
+[gd_scene load_steps=5 format=3 uid="uid://cyb1ltl3qvtru"]
 
 [ext_resource type="Script" path="res://UI/menus/start_screen.gd" id="1_bwfsw"]
-[ext_resource type="Texture2D" uid="uid://35pi36u1ppnw" path="res://UI/sprites/gameBackground.png" id="2_3ucrs"]
-[ext_resource type="FontFile" uid="uid://b1c4myovwkg6e" path="res://UI/theme/font/CoolIce-PKJaB.otf" id="3_4xhdj"]
-[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="3_5cpkr"]
+[ext_resource type="Texture2D" uid="uid://cwo7cdjb4hvuv" path="res://UI/TitlePage.png" id="2_m2v62"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="3_5cpkr"]
 [ext_resource type="PackedScene" uid="uid://boadmbbqicjnd" path="res://UI/menus/options_menu.tscn" id="4_jtghg"]
 
 [node name="StartScreen" type="Node"]
@@ -16,40 +15,34 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.00438, 1.00419)
-texture = ExtResource("2_3ucrs")
+texture = ExtResource("2_m2v62")
 
-[node name="GameTitle" type="Label" parent="."]
-texture_filter = 1
-offset_left = 80.0
-offset_top = 66.0
-offset_right = 1104.0
-offset_bottom = 246.0
-theme_override_fonts/font = ExtResource("3_4xhdj")
-theme_override_font_sizes/font_size = 150
-text = "Dont Freeze"
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-offset_left = 89.0
-offset_top = 251.0
-offset_right = 342.0
-offset_bottom = 426.0
-theme_override_constants/separation = 20
-
-[node name="Play" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 488.0
+offset_top = 957.0
+offset_right = 1440.0
+offset_bottom = 1040.0
 theme = ExtResource("3_5cpkr")
-text = "Play"
+theme_override_constants/separation = 50
+alignment = 1
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 7
 theme = ExtResource("3_5cpkr")
 text = "Options"
 
+[node name="Play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 7
+theme = ExtResource("3_5cpkr")
+text = "Play"
+
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 7
 theme = ExtResource("3_5cpkr")
-text = "Quit
-"
+text = "Quit"
 
 [node name="OptionsMenu" parent="." instance=ExtResource("4_jtghg")]
 visible = false
@@ -58,7 +51,7 @@ offset_top = 435.0
 offset_right = -1073.0
 offset_bottom = -645.0
 
-[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_exit_pressed"]
 [connection signal="pressed_back" from="OptionsMenu" to="." method="_on_options_menu_pressed_back"]
