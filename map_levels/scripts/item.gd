@@ -18,7 +18,7 @@ func _process(_delta: float) -> void:
 		$Sprite2D.texture = item.texture
 		return
 	if (follow_player):
-		var new_pos := Vector2(player.position.x, player.position.y - 135)
+		var new_pos := Vector2(player.position.x, player.position.y - 170)
 		set_global_position(new_pos)
 
 func pick_me_up(player_ref: Player) -> void:
