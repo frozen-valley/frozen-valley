@@ -7,8 +7,8 @@ class_name Quicktime
 @export var needle_color: Color = Color("fa0903")
 @export var needle_width: float = 5
 @export var x_size: float = 580
-@export var correct_start: float = 3 * (x_size / 5)
-@export var correct_width: float = x_size / 5
+var correct_start: float = 3  * (x_size / 5)
+var correct_width: float = x_size / 10
 
 var _x_offset: float = 0
 var _confirmed := false
@@ -46,7 +46,9 @@ func _process(_delta: float) -> void:
 		#_win()
 
 func _draw():
-	draw_rect(Rect2(0, 0, x_size, 100.0), background)
-	draw_rect(Rect2(3 * (x_size / 5), 0, x_size / 5, 100.0), correct)
-	draw_rect(Rect2(_x_offset, 0, needle_width, 100.0), needle_color)
-	draw_rect(Rect2(0, 0, x_size, 100.0), border, false, 6.0)
+	$Marker.position.x = _x_offset - 18
+
+	#draw_rect(Rect2(0, 0, x_size, 100.0), background)
+	#draw_rect(Rect2(correct_start, 0, correct_width, 100.0), correct)
+	#draw_rect(Rect2(_x_offset, 0, needle_width, 100.0), needle_color)
+	#draw_rect(Rect2(0, 0, x_size, 100.0), border, false, 6.0)
