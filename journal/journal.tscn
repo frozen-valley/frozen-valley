@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://davqj3l78lli2"]
+[gd_scene load_steps=8 format=3 uid="uid://davqj3l78lli2"]
 
 [ext_resource type="Script" path="res://journal/journal.gd" id="1_8yidi"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="1_ocvud"]
 [ext_resource type="Texture2D" uid="uid://bcbrhkp6fxq8k" path="res://journal/sprites/Journal.png" id="2_xainj"]
 [ext_resource type="PackedScene" uid="uid://ca3p7qid8y0u4" path="res://journal/pages/journal_page1.tscn" id="3_tp6me"]
 [ext_resource type="PackedScene" uid="uid://4f5cq5tdx1lk" path="res://journal/pages/journal_page2.tscn" id="4_uux8f"]
 [ext_resource type="PackedScene" uid="uid://dg5gxrcommbkl" path="res://journal/pages/journal_page3.tscn" id="5_527f6"]
+[ext_resource type="Texture2D" uid="uid://bs0g7ox6s4f1l" path="res://journal/sprites/JournalButton.png" id="7_eomg3"]
 
 [node name="Book" type="Control"]
 layout_mode = 3
@@ -13,62 +15,64 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_ocvud")
 script = ExtResource("1_8yidi")
 
 [node name="JournalBackground" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_xainj")
 
 [node name="Pages" type="Control" parent="JournalBackground"]
 anchors_preset = 0
 
 [node name="JournalPage1" parent="JournalBackground/Pages" instance=ExtResource("3_tp6me")]
-layout_mode = 0
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-grow_horizontal = 1
-grow_vertical = 1
+layout_mode = 1
 
 [node name="JournalPage2" parent="JournalBackground/Pages" instance=ExtResource("4_uux8f")]
 visible = false
 layout_mode = 1
-offset_left = 29.0
-offset_top = 34.0
-offset_right = 29.0
-offset_bottom = 34.0
+offset_left = 40.0
+offset_top = 32.0
+offset_right = 40.0
+offset_bottom = 32.0
 
 [node name="JournalPage3" parent="JournalBackground/Pages" instance=ExtResource("5_527f6")]
 visible = false
 layout_mode = 1
 
-[node name="LeftButton" type="Button" parent="."]
+[node name="LeftButton" type="Button" parent="JournalBackground"]
 layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_top = -25.0001
-offset_right = 69.0
-offset_bottom = 24.9999
-grow_vertical = 2
-text = "<"
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 314.0
+offset_top = -247.0
+offset_right = 628.0
+offset_bottom = -85.0
+grow_vertical = 0
+scale = Vector2(-1, 1)
+icon = ExtResource("7_eomg3")
+flat = true
 
-[node name="RightButton" type="Button" parent="."]
+[node name="RightButton" type="Button" parent="JournalBackground"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -69.0001
-offset_top = -25.0001
-offset_right = -0.00012207
-offset_bottom = 24.9999
+offset_left = -314.0
+offset_top = 293.0
+offset_bottom = 455.0
 grow_horizontal = 0
 grow_vertical = 2
-text = ">"
+icon = ExtResource("7_eomg3")
+flat = true
 
-[connection signal="pressed" from="LeftButton" to="." method="_on_left_button_pressed"]
-[connection signal="pressed" from="RightButton" to="." method="_on_right_button_pressed"]
+[connection signal="pressed" from="JournalBackground/LeftButton" to="." method="_on_left_button_pressed"]
+[connection signal="pressed" from="JournalBackground/RightButton" to="." method="_on_right_button_pressed"]

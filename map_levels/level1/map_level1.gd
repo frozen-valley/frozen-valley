@@ -12,17 +12,19 @@ func _ready() -> void:
 	Dialogic.start("level1_intro")
 
 func _on_dead_tree_play_minigame() -> void:
+	$NavigationRegion2D/Player/Camera2D.enabled = false
 	tree_chop = treechop_minigame.instantiate()
 	add_child(tree_chop)
 	tree_chop.connect("done", _on_tree_chopped)
-	$Player/Camera2D.enabled = false
+	$CanvasLayer/Inventory_UI.disable()
 
 func _on_tree_chopped() -> void:
-	$Player/Camera2D.enabled = true
+	$NavigationRegion2D/Player/Camera2D.enabled = true
 	remove_child(tree_chop)
 	tree_chop.queue_free()
 	tree_chop = null
 	do_solved_minigame()
+	$CanvasLayer/Inventory_UI.enable()
 	
 
 func do_solved_minigame():
@@ -31,5 +33,5 @@ func do_solved_minigame():
 	log_and_stump_node.position = Vector2(-681, -796)
 	log_and_stump_node.scale.x *= -1
 	add_child(log_and_stump_node)
-	$CrossRiverButton.visible = true
+	$CrossRiverButton.show()
 	$NavigationRegion2D/DeadTree.queue_free()

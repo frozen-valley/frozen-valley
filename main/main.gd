@@ -8,6 +8,7 @@ extends Node
 	preload("res://transitions/river_cross/river_cross_transition.tscn"),
 	preload("res://bonfire/bonfire.tscn"),
 	preload("res://transitions/bonfire/bonfire_transition.tscn"),
+	preload("res://map_levels/level 2/map_level2.tscn"),
 	preload("res://transitions/ending/ending_transition.tscn")
 ]
 
@@ -18,6 +19,7 @@ func _ready() -> void:
 	play_next()
 
 func _on_done():
+	Dialogic.end_timeline()
 	remove_child(current_scene)
 	current_scene.queue_free()
 	current_scene = null
@@ -32,5 +34,4 @@ func play_next():
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("skip_scene"):
-		Dialogic.end_timeline()
 		_on_done()
