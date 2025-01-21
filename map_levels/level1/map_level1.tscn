@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://map_levels/sub_scenes/item.tscn" id="4_dapfc"]
 [ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="5_7mr62"]
 [ext_resource type="PackedScene" uid="uid://bnlky7u2abek5" path="res://map_levels/sub_scenes/snow.tscn" id="6_fwclf"]
-[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="7_43dni"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="7_43dni"]
 [ext_resource type="PackedScene" uid="uid://cxjtf42fqpgp5" path="res://map_levels/sub_scenes/partner.tscn" id="7_jlq1f"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map_levels/sub_scenes/player.tscn" id="8_mgbvs"]
 [ext_resource type="PackedScene" uid="uid://bcv6o4gblvict" path="res://inventory/inv_scenes/inventory_ui.tscn" id="9_ovmc0"]
@@ -155,7 +155,6 @@ script = ExtResource("16_ianfm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanyonNotice"]
 position = Vector2(212.665, 134.814)
 rotation = 0.984219
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1018v")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
