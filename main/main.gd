@@ -19,6 +19,7 @@ func _ready() -> void:
 	play_next()
 
 func _on_done():
+	Dialogic.end_timeline()
 	remove_child(current_scene)
 	current_scene.queue_free()
 	current_scene = null
@@ -33,5 +34,4 @@ func play_next():
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("skip_scene"):
-		Dialogic.end_timeline()
 		_on_done()
