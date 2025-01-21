@@ -3,7 +3,7 @@ extends Control
 @onready var inv: Inventory = preload("res://inventory/player_inventory.tres")
 @onready var slots: Array = $GridContainer.get_children()
 
-
+var disabled = false
 var is_journal_open := false
 
 func _ready():
@@ -13,7 +13,16 @@ func _ready():
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
 		slots[i].update(inv.slots[i])
-	
+
+
+func disable():
+	disabled = true
+	hide()
+
+func enable():
+	disabled = false
+	show()
+
 func close_journal():
 	is_journal_open = false
 	$GridContainer.show()
