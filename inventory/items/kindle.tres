@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://lstqytskunx"]
+
+[ext_resource type="Script" path="res://inventory/inv_scripts/inventory_item.gd" id="1_5jgsq"]
+[ext_resource type="Texture2D" uid="uid://b2qukm537hi50" path="res://bonfire/sprites/Kindle.png" id="2_j23fa"]
+
+[resource]
+script = ExtResource("1_5jgsq")
+name = "kindle"
+texture = ExtResource("2_j23fa")

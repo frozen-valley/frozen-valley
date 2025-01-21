@@ -1,8 +1,8 @@
-[gd_scene load_steps=41 format=4 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=52 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="Script" path="res://map_levels/level1/map_level1.gd" id="1_j1dqv"]
-[ext_resource type="Texture2D" uid="uid://db5d2x5sdcipr" path="res://map_levels/river_tilemap_atlas.tres" id="2_rxlgl"]
 [ext_resource type="Texture2D" uid="uid://df31t0dtpu16h" path="res://sprites/tiles/Tiles.png" id="3_73peq"]
+[ext_resource type="Texture2D" uid="uid://cm31636me0rrt" path="res://sprites/world_environment/ChopBG.png" id="3_ud36u"]
 [ext_resource type="Texture2D" uid="uid://bekap8p1rfd6n" path="res://sprites/tiles/TileSetNew.png" id="4_6dfvn"]
 [ext_resource type="PackedScene" uid="uid://b5qs07i1uh2um" path="res://map_levels/sub_scenes/item.tscn" id="4_dapfc"]
 [ext_resource type="Resource" uid="uid://cfc5ju61fi5kc" path="res://inventory/items/axe.tres" id="5_7mr62"]
@@ -23,55 +23,24 @@
 [ext_resource type="Script" path="res://map_levels/level1/canyon_notice.gd" id="16_ianfm"]
 [ext_resource type="Texture2D" uid="uid://dsbne0mbrpnuf" path="res://sprites/tiles/LakeTile.png" id="16_jovg7"]
 [ext_resource type="PackedScene" uid="uid://c2tsws2qvirbp" path="res://map_levels/sub_scenes/tree_stump.tscn" id="17_3ayle"]
+[ext_resource type="Resource" uid="uid://c80mnj7kpieqt" path="res://inventory/items/plank.tres" id="17_v0v12"]
+[ext_resource type="Resource" uid="uid://cvky2iellkcgs" path="res://inventory/items/logs.tres" id="18_p6m3h"]
+[ext_resource type="Resource" uid="uid://lstqytskunx" path="res://inventory/items/kindle.tres" id="19_480ii"]
+[ext_resource type="Resource" uid="uid://giwspgikmgn7" path="res://inventory/items/twigs.tres" id="20_yxg1c"]
 [ext_resource type="AudioStream" uid="uid://ddbe0s8uoaknx" path="res://audio/game_soundtrack.wav" id="21_34k76"]
 [ext_resource type="PackedScene" uid="uid://de1xjjlunygjm" path="res://map_levels/sub_scenes/hill2.tscn" id="24_1s5dx"]
+[ext_resource type="Texture2D" uid="uid://bno1tws4pl081" path="res://sprites/house/Door.png" id="24_4xcp5"]
 [ext_resource type="PackedScene" uid="uid://d3x8867t5rqt1" path="res://map_levels/sub_scenes/rock.tscn" id="25_lje61"]
 [ext_resource type="PackedScene" uid="uid://btq4l7wgg1jo0" path="res://map_levels/sub_scenes/hill1.tscn" id="26_0rip4"]
+[ext_resource type="Script" path="res://map_levels/level1/door_detector_area.gd" id="26_cyj70"]
 [ext_resource type="PackedScene" uid="uid://da2x35nbm558" path="res://map_levels/sub_scenes/dead_tree.tscn" id="27_5mve6"]
 [ext_resource type="Resource" uid="uid://dqnfnldl3oc43" path="res://inventory/items/key.tres" id="27_lph8l"]
+[ext_resource type="AudioStream" uid="uid://ckdps6686n3yj" path="res://audio/door-unlocking.mp3" id="27_lufyn"]
 [ext_resource type="PackedScene" uid="uid://by2b56k5xmlrd" path="res://map_levels/sub_scenes/bush2.tscn" id="28_37vij"]
 [ext_resource type="PackedScene" uid="uid://cgs286j38xspa" path="res://map_levels/sub_scenes/bush1.tscn" id="29_ujy41"]
+[ext_resource type="Resource" uid="uid://bhset6bsfxlrw" path="res://inventory/player_inventory.tres" id="31_6jr4d"]
 [ext_resource type="Texture2D" uid="uid://dra4y6o67h8mm" path="res://sprites/house/Debries.png" id="31_pggkk"]
 [ext_resource type="PackedScene" uid="uid://cvrklngngr3q2" path="res://map_levels/sub_scenes/fox_dead.tscn" id="33_hyk1j"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ugstr"]
-texture = ExtResource("2_rxlgl")
-texture_region_size = Vector2i(64, 64)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-5:1/0 = 0
-6:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-5:2/0 = 0
-6:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-4:4/0 = 0
-5:4/0 = 0
-6:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e87v8"]
 texture = ExtResource("3_73peq")
@@ -102,8 +71,15 @@ texture_region_size = Vector2i(64, 64)
 [sub_resource type="TileSet" id="TileSet_ryj3h"]
 tile_size = Vector2i(64, 64)
 sources/1 = SubResource("TileSetAtlasSource_e87v8")
-sources/0 = SubResource("TileSetAtlasSource_ugstr")
 sources/3 = SubResource("TileSetAtlasSource_3ap2g")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfeg5"]
+texture = ExtResource("3_ud36u")
+0:1/size_in_atlas = Vector2i(125, 66)
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_qhxyn"]
+sources/1 = SubResource("TileSetAtlasSource_mfeg5")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1018v"]
 size = Vector2(328.196, 633.511)
@@ -114,8 +90,14 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5, 6), Packe
 outlines = Array[PackedVector2Array]([PackedVector2Array(-947, -945, -947, 2404, 3451, 2417, 3438, -1002)])
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_kgvex"]
-a = Vector2(295, -193)
-b = Vector2(-266, 166)
+a = Vector2(309, -202)
+b = Vector2(-422, 150)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wcpb2"]
+size = Vector2(113, 93.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xvfg1"]
+size = Vector2(115, 113)
 
 [node name="MapLevel1" type="Node"]
 script = ExtResource("1_j1dqv")
@@ -124,8 +106,14 @@ script = ExtResource("1_j1dqv")
 z_index = -5
 y_sort_enabled = true
 position = Vector2(0, -4)
-tile_map_data = PackedByteArray("AADx//H/AAAAAAAAAADx//L/AAAAAAEAAADx//P/AAAAAAIAAADx//T/AAAAAAMAAADx//X/AAAAAAQAAADx//b/AQACAAIAAADy//H/AAABAAAAAADy//L/AAABAAEAAADy//P/AAABAAIAAADy//T/AAABAAMAAADy//X/AAABAAQAAADy//b/AQACAAIAAADz//H/AAACAAAAAADz//L/AAACAAEAAADz//P/AAACAAIAAADz//T/AAACAAMAAADz//X/AAACAAQAAADz//b/AQACAAIAAAD0//H/AAADAAAAAAD0//L/AAADAAEAAAD0//P/AAADAAIAAAD0//T/AAADAAMAAAD0//X/AAADAAQAAAD0//b/AQAAAAAAAAD1//H/AAAEAAAAAAD1//L/AAAEAAEAAAD1//P/AAAEAAIAAAD1//T/AAAEAAMAAAD1//X/AAAEAAQAAAD1//b/AQACAAIAAAD2//H/AAAFAAAAAAD2//L/AAAFAAEAAAD2//P/AAAFAAIAAAD2//T/AAAFAAMAAAD2//X/AAAFAAQAAAD2//b/AQACAAIAAAD3//H/AAAGAAAAAAD3//L/AAAGAAEAAAD3//P/AAAGAAIAAAD3//T/AAAGAAMAAAD3//X/AAAGAAQAAAD3//b/AQACAAIAAAD4//H/AQACAAIAAAD4//L/AQACAAIAAAD4//P/AQACAAIAAAD4//T/AQACAAIAAAD4//X/AQACAAIAAAD4//b/AQACAAIAAAD8//7/AwAAAAAAAAAEAO7/AwAAAAAAAAATAP7/AwAAAAAAAAD8/w4AAwAAAAAAAAATAA4AAwAAAAAAAAAbAO7/AwAAAAAAAAAqAP7/AwAAAAAAAAAqAA4AAwAAAAAAAAAyAO//AwAAAAAAAAD8/x0AAwAAAAAAAAASAB4AAwAAAAAAAAApAB4AAwAAAAAAAAAjAAEAAQAAAAIAAAAjAAIAAQAAAAIAAAAjAAMAAQAAAAIAAAAjAAQAAQABAAMAAAAiAAQAAQAAAAIAAFAhAAQAAQAAAAIAAFAgAAQAAQAAAAMAAFAgAAUAAQAAAAIAAAAgAAYAAQAAAAIAAAAgAAcAAQAAAAIAAAAgAAoAAQAAAAIAAAAgAAwAAQAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAD8//7/AwAAAAAAAAAEAO7/AwAAAAAAAAATAP7/AwAAAAAAAAD8/w4AAwAAAAAAAAATAA4AAwAAAAAAAAAbAO7/AwAAAAAAAAAqAP7/AwAAAAAAAAAqAA4AAwAAAAAAAAAyAO//AwAAAAAAAAD8/x0AAwAAAAAAAAASAB4AAwAAAAAAAAApAB4AAwAAAAAAAAAgAAcAAQAAAAIAAAAgAAoAAQAAAAIAAAAgAAwAAQAAAAIAAAD8/+r/AwAAAAAAAAA=")
 tile_set = SubResource("TileSet_ryj3h")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+position = Vector2(-10, 0)
+scale = Vector2(0.5, 0.5)
+tile_map_data = PackedByteArray("AADH/6j/AQAAAAEAAAA=")
+tile_set = SubResource("TileSet_qhxyn")
 
 [node name="Snow" parent="." instance=ExtResource("6_fwclf")]
 position = Vector2(480, -970)
@@ -159,11 +147,11 @@ text = "Cross the river"
 script = ExtResource("15_34xsh")
 
 [node name="CanyonNotice" type="Area2D" parent="."]
-position = Vector2(-791, -824)
+position = Vector2(-794, -839)
 script = ExtResource("16_ianfm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanyonNotice"]
-position = Vector2(93.2256, 31.5257)
+position = Vector2(312, 156)
 rotation = 0.984219
 shape = SubResource("RectangleShape2D_1018v")
 
@@ -199,10 +187,12 @@ scale = Vector2(10, 9)
 position = Vector2(-748, -799)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/River"]
+position = Vector2(232, 97)
 shape = SubResource("SegmentShape2D_kgvex")
 
 [node name="Player" parent="NavigationRegion2D" instance=ExtResource("8_mgbvs")]
 position = Vector2(2175, 248)
+collision_mask = 9
 
 [node name="Camera2D" type="Camera2D" parent="NavigationRegion2D/Player"]
 zoom = Vector2(1.5, 1.5)
@@ -223,7 +213,7 @@ distance_treshold = 100.0
 distance_leeway = 200.0
 
 [node name="DeadTree" parent="NavigationRegion2D" node_paths=PackedStringArray("player") instance=ExtResource("13_juv8s")]
-position = Vector2(-680, -796)
+position = Vector2(-542, -716)
 player = NodePath("../Player")
 
 [node name="AxeItem" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
@@ -231,8 +221,38 @@ position = Vector2(2517, -201)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("5_7mr62")
 
+[node name="AxeItem2" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+position = Vector2(1960, -129)
+rotation = 2.42404
+scale = Vector2(0.5, 0.5)
+item = ExtResource("17_v0v12")
+
+[node name="AxeItem5" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+position = Vector2(2961, 128)
+rotation = -0.0619342
+scale = Vector2(0.5, 0.5)
+item = ExtResource("18_p6m3h")
+
+[node name="AxeItem6" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+position = Vector2(1732, 1279)
+rotation = -0.0619342
+scale = Vector2(0.5, 0.5)
+item = ExtResource("19_480ii")
+
+[node name="AxeItem3" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+position = Vector2(498, 378)
+rotation = -0.0294244
+scale = Vector2(0.5, 0.5)
+item = ExtResource("20_yxg1c")
+
+[node name="AxeItem4" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+position = Vector2(411, 457)
+rotation = -0.0294244
+scale = Vector2(0.5, 0.5)
+item = ExtResource("20_yxg1c")
+
 [node name="KeyItem" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
-position = Vector2(1854, 1946)
+position = Vector2(2338, 411)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("27_lph8l")
 
@@ -288,6 +308,34 @@ collision_mask = 7
 [node name="Walls" type="CollisionPolygon2D" parent="NavigationRegion2D/House/House"]
 build_mode = 1
 polygon = PackedVector2Array(-142, 212, -145, 223, -326, 223, -221, 7, 304, 6, 215, 229, 23, 229, 33, 211, 201, 209, 288, 13, -212, 13, -311, 215)
+
+[node name="HouseDoor" type="StaticBody2D" parent="NavigationRegion2D/House"]
+position = Vector2(2349, -101)
+collision_layer = 8
+
+[node name="HouseDoorSprite" type="Sprite2D" parent="NavigationRegion2D/House/HouseDoor"]
+position = Vector2(50, -91)
+scale = Vector2(1.6, 1.6)
+texture = ExtResource("24_4xcp5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/House/HouseDoor"]
+position = Vector2(-4.5, 61.75)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wcpb2")
+
+[node name="DoorDetectorArea" type="Area2D" parent="NavigationRegion2D/House/HouseDoor" node_paths=PackedStringArray("player", "key_item")]
+position = Vector2(-6, 49)
+script = ExtResource("26_cyj70")
+player = NodePath("../../../Player")
+inventory = ExtResource("31_6jr4d")
+key_item = NodePath("../../../KeyItem")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/House/HouseDoor/DoorDetectorArea"]
+position = Vector2(-1.5, 46.5)
+shape = SubResource("RectangleShape2D_xvfg1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="NavigationRegion2D/House/HouseDoor"]
+stream = ExtResource("27_lufyn")
 
 [node name="Environment" type="Node2D" parent="NavigationRegion2D"]
 y_sort_enabled = true
@@ -472,3 +520,5 @@ position = Vector2(3280, 1400)
 [connection signal="play_minigame" from="NavigationRegion2D/DeadTree" to="." method="_on_dead_tree_play_minigame"]
 [connection signal="body_entered" from="NavigationRegion2D/House/HouseArea" to="NavigationRegion2D/House/HouseArea" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion2D/House/HouseArea" to="NavigationRegion2D/House/HouseArea" method="_on_body_exited"]
+[connection signal="body_entered" from="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" to="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" method="_on_body_entered"]
+[connection signal="body_exited" from="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" to="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" method="_on_body_exited"]
