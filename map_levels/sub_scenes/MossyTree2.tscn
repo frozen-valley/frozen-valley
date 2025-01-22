@@ -6,11 +6,13 @@
 radius = 36.0139
 
 [node name="StaticBody2D" type="StaticBody2D"]
+position = Vector2(0, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(1, -152)
 texture = ExtResource("1_4xhap")
+offset = Vector2(0, -50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-4, 9)
+position = Vector2(-4, -20)
 shape = SubResource("CircleShape2D_iy7lx")
