@@ -8,7 +8,7 @@ var player_is_at_door: bool = false
 signal used_key
 
 
-func _process(delta):
+func _process(_delta):
 	var interact: bool = Input.is_action_just_pressed("interact")
 	if (interact && player_is_at_door):
 		if (player.inventory.has_item("key")):
@@ -21,12 +21,12 @@ func _process(delta):
 			Dialogic.start("need_key")
 
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	player_is_at_door = true
 	
 
 
 
-func _on_body_exited(body):
+func _on_body_exited(_body):
 	player_is_at_door = false
 	

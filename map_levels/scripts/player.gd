@@ -9,8 +9,8 @@ var pickup_queue: Array[Pickupable]
 var move := Vector2(0, 0)
 
 @export var inventory: Inventory
-@export var key: Pickupable
 @onready var animated_sprite = $AnimatedSprite2D
+
 
 func _add_to_inventory(item: Pickupable) -> void:
 	var item_type = item.item
@@ -23,7 +23,7 @@ func _pickup() -> void:
 	pickup_queue.remove_at(0)
 
 func _use_key():
-	inventory.remove(key.item)
+	inventory.remove_key()
 
 func _listen_for_pickups() -> void:
 	var interact: bool = Input.is_action_just_pressed("interact")
@@ -74,3 +74,7 @@ func _physics_process(_delta: float) -> void:
 	# Update the velocity
 	velocity = move * SPEED
 	move_and_slide()
+
+
+func _on_door_detector_area_used_key() -> void:
+	_use_key()

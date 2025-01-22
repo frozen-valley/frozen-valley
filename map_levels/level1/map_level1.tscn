@@ -529,3 +529,4 @@ position = Vector2(-1055, 612)
 [connection signal="body_exited" from="NavigationRegion2D/House/HouseArea" to="NavigationRegion2D/House/HouseArea" method="_on_body_exited"]
 [connection signal="body_entered" from="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" to="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" method="_on_body_entered"]
 [connection signal="body_exited" from="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" to="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" method="_on_body_exited"]
+[connection signal="used_key" from="NavigationRegion2D/House/HouseDoor/DoorDetectorArea" to="NavigationRegion2D/Player" method="_on_door_detector_area_used_key"]
