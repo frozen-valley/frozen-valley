@@ -9,10 +9,11 @@ size = Vector2(1313.75, 217.5)
 scale = Vector2(0.4, 0.4)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(10, -174)
+position = Vector2(10, 0)
 texture = ExtResource("1_25f0c")
+offset = Vector2(0, -300)
 
-[node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
-position = Vector2(8.125, 217.5)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_nwvmh")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -130)
+build_mode = 1
+polygon = PackedVector2Array(-179, 325, 245, 311, 649, 151, -683, 149, -526, 287)
