@@ -6,13 +6,14 @@
 radius = 26.8742
 
 [node name="MossTree1" type="StaticBody2D"]
-position = Vector2(-2, -61)
+position = Vector2(-2, 30)
 scale = Vector2(0.6, 0.6)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -69)
 texture = ExtResource("1_bl5xb")
+offset = Vector2(0, -130)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.66667, 100)
+position = Vector2(0, -10)
 shape = SubResource("CircleShape2D_ohkfp")

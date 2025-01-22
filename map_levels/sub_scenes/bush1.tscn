@@ -3,10 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://cmg883x5fp8xj" path="res://sprites/world_environment/Bush1.png" id="1_ad37x"]
 
 [node name="StaticBody2D" type="StaticBody2D"]
-position = Vector2(0, 20)
 scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(10, -31)
+position = Vector2(10, 0)
 texture = ExtResource("1_ad37x")
-offset = Vector2(0, -150)
+offset = Vector2(0, -100)
