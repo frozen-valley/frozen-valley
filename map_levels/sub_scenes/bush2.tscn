@@ -8,7 +8,4 @@ scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qs07l")
-<<<<<<< HEAD
-=======
 offset = Vector2(0, -150)
->>>>>>> master

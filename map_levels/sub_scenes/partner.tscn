@@ -31,11 +31,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-<<<<<<< HEAD
-"speed": 3.0
-=======
 "speed": 9.0
->>>>>>> master
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r82vx"]

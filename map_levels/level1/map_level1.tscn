@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=4 uid="uid://d4cq7vev1xowi"]
+[gd_scene load_steps=53 format=4 uid="uid://d4cq7vev1xowi"]
 
 [ext_resource type="Script" path="res://map_levels/level1/map_level1.gd" id="1_j1dqv"]
 [ext_resource type="Texture2D" uid="uid://df31t0dtpu16h" path="res://sprites/tiles/Tiles.png" id="3_73peq"]
@@ -161,7 +161,6 @@ script = ExtResource("16_ianfm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanyonNotice"]
 position = Vector2(212.665, 134.814)
-
 rotation = 0.984219
 shape = SubResource("RectangleShape2D_1018v")
 
@@ -330,7 +329,6 @@ texture = ExtResource("24_4xcp5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/House/HouseDoor"]
 position = Vector2(-4.5, 61.75)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wcpb2")
 
 [node name="DoorDetectorArea" type="Area2D" parent="NavigationRegion2D/House/HouseDoor" node_paths=PackedStringArray("player", "key_item")]

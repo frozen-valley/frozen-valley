@@ -9,7 +9,4 @@ scale = Vector2(0.3, 0.3)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(10, -31)
 texture = ExtResource("1_ad37x")
-<<<<<<< HEAD
-=======
 offset = Vector2(0, -150)
->>>>>>> master
