@@ -1,10 +1,6 @@
 extends Area2D
 
-var transition_counter = 0
 @onready var player = get_parent().get_node("Player")
-
-func _ready() -> void:
-	pass
 
 func _on_body_entered(body):
 	if (body is not Player):
@@ -14,8 +10,4 @@ func _on_body_entered(body):
 	place_player()
 
 func place_player():
-	player.global_position = Vector2(1291,824)
-
-func _on_finished():
-	Dialogic.start("read_letter")
-		
+	player.global_position = Vector2(6745, -499)

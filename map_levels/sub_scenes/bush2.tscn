@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://3vrsv8sbxy2b" path="res://sprites/world_environment/Bush2.png" id="1_qs07l"]
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="Bush2" type="Node2D"]
 scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

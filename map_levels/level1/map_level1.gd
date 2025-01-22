@@ -30,8 +30,9 @@ func _on_tree_chopped() -> void:
 func do_solved_minigame():
 	var log_and_stump_resource := load("res://map_levels/sub_scenes/log_and_stump.tscn") 
 	var log_and_stump_node = log_and_stump_resource.instantiate()
-	log_and_stump_node.position = Vector2(-681, -796)
+	log_and_stump_node.position = $NavigationRegion2D/DeadTree.position
 	log_and_stump_node.scale.x *= -1
+	log_and_stump_node.scale *= 1.5
 	add_child(log_and_stump_node)
 	$CrossRiverButton.show()
 	$NavigationRegion2D/DeadTree.queue_free()

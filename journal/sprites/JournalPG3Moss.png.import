@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://t2tfmq4bhk8r"
-path="res://.godot/imported/empty_200x200.png-114308c9a633b0d15302bbc3ed7b8d0d.ctex"
+uid="uid://ptwc752rj85n"
+path="res://.godot/imported/JournalPG3Moss.png-c9278aa3dab7b8baedd332a5b6295226.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bonfire/sprites/empty_200x200.png"
-dest_files=["res://.godot/imported/empty_200x200.png-114308c9a633b0d15302bbc3ed7b8d0d.ctex"]
+source_file="res://journal/sprites/JournalPG3Moss.png"
+dest_files=["res://.godot/imported/JournalPG3Moss.png-c9278aa3dab7b8baedd332a5b6295226.ctex"]
 
 [params]
 
