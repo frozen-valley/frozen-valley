@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck68v3ll5u0mf"]
+[gd_scene load_steps=8 format=3 uid="uid://ck68v3ll5u0mf"]
 
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="1_1gobd"]
 [ext_resource type="Script" path="res://UI/menus/pause_menu.gd" id="1_4bjm0"]
 [ext_resource type="Shader" path="res://UI/pause_menu.gdshader" id="1_6tgsf"]
 
@@ -76,6 +77,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1gobd")
 script = ExtResource("1_4bjm0")
 
 [node name="PauseCanvas" type="CanvasLayer" parent="."]
@@ -88,6 +90,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1gobd")
 color = Color(1, 1, 1, 0)
 
 [node name="PanelContainer" type="PanelContainer" parent="PauseCanvas"]
@@ -97,25 +100,36 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -369.0
-offset_top = -335.5
-offset_right = 369.0
-offset_bottom = 335.5
+offset_left = -300.0
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_1gobd")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PauseCanvas/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PauseCanvas/PanelContainer"]
 layout_mode = 2
-size_flags_vertical = 4
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseCanvas/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_1gobd")
 theme_override_constants/separation = 50
+alignment = 1
 
-[node name="Resume" type="Button" parent="PauseCanvas/PanelContainer/VBoxContainer"]
+[node name="Resume" type="Button" parent="PauseCanvas/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_1gobd")
 theme_override_font_sizes/font_size = 50
 text = "Resume"
 
-[node name="Quit" type="Button" parent="PauseCanvas/PanelContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="PauseCanvas/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("1_1gobd")
 theme_override_font_sizes/font_size = 50
 text = "Quit
 "
@@ -125,5 +139,5 @@ libraries = {
 "": SubResource("AnimationLibrary_x1cah")
 }
 
-[connection signal="pressed" from="PauseCanvas/PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PauseCanvas/PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="PauseCanvas/PanelContainer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PauseCanvas/PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

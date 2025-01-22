@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://t6eeaf2vdo43"]
+[gd_scene load_steps=3 format=3 uid="uid://t6eeaf2vdo43"]
 
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="1_27eqe"]
 [ext_resource type="Script" path="res://objectives/objectives_manager.gd" id="1_gs5ki"]
 
 [node name="ObjectivesManager" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_27eqe")
 script = ExtResource("1_gs5ki")
 
 [node name="ObjectivesContainer" type="VBoxContainer" parent="."]

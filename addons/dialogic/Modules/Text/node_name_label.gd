@@ -14,7 +14,6 @@ func _ready() -> void:
 		name_label_root.visible = false
 	text = ""
 
-
 func _set(property, what):
 	if property == 'text' and typeof(what) == TYPE_STRING:
 		text = what

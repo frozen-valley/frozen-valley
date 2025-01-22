@@ -10,8 +10,8 @@ var is_open: bool = false
 
 func _ready() -> void:
 	for page: Control in pages:
-		page.visible = false
-	pages[current_page].visible = true
+		page.hide()
+	pages[current_page].show()
 
 func _process(_delta):
 	if Input.is_action_just_pressed("book"):
@@ -21,25 +21,25 @@ func _process(_delta):
 			open()
 	
 func close():
-	visible = false
+	hide()
 	is_open = false
 	closed.emit()
 
 func open():
-	visible = true
+	show()
 	is_open = true
 	opened.emit()
 
 func _on_left_button_pressed():
 	if current_page > 0:
-		pages[current_page].visible = false
+		pages[current_page].hide()
 		current_page = current_page - 1
-		pages[current_page].visible = true
+		pages[current_page].show()
 		
 
 func _on_right_button_pressed():
 	if current_page < len(pages)-1:
-		pages[current_page].visible = false
+		pages[current_page].hide()
 		current_page = current_page + 1
-		pages[current_page].visible = true
+		pages[current_page].show()
 		

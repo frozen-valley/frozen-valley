@@ -18,13 +18,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("3_cfsha")
 }, {
 "duration": 1.0,
 "texture": ExtResource("2_n72h5")
 }, {
-"duration": 1.0,
+"duration": 2.0,
 "texture": ExtResource("5_62hgy")
 }, {
 "duration": 1.0,
@@ -32,7 +32,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 3.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ew5rr"]

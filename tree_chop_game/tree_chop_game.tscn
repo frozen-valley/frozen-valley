@@ -1,13 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://k3fyvx8tr23c"]
+[gd_scene load_steps=18 format=3 uid="uid://k3fyvx8tr23c"]
 
 [ext_resource type="Script" path="res://tree_chop_game/scripts/quicktime_game.gd" id="1_a5lmt"]
+[ext_resource type="Texture2D" uid="uid://c7mbk8yk3w1l3" path="res://tree_chop_game/ChopBG.png" id="2_cy12d"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/tree_chop_game.gd" id="2_g7vns"]
 [ext_resource type="Curve" uid="uid://ddrr7x2w7m8up" path="res://tree_chop_game/tree_chop_axe_velocity.tres" id="2_prdf5"]
 [ext_resource type="Texture2D" uid="uid://mqdmye1kph0g" path="res://icon.svg" id="3_r4u2g"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/quicktime.gd" id="4_n3hck"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/quicktime_item.gd" id="5_ik6if"]
+[ext_resource type="Texture2D" uid="uid://b666yerex2ivp" path="res://dialogue/styles/DialogueBox.png" id="7_igb0h"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/dead_tree_game.gd" id="7_m8k55"]
 [ext_resource type="Texture2D" uid="uid://dt4rsvdwxu0wb" path="res://sprites/tools/Axe.png" id="8_gem4a"]
+[ext_resource type="Texture2D" uid="uid://bwg6hv820q0ev" path="res://UI/Button1.png" id="8_qovci"]
+[ext_resource type="Texture2D" uid="uid://pnajxw1xi271" path="res://sprites/misc/Snowflake.png" id="9_ij6fg"]
 [ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/world_environment/trees/DeadTree.png" id="9_t3d4o"]
 [ext_resource type="Texture2D" uid="uid://bln1bnqqa8s2k" path="res://sprites/world_environment/trees/ChoppedTree1.png" id="10_q6sxq"]
 [ext_resource type="Texture2D" uid="uid://dqishhaa8m6c0" path="res://sprites/world_environment/trees/ChoppedTree2.png" id="11_ln1sr"]
@@ -16,6 +20,13 @@
 
 [node name="TreeChop" type="Node"]
 script = ExtResource("1_a5lmt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 2459.0
+offset_top = 1432.0
+offset_right = 4459.0
+offset_bottom = 2512.0
+texture = ExtResource("2_cy12d")
 
 [node name="TreeChopGame" type="Node2D" parent="."]
 position = Vector2(3210, 2033)
@@ -33,6 +44,35 @@ texture = ExtResource("3_r4u2g")
 [node name="Quicktime" type="Node2D" parent="TreeChopGame"]
 position = Vector2(-290, -200)
 script = ExtResource("4_n3hck")
+
+[node name="Playzone" type="NinePatchRect" parent="TreeChopGame/Quicktime"]
+offset_right = 1160.0
+offset_bottom = 200.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_igb0h")
+patch_margin_left = 110
+patch_margin_top = 50
+patch_margin_right = 110
+patch_margin_bottom = 50
+
+[node name="CorrectArea" type="NinePatchRect" parent="TreeChopGame/Quicktime"]
+offset_left = 385.0
+offset_top = 5.0
+offset_right = 565.0
+offset_bottom = 185.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_qovci")
+patch_margin_left = 49
+patch_margin_top = 24
+patch_margin_right = 49
+patch_margin_bottom = 24
+
+[node name="Marker" type="TextureRect" parent="TreeChopGame/Quicktime"]
+offset_left = -18.0
+offset_right = 557.0
+offset_bottom = 436.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("9_ij6fg")
 
 [node name="Axe" type="Node2D" parent="TreeChopGame"]
 position = Vector2(-300, 80)

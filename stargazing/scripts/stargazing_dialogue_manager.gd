@@ -9,7 +9,6 @@ func _ready() -> void:
 	Dialogic.start("stargazing_intro")
 
 func handle_signal(arg: String):
-	print(arg)
 	if arg == "stargazing intro ended":
 		intro_dialogue_ended.emit()
 	if arg == "stargazing explanation ended":
