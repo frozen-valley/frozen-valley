@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2tsws2qvirbp"]
+
+[ext_resource type="Texture2D" uid="uid://bfkidud4yiaw1" path="res://sprites/world_environment/trees/Stump.png" id="1_ejsbf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f3aks"]
+radius = 27.4591
+
+[node name="StaticBody2D" type="StaticBody2D"]
+scale = Vector2(0.6, 0.6)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4, -181)
+texture = ExtResource("1_ejsbf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -1)
+shape = SubResource("CircleShape2D_f3aks")

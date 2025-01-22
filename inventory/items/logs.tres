@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://cvky2iellkcgs"]
+
+[ext_resource type="Script" path="res://inventory/inv_scripts/inventory_item.gd" id="1_hqc8r"]
+[ext_resource type="Texture2D" uid="uid://ce1tfhf67qm3v" path="res://bonfire/sprites/Logs.png" id="2_l8p7x"]
+
+[resource]
+script = ExtResource("1_hqc8r")
+name = "logs"
+texture = ExtResource("2_l8p7x")

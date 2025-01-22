@@ -23,3 +23,12 @@ func insert(item: InventoryItem):
 			emptySlots[0].item = item
 			emptySlots[0].amount = 1
 	update.emit()
+
+func remove(item: InventoryItem):
+	var invItemCounter: int = 0
+	var itemSlots = slots.filter(func(slot): return slot.item == item)
+	for invItem in itemSlots:
+		invItemCounter += 1
+		if invItem.name == item.name:
+			itemSlots[invItemCounter].amount -= 1
+	update.emit()
