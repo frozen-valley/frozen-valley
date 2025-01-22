@@ -6,7 +6,7 @@ class_name MaterialButton
 @export var move_for_multiplier: int = 100
 
 @onready var _icon: Texture2D = icon
-@onready var _empty_icon: Texture2D = preload("res://bonfire/sprites/empty_200x200.png")
+#@onready var _empty_icon: Texture2D = preload("res://bonfire/sprites/empty_200x200.png")
 
 var _fireplace_material: Flammable
 
@@ -18,7 +18,7 @@ func _on_toggled(toggled_on: bool) -> void:
 		var child_count = fireplace.get_child_count()
 		var move_for = (child_count / 2.0) * move_for_multiplier - index * move_for_multiplier
 		_fireplace_material.global_position.x -= move_for
-		icon = _empty_icon
+		icon = null
 	else:
 		fireplace.remove_child(_fireplace_material)
 		_fireplace_material.queue_free()

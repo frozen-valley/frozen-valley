@@ -230,42 +230,42 @@ position = Vector2(-549, -725)
 scale = Vector2(1.5, 1.5)
 player = NodePath("../Player")
 
-[node name="AxeItem" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+[node name="Axe" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
 position = Vector2(2517, -201)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("5_7mr62")
 
-[node name="AxeItem2" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+[node name="Plank" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
 position = Vector2(1960, -129)
 rotation = 2.42404
 scale = Vector2(0.5, 0.5)
 item = ExtResource("17_v0v12")
 
-[node name="AxeItem5" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+[node name="Logs" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
 position = Vector2(405, 1120)
 rotation = -0.0619342
 scale = Vector2(0.5, 0.5)
 item = ExtResource("18_p6m3h")
 
-[node name="AxeItem6" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+[node name="Kindle" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
 position = Vector2(1732, 1279)
 rotation = -0.0619342
 scale = Vector2(0.5, 0.5)
 item = ExtResource("19_480ii")
 
-[node name="AxeItem3" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+[node name="Twigs2" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
 position = Vector2(498, 378)
 rotation = -0.0294244
 scale = Vector2(0.5, 0.5)
 item = ExtResource("20_yxg1c")
 
-[node name="AxeItem4" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+[node name="Twigs1" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
 position = Vector2(411, 457)
 rotation = -0.0294244
 scale = Vector2(0.5, 0.5)
 item = ExtResource("20_yxg1c")
 
-[node name="KeyItem" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
+[node name="Key" parent="NavigationRegion2D" instance=ExtResource("4_dapfc")]
 position = Vector2(2338, 411)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("27_lph8l")
@@ -335,7 +335,7 @@ position = Vector2(-6, 49)
 script = ExtResource("26_cyj70")
 player = NodePath("../../../Player")
 inventory = ExtResource("31_6jr4d")
-key_item = NodePath("../../../KeyItem")
+key_item = NodePath("../../../Key")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavigationRegion2D/House/HouseDoor/DoorDetectorArea"]
 position = Vector2(-1.5, 46.5)

@@ -4,7 +4,7 @@ var transition_counter = 0
 @onready var player = get_parent().get_node("Player")
 
 func _ready() -> void:
-	pass
+	TransitionScreen.on_transition_finished.connect(_on_finished)
 
 func _on_body_entered(body):
 	if (body is not Player):
@@ -17,5 +17,5 @@ func place_player():
 	player.global_position = Vector2(1291,824)
 
 func _on_finished():
-	Dialogic.start("read_letter")
+	Dialogic.start("north_finding")
 		

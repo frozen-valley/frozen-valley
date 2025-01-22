@@ -11,7 +11,7 @@ func has_item(item_name: String) -> bool:
 			continue
 		if (item.item.name == item_name):
 			return true
-	return false
+	return falseads
 
 func insert(item: InventoryItem):
 	var itemSlots = slots.filter(func(slot): return slot.item == item)
