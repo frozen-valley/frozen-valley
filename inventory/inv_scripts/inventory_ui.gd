@@ -1,10 +1,10 @@
 extends Control
 
 @onready var inv: Inventory = preload("res://inventory/player_inventory.tres")
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var slots: Array = $GridContainer.get_children()
 
-
-var is_open := false
+var disabled = false
+var is_journal_open := false
 
 func _ready():
 	inv.update.connect(update_slots)
@@ -13,11 +13,29 @@ func _ready():
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
 		slots[i].update(inv.slots[i])
-	
-func close():
-	visible = false
-	is_open = false
 
-func open():
-	visible = true
-	is_open = true
+
+func disable():
+	disabled = true
+	hide()
+
+func enable():
+	disabled = false
+	show()
+
+func close_journal():
+	is_journal_open = false
+	$GridContainer.show()
+	$InventoryTexture.show()
+
+func open_journal():
+	is_journal_open = true
+	$GridContainer.hide()
+	$InventoryTexture.hide()
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("book"):
+		if is_journal_open:
+			close_journal()
+		else:
+			open_journal()

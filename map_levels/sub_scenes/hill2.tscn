@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://de1xjjlunygjm"]
+[gd_scene load_steps=3 format=3 uid="uid://de1xjjlunygjm"]
 
 [ext_resource type="Texture2D" uid="uid://c50jcwp8d835o" path="res://sprites/world_environment/Hill2.png" id="1_2ywcn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxs0m"]
+size = Vector2(1236, 168)
 
 [node name="StaticBody2D" type="StaticBody2D"]
 position = Vector2(0, 75)

@@ -103,7 +103,7 @@ func _apply_export_overrides() -> void:
 	%MarginContainer.add_theme_constant_override("margin_bottom", bottom_margin)
 
 	## BOX SETTINGS
-	var panel: PanelContainer = %Panel
+	var panel = %Panel
 	var portrait_panel: Panel = %PortraitPanel
 	if box_modulate_global_color:
 		panel.self_modulate = get_global_setting(&'bg_color', box_modulate_custom_color)

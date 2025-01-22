@@ -4,8 +4,12 @@ class_name ObjectivesManager
 signal all_solved
 
 @export var objective: Objective
+@export var unsolved_task_color: Color = Color(0.75, 0.75, 1, 1)
+@export var solved_task_color: Color = Color(0.75, 0.75, 1, 0.25)
+
 @onready var label_preload = preload("res://objectives/ObjectiveLabel.tscn")
 @onready var container: VBoxContainer = $ObjectivesContainer
+
 
 var solved: Array[bool] = []
 var task_labels: Array[Label] = []
@@ -26,6 +30,7 @@ func _ready():
 		new_label.text = "    - " + task
 		container.add_child(new_label)
 		task_labels.append(new_label)
+		new_label.modulate = unsolved_task_color
 		if objective.sequential:
 			new_label.hide()
 	task_labels[0].show()
@@ -45,7 +50,7 @@ func solve(index: int = -1):
 			printerr("All objectives are already solved!")
 			return
 		solved[index] = true
-		task_labels[index].modulate = Color(0.25, 1, 0.25, 0.25)
+		task_labels[index].modulate = solved_task_color
 		if index+1 < len(task_labels):
 			task_labels[index+1].show()
 		else:
@@ -57,9 +62,6 @@ func solve(index: int = -1):
 			printerr("Objective '" + objective.tasks[index] + "' is already solved!")
 		else:
 			solved[index] = true
-			task_labels[index].modulate = Color(0.25, 1, 0.25, 0.25)
+			task_labels[index].modulate = solved_task_color
 		if solve_count == task_count:
 			all_solved.emit()
-
-func _on_button_pressed() -> void:
-	solve()

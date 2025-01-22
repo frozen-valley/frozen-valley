@@ -1,19 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://oybron8yksgo"]
 
 [ext_resource type="Script" path="res://transitions/ending/ending_transition.gd" id="1_087bd"]
-[ext_resource type="Texture2D" uid="uid://35pi36u1ppnw" path="res://UI/sprites/gameBackground.png" id="2_oguk2"]
+[ext_resource type="Texture2D" uid="uid://dbswwi6glsngr" path="res://transitions/ending/EndScene.png" id="2_5urwn"]
 
 [node name="EndingTransition" type="Node"]
 script = ExtResource("1_087bd")
+transition_time = 20.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
 position = Vector2(960, 540)
-texture = ExtResource("2_oguk2")
-
-[node name="Label" type="Label" parent="."]
-offset_left = 936.0
-offset_top = 430.0
-offset_right = 1028.0
-offset_bottom = 453.0
-text = "Placeholder"
+texture = ExtResource("2_5urwn")
