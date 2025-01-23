@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://dhcfrq08bxrux"]
+[gd_scene load_steps=46 format=4 uid="uid://dhcfrq08bxrux"]
 
 [ext_resource type="Script" path="res://map_levels/level 2/map_level_2.gd" id="1_dkh0h"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map_levels/sub_scenes/player.tscn" id="2_3x33r"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://dkel0yd65u2km" path="res://audio/game_soundtrack_heated.wav" id="16_h38v4"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="17_ca1ds"]
 [ext_resource type="Script" path="res://map_levels/level 2/crossing_detector_3.gd" id="18_n83i4"]
+[ext_resource type="PackedScene" uid="uid://dcmwapll00ibr" path="res://map_levels/sub_scenes/MossyTree3.tscn" id="22_upqr7"]
 [ext_resource type="Texture2D" uid="uid://c78ghc5hbbr2v" path="res://bonfire/sprites/Twigs.png" id="23_l1ori"]
 [ext_resource type="Texture2D" uid="uid://d4ewxfg72ueou" path="res://bonfire/sprites/Plank.png" id="24_hyy51"]
 [ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="25_4rbq1"]
@@ -32,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://t6eeaf2vdo43" path="res://objectives/ObjectivesManager.tscn" id="27_730yi"]
 [ext_resource type="Script" path="res://map_levels/level 2/level_2_objectives_manager.gd" id="27_bjvnj"]
 [ext_resource type="Script" path="res://objectives/objective.gd" id="28_jakjr"]
+[ext_resource type="PackedScene" uid="uid://ck68v3ll5u0mf" path="res://UI/menus/pause_menu.tscn" id="34_8tw3v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ufrgx"]
 texture = ExtResource("2_32mex")
@@ -88,11 +90,33 @@ z_index = -1
 tile_map_data = PackedByteArray("AAD//wIAAAAAAAIAAAAAAAAAAAAAAAIAAAADAAAAAAAAAAIAAAAFAAIAAAAAAAIAAAAFAP7/AAAAAAIAAAAGAAAAAAABAAAAAAACAAIAAAAAAAIAAAD/////AAAAAAEAAAABAAIAAAABAAIAAAD//wEAAAABAAIAAAABAP//AAABAAIAAAAAAP7/AAABAAIAAAADAP7/AAABAAIAAAACAP7/AAABAAIAAAABAAEAAAABAAIAAAAEAAIAAAABAAIAAAAGAAIAAAABAAAAAAAFAAEAAAABAAAAAAADAAEAAAABAAAAAAADAAIAAAAAAAEAAAAAAAEAAAABAAAAAAAEAP//AAABAAAAAAABAP7/AAABAAAAAAACAAAAAAAAAAEAAAAGAAEAAAAAAAEAAAAEAAEAAAAAAAIAAAACAAEAAAAAAAIAAAAAAAIAAAABAAEAAAD//wAAAAAAAAIAAAAAAP//AAABAAEAAAD///7/AAAAAAIAAAABAAAAAAAAAAIAAAADAP//AAAAAAIAAAACAP//AAAAAAIAAAAEAP7/AAAAAAIAAAAFAAAAAAAAAAIAAAAGAP//AAAAAAIAAAAGAP7/AAAAAAEAAAAEAAAAAAABAAEAAAAFAP//AAAAAAIAAAAHAP//AAABAAEAAAAHAP7/AAAAAAIAAAAHAAAAAAAAAAIAAAAHAAEAAAABAAIAAAAHAAIAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_1ocvm")
 
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAD//wIAAAAAAAIAAAAAAAAAAAAAAAIAAAADAAAAAAAAAAIAAAAFAAIAAAAAAAIAAAAFAP7/AAAAAAIAAAAGAAAAAAABAAAAAAACAAIAAAAAAAIAAAD/////AAAAAAEAAAABAAIAAAABAAIAAAD//wEAAAABAAIAAAABAP//AAABAAIAAAAAAP7/AAABAAIAAAADAP7/AAABAAIAAAACAP7/AAABAAIAAAABAAEAAAABAAIAAAAEAAIAAAABAAIAAAAGAAIAAAABAAAAAAAFAAEAAAABAAAAAAADAAEAAAABAAAAAAADAAIAAAAAAAEAAAAAAAEAAAABAAAAAAAEAP//AAABAAAAAAABAP7/AAABAAAAAAACAAAAAAAAAAEAAAAGAAEAAAAAAAEAAAAEAAEAAAAAAAIAAAACAAEAAAAAAAIAAAAAAAIAAAABAAEAAAD//wAAAAAAAAIAAAAAAP//AAABAAEAAAD///7/AAAAAAIAAAABAAAAAAAAAAIAAAADAP//AAAAAAIAAAACAP//AAAAAAIAAAAEAP7/AAAAAAIAAAAFAAAAAAAAAAIAAAAGAP//AAAAAAIAAAAGAP7/AAAAAAEAAAAEAAAAAAABAAEAAAAFAP//AAAAAAIAAAAHAP//AAABAAEAAAAHAP7/AAAAAAIAAAAHAAAAAAAAAAIAAAAHAAEAAAABAAIAAAAHAAIAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_1ocvm")
+
+[node name="TileMapLayer3" type="TileMapLayer" parent="."]
+z_index = -1
+tile_map_data = PackedByteArray("AAD//wIAAAAAAAIAAAAAAAAAAAAAAAIAAAADAAAAAAAAAAIAAAAFAAIAAAAAAAIAAAAFAP7/AAAAAAIAAAAGAAAAAAABAAAAAAACAAIAAAAAAAIAAAD/////AAAAAAEAAAABAAIAAAABAAIAAAD//wEAAAABAAIAAAABAP//AAABAAIAAAAAAP7/AAABAAIAAAADAP7/AAABAAIAAAACAP7/AAABAAIAAAABAAEAAAABAAIAAAAEAAIAAAABAAIAAAAGAAIAAAABAAAAAAAFAAEAAAABAAAAAAADAAEAAAABAAAAAAADAAIAAAAAAAEAAAAAAAEAAAABAAAAAAAEAP//AAABAAAAAAABAP7/AAABAAAAAAACAAAAAAAAAAEAAAAGAAEAAAAAAAEAAAAEAAEAAAAAAAIAAAACAAEAAAAAAAIAAAAAAAIAAAABAAEAAAD//wAAAAAAAAIAAAAAAP//AAABAAEAAAD///7/AAAAAAIAAAABAAAAAAAAAAIAAAADAP//AAAAAAIAAAACAP//AAAAAAIAAAAEAP7/AAAAAAIAAAAFAAAAAAAAAAIAAAAGAP//AAAAAAIAAAAGAP7/AAAAAAEAAAAEAAAAAAABAAEAAAAFAP//AAAAAAIAAAAHAP//AAABAAEAAAAHAP7/AAAAAAIAAAAHAAAAAAAAAAIAAAAHAAEAAAABAAIAAAAHAAIAAAAAAAEAAAA=")
+tile_set = SubResource("TileSet_1ocvm")
+
 [node name="ForestBorder" type="StaticBody2D" parent="."]
 position = Vector2(3130, 310)
 scale = Vector2(100, 100)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ForestBorder"]
+position = Vector2(17.33, -1.11)
+scale = Vector2(5, 3)
+build_mode = 1
+polygon = PackedVector2Array(-5.646, 6.28, -6.546, 5.98, -9.616, 5.9, -9.48, 4.53667, -8.196, 4.11, -7.906, 2.97667, -9.376, 2.62, -9.316, 1.52667, -7.88, 1.12333, -7.806, -0.606667, -6.562, -0.606667, -6.098, 0.59, -5.22, 1.06667, -4.382, 0.973333, -4.192, -1.12667, -2.614, -1.19, -2.648, -0.03, -2.27434, -0.716426, -1.2, -2.69, 1.102, -2.92667, 2.794, -3.83, 4.536, -3.57667, 7.292, -3.71, 7.934, -3.43333, 7.878, -4.28667, 8.766, -4.46, 8.978, -3.36, 8.836, -1.61, 9.42, -1.69667, 9.96, -1.40667, 10.308, -0.576667, 10.07, 0.346667, 9.254, 0.38, 8.936, 1.23333, 9.608, 2.75, 10.018, 2.5, 10.146, 3.62333, 9.158, 3.97, 8.056, 2.83667, 7.386, 2.09, 7.716, -0.483333, 7.404, -1.82333, 5.192, -1.86, 4.794, -1.41667, 4.628, -0.493333, 4.332, 0.0933333, 3.984, 0.0766667, 3.736, 0.0366666, 3.504, 0.396667, 3.156, -0.293333, 3.176, -1.37667, 2.774, -1.89667, 2.088, -1.63667, 0.57, -1.44333, -0.164001, -0.963333, -0.900001, -0.313333, -1.828, 0.943333, -0.576, 0.95, -0.0900002, 1.09333, 0.0240002, 1.78, -0.262, 2.33, -1.596, 3.03333, -1.138, 4.38, -3.468, 5.58667, -4.826, 3.27667, -6.406, 3.11667, -6.162, 4.34333, -4.732, 4.95333, -4.782, 6.51)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ForestBorder"]
+position = Vector2(17.33, -1.11)
+scale = Vector2(5, 3)
+build_mode = 1
+polygon = PackedVector2Array(-5.646, 6.28, -6.546, 5.98, -9.616, 5.9, -9.48, 4.53667, -8.196, 4.11, -7.906, 2.97667, -9.376, 2.62, -9.316, 1.52667, -7.88, 1.12333, -7.806, -0.606667, -6.562, -0.606667, -6.098, 0.59, -5.22, 1.06667, -4.382, 0.973333, -4.192, -1.12667, -2.614, -1.19, -2.648, -0.03, -2.27434, -0.716426, -1.2, -2.69, 1.102, -2.92667, 2.794, -3.83, 4.536, -3.57667, 7.292, -3.71, 7.934, -3.43333, 7.878, -4.28667, 8.766, -4.46, 8.978, -3.36, 8.836, -1.61, 9.42, -1.69667, 9.96, -1.40667, 10.308, -0.576667, 10.07, 0.346667, 9.254, 0.38, 8.936, 1.23333, 9.608, 2.75, 10.018, 2.5, 10.146, 3.62333, 9.158, 3.97, 8.056, 2.83667, 7.386, 2.09, 7.716, -0.483333, 7.404, -1.82333, 5.192, -1.86, 4.794, -1.41667, 4.628, -0.493333, 4.332, 0.0933333, 3.984, 0.0766667, 3.736, 0.0366666, 3.504, 0.396667, 3.156, -0.293333, 3.176, -1.37667, 2.774, -1.89667, 2.088, -1.63667, 0.57, -1.44333, -0.164001, -0.963333, -0.900001, -0.313333, -1.828, 0.943333, -0.576, 0.95, -0.0900002, 1.09333, 0.0240002, 1.78, -0.262, 2.33, -1.596, 3.03333, -1.138, 4.38, -3.468, 5.58667, -4.826, 3.27667, -6.406, 3.11667, -6.162, 4.34333, -4.732, 4.95333, -4.782, 6.51)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="ForestBorder"]
 position = Vector2(17.33, -1.11)
 scale = Vector2(5, 3)
 build_mode = 1
@@ -176,406 +200,319 @@ shape = SubResource("SegmentShape2D_5ks1o")
 y_sort_enabled = true
 
 [node name="Bush3" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(856, 1467)
 
 [node name="Bush51" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1057, 1218)
 
 [node name="Bush5" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(215, 1553)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bush54" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(823, 1852)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bush2" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(1950, 1941)
 
 [node name="Bush53" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(2571, 1650)
 
 [node name="Bush55" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(1955, 2077)
 
 [node name="Bush56" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(846, 1983)
 
 [node name="Bush52" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(1562, 1229)
 
 [node name="Bush4" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(238, 1805)
 scale = Vector2(0.6, 0.6)
 
 [node name="Bush83" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1052, 2081)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bush84" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(1075, 2212)
 
 [node name="Bush85" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(467, 2034)
 scale = Vector2(0.6, 0.6)
 
 [node name="Bush9" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(741, 1027)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush50" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(376, 996)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush16" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3404, 1175)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush34" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(6638, -811)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush87" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(6638, -811)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush82" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(7333, -15.0001)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush70" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3278, -192)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush36" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(7470, -682)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush38" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(8282, -729)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush39" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(8620, -442)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush40" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(8941, -1293)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush41" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(8947, -138)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush42" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(9203, -333)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush57" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(9203, -333)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush31" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3085, 1612)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush69" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3115, 1929)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush17" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(2877, 335)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush21" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(2877, 335)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush22" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3415, 213)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush23" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3825, 1119)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush24" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3850, 1550)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush27" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3850, 1550)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush28" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(3765, 1578)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush10" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(610, 549)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush20" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(2697, 579)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush12" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(284, 667)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush71" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(212, 1367)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush72" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(120, 1038)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush74" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(13, 1198)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush75" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(-79, 869)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush76" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(-243, 1240)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1716, 1599)
 
 [node name="Bush15" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(2561, 1118)
 scale = Vector2(1, 1)
 
 [node name="Bush47" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(8523, -95)
 scale = Vector2(1, 1)
 
 [node name="Bush48" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(8666, -1094)
 scale = Vector2(1, 1)
 
 [node name="Bush49" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(10261, 224)
 scale = Vector2(1, 1)
 
 [node name="Bush6" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1702, 1505)
 
 [node name="Bush18" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(3383, 442)
 
 [node name="Bush19" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(3644, 609)
 
 [node name="Bush32" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(7637, 114)
 
 [node name="Bush35" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(7199, -735)
 
 [node name="Bush43" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(8970, 231)
 
 [node name="Bush44" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(9866, 223)
 
 [node name="Bush46" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(10210, 19)
 
 [node name="Bush58" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(9149, -1127)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush59" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(9149, -1127)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush60" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(9648, -791)
 scale = Vector2(1, 1)
 
 [node name="Bush61" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(9208, -766)
 
 [node name="Bush62" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(9552, -970)
 
 [node name="Bush77" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(10510, 32)
 scale = Vector2(1, 1)
 
 [node name="Bush78" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(10169, -216)
 
 [node name="Bush79" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(9897, -983)
 scale = Vector2(1, 1)
 
 [node name="Bush80" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(9846, -1188)
 
 [node name="Bush63" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(8571, -1267)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush64" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(8571, -1267)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush66" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(8630, -906)
 
 [node name="Bush67" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(8974, -1110)
 
 [node name="Bush45" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(9742, 485)
 
 [node name="Bush81" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(9844, 506)
 
 [node name="Bush29" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(4532, 421)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bush37" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(4234, -378)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bush33" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(5390, -1061)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bush30" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(4645, 474)
 
 [node name="Bush86" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(5567, 192)
 
 [node name="Bush25" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(3598, 1453)
 
 [node name="Bush26" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(3591, 1598)
 
 [node name="Bush73" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(3591, 1598)
 
 [node name="Bush65" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-y_sort_enabled = true
 position = Vector2(2167, 96.0001)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush68" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(2673, 82)
 
 [node name="Bush7" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1603, 957)
 scale = Vector2(-0.3, 0.3)
 
 [node name="Bush11" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1736, 451)
 scale = Vector2(-0.3, 0.3)
 
 [node name="Bush13" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1075, 194)
 scale = Vector2(-0.3, 0.3)
 
 [node name="Bush14" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1464, 213)
 scale = Vector2(-0.3, 0.3)
 
 [node name="Bush8" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-y_sort_enabled = true
 position = Vector2(1140, 555)
 scale = Vector2(-0.3, 0.3)
 
@@ -1607,7 +1544,7 @@ position = Vector2(1706, 1143)
 position = Vector2(1487, 1113)
 
 [node name="Tree27" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
-position = Vector2(1631, 696)
+position = Vector2(1656, 635)
 scale = Vector2(0.7, 0.7)
 
 [node name="Tree20" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
@@ -1852,32 +1789,28 @@ position = Vector2(1841, 1579)
 position = Vector2(1915, 1637)
 
 [node name="StaticBody2D" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
-y_sort_enabled = true
 position = Vector2(4202, 424)
 
 [node name="DeadTree" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(1742, 1367)
 
 [node name="DeadTree14" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(770, 484)
 
 [node name="DeadTree4" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(2367, 1022)
 
 [node name="DeadTree15" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(2828, 518)
 
 [node name="DeadTree2" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(920, 1033)
 
 [node name="DeadTree18" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
-position = Vector2(420, 1838)
+position = Vector2(456, 1972)
+
+[node name="DeadTree28" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
+position = Vector2(456, 1972)
 
 [node name="Tree277" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
 position = Vector2(1309, 2103)
@@ -1902,19 +1835,15 @@ position = Vector2(364, 2188)
 scale = Vector2(1.5, 1.5)
 
 [node name="DeadTree27" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(649, 2067)
 
 [node name="DeadTree5" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(2761, 66)
 
 [node name="DeadTree7" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(3949, 411)
 
 [node name="DeadTree9" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(4328, 920)
 
 [node name="Tree273" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
@@ -1970,31 +1899,24 @@ position = Vector2(4431, 1160)
 scale = Vector2(1.2, 1.2)
 
 [node name="DeadTree26" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(4292, 1134)
 
 [node name="DeadTree10" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(4346, 390)
 
 [node name="DeadTree6" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(3408, 1049)
 
 [node name="DeadTree16" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(2956, 1250)
 
 [node name="DeadTree17" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(1888, 1984)
 
 [node name="DeadTree11" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(6006, -1093)
 
 [node name="DeadTree12" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(6867, -844)
 
 [node name="Tree269" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
@@ -2014,7 +1936,6 @@ position = Vector2(7252, -135)
 scale = Vector2(1.2, 1.2)
 
 [node name="DeadTree25" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(7562, -48.0001)
 
 [node name="Tree238" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
@@ -2034,7 +1955,6 @@ position = Vector2(1877, 77)
 scale = Vector2(1.2, 1.2)
 
 [node name="DeadTree22" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(2187, 164)
 
 [node name="Tree221" type="StaticBody2D" parent="YSort/Trees"]
@@ -2100,23 +2020,18 @@ position = Vector2(1, 1)
 shape = SubResource("CircleShape2D_dksyn")
 
 [node name="DeadTree19" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(2646, -474)
 
 [node name="DeadTree20" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(3507, -225)
 
 [node name="DeadTree13" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(7355, -356)
 
 [node name="DeadTree8" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(3655, 1499)
 
 [node name="DeadTree3" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(209, 822)
 scale = Vector2(1.5, 1.5)
 
@@ -2130,7 +2045,6 @@ position = Vector2(89, 1386)
 position = Vector2(232, 1024)
 
 [node name="DeadTree21" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(45, 1193)
 scale = Vector2(1.5, 1.5)
 
@@ -2141,7 +2055,6 @@ position = Vector2(-110, 1217)
 position = Vector2(33, 855)
 
 [node name="DeadTree23" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(-154, 1024)
 scale = Vector2(1.5, 1.5)
 
@@ -2149,7 +2062,6 @@ scale = Vector2(1.5, 1.5)
 position = Vector2(-131, 1226)
 
 [node name="DeadTree24" parent="YSort/Trees" instance=ExtResource("7_p13e1")]
-y_sort_enabled = true
 position = Vector2(-318, 1395)
 scale = Vector2(1.5, 1.5)
 
@@ -2160,146 +2072,214 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_jeojd")
 
 [node name="MossTree1" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(1041, 1458)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
+[node name="MossTree21" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(1118, 1863)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
 [node name="MossTree2" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(1051, 1256)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree3" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(1051, 1256)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree4" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
-position = Vector2(1689, 893)
+position = Vector2(1665, 970)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossTree22" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(1665, 970)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossTree23" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(969, 649)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossTree24" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(1782, 570)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree9" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(580, 377)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree10" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(369, 449)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree11" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(1262, 238)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree12" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(476, 1217)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree13" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(1872, 2254)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree14" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(3690, 1783)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree15" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(4108, 1608)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree16" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(1454, -79.9999)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree17" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(848, 122)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree18" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(1207, -107)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree5" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(1568, 584)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree6" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
-position = Vector2(3656, 214)
+position = Vector2(3651, 314)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossTree25" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(2913, 453)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossTree26" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(3469, 1118)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossTree27" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(3647, 551)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree20" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(3944, -62)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
+[node name="MossTree29" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(4416, -407)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossTree28" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(4034, 359)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
 [node name="MossTree7" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(4227, -356)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree8" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(7536, -581)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree19" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-y_sort_enabled = true
 position = Vector2(7068, -685)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
+[node name="MossTree30" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(6365, -369)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossTree31" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
+position = Vector2(6506, -761)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
 [node name="MossyTree2" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
-y_sort_enabled = true
 position = Vector2(1627, 1509)
 
+[node name="MossyTree10" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
+position = Vector2(1627, 1509)
+
+[node name="MossyTree11" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
+position = Vector2(1607, 1936)
+
 [node name="MossyTree22" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
-y_sort_enabled = true
 position = Vector2(1519, 967)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossyTree23" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
-y_sort_enabled = true
 position = Vector2(3844, 456)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
+[node name="MossyTree25" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
+position = Vector2(3407, 406)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
+[node name="MossyTree26" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
+position = Vector2(2867, 957)
+rotation = 3.14159
+scale = Vector2(0.6, -0.6)
+
 [node name="MossyTree24" parent="YSort/Trees" instance=ExtResource("6_wli5l")]
-y_sort_enabled = true
 position = Vector2(4408, 69)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
+
+[node name="MossyTree3" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
+position = Vector2(8782, 695)
+
+[node name="MossyTree4" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
+position = Vector2(9422, -223)
+
+[node name="MossyTree5" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
+position = Vector2(8876, -835)
+
+[node name="MossyTree6" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
+position = Vector2(9245, -670)
+
+[node name="MossyTree7" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
+position = Vector2(9046, -1132)
+
+[node name="MossyTree8" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
+position = Vector2(9343, 453)
+
+[node name="MossyTree9" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
+position = Vector2(8983, -111)
 
 [node name="Rocks" type="Node2D" parent="YSort"]
 y_sort_enabled = true
@@ -2688,6 +2668,8 @@ script = ExtResource("27_bjvnj")
 
 [node name="ObjectivesManager" parent="CanvasLayer/Level2ObjectivesManager" instance=ExtResource("27_730yi")]
 objective = SubResource("Resource_doys0")
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("34_8tw3v")]
 
 [connection signal="found" from="YSort/Sister" to="YSort/Player/Camera2D/Level2Audio" method="_on_sister_found"]
 [connection signal="found" from="YSort/Sister" to="CanvasLayer/Level2ObjectivesManager" method="_on_sister_found"]

@@ -23,6 +23,6 @@ animations = [{
 
 [node name="RealCampfire" type="AnimatedSprite2D"]
 position = Vector2(0, -25)
-scale = Vector2(0.175, 0.175)
+scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_nw7bk")
 frame_progress = 0.144009

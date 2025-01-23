@@ -6,7 +6,8 @@
 
 [node name="EndingTransition" type="Node"]
 script = ExtResource("1_087bd")
-transition_time = 20.0
+float_speed = 2.0
+transition_time = 120.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0, 0, 0, 1)
