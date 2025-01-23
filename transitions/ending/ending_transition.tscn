@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://oybron8yksgo"]
+[gd_scene load_steps=6 format=3 uid="uid://oybron8yksgo"]
 
 [ext_resource type="Script" path="res://transitions/ending/ending_transition.gd" id="1_087bd"]
 [ext_resource type="Texture2D" uid="uid://dbswwi6glsngr" path="res://transitions/ending/EndScene.png" id="2_5urwn"]
 [ext_resource type="AudioStream" uid="uid://cw28s8euhcfui" path="res://audio/clarity.v4.mp3" id="3_fwp0y"]
+[ext_resource type="FontFile" uid="uid://bxn0heivf4x28" path="res://UI/theme/font/TakeOffEh-MwAY.otf" id="4_dwwu4"]
+[ext_resource type="Texture2D" uid="uid://3h1pyv3j0i4d" path="res://sprites/misc/CreditsTitle.png" id="4_mqogp"]
 
 [node name="EndingTransition" type="Node"]
 script = ExtResource("1_087bd")
@@ -21,3 +23,30 @@ autoplay = true
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Credits" type="Label" parent="."]
+visible = false
+offset_left = 677.0
+offset_top = 97.0
+offset_right = 1170.0
+offset_bottom = 314.0
+theme_override_colors/font_color = Color(0, 0.176471, 0.447059, 1)
+theme_override_fonts/font = ExtResource("4_dwwu4")
+text = "Project R, Faculty of electrical engineering and computing, Zagreb 2025.
+
+CREDITS:
+Jelena Glasović
+Marin Prusac
+Erik Kranjec
+Dean Rakić
+
+Special Thanks:
+Jan Falak - Music
+Leonardo Šimunović - Music"
+horizontal_alignment = 1
+
+[node name="TitleScreen" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(374, 323)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_mqogp")

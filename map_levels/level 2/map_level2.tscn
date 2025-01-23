@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://map_levels/level 2/map_level_2.gd" id="1_dkh0h"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map_levels/sub_scenes/player.tscn" id="2_3x33r"]
 [ext_resource type="Texture2D" uid="uid://b7lk8mf6lyg1h" path="res://map_levels/tile_atlas.tres" id="2_32mex"]
-[ext_resource type="PackedScene" path="res://map_levels/sub_scenes/rock.tscn" id="4_bpa67"]
+[ext_resource type="PackedScene" uid="uid://d3x8867t5rqt1" path="res://map_levels/sub_scenes/rock.tscn" id="4_bpa67"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map_levels/sub_scenes/tree.tscn" id="4_jrj26"]
 [ext_resource type="PackedScene" uid="uid://buvdefihipgne" path="res://map_levels/sub_scenes/MossyTree1.tscn" id="5_lb1n4"]
 [ext_resource type="Script" path="res://map_levels/level 2/level_2_audio.gd" id="5_txy4s"]
@@ -419,7 +419,7 @@ position = Vector2(9648, -791)
 scale = Vector2(1, 1)
 
 [node name="Bush61" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-position = Vector2(9208, -766)
+position = Vector2(9201, -823)
 
 [node name="Bush62" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
 position = Vector2(9552, -970)
@@ -493,7 +493,7 @@ scale = Vector2(0.4, 0.4)
 position = Vector2(2673, 82)
 
 [node name="Bush7" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-position = Vector2(1603, 957)
+position = Vector2(1630, 1017)
 scale = Vector2(-0.3, 0.3)
 
 [node name="Bush11" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
@@ -501,11 +501,11 @@ position = Vector2(1736, 451)
 scale = Vector2(-0.3, 0.3)
 
 [node name="Bush13" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-position = Vector2(1075, 194)
+position = Vector2(1108, 369)
 scale = Vector2(-0.3, 0.3)
 
 [node name="Bush14" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-position = Vector2(1464, 213)
+position = Vector2(1509, 195)
 scale = Vector2(-0.3, 0.3)
 
 [node name="Bush8" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
@@ -771,7 +771,7 @@ position = Vector2(8811, 201)
 scale = Vector2(2, 2)
 
 [node name="Tree110" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
-position = Vector2(8827, 431)
+position = Vector2(8741, 472)
 scale = Vector2(2, 2)
 
 [node name="Tree111" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
@@ -1148,10 +1148,6 @@ scale = Vector2(1.2, 1.2)
 
 [node name="Tree129" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
 position = Vector2(8944, -203)
-scale = Vector2(1.2, 1.2)
-
-[node name="Tree130" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
-position = Vector2(8973, 92)
 scale = Vector2(1.2, 1.2)
 
 [node name="Tree131" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
@@ -2118,7 +2114,7 @@ rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree11" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-position = Vector2(1262, 238)
+position = Vector2(1228, 195)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
@@ -2266,7 +2262,7 @@ position = Vector2(9422, -223)
 position = Vector2(8876, -835)
 
 [node name="MossyTree6" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
-position = Vector2(9245, -670)
+position = Vector2(9256, -657)
 
 [node name="MossyTree7" parent="YSort/Trees" instance=ExtResource("22_upqr7")]
 position = Vector2(9046, -1132)
@@ -2666,6 +2662,7 @@ script = ExtResource("27_bjvnj")
 objective = SubResource("Resource_doys0")
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("34_8tw3v")]
+visible = false
 
 [connection signal="found" from="YSort/Sister" to="YSort/Player/Camera2D/Level2Audio" method="_on_sister_found"]
 [connection signal="found" from="YSort/Sister" to="CanvasLayer/Level2ObjectivesManager" method="_on_sister_found"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://k3fyvx8tr23c"]
+[gd_scene load_steps=19 format=3 uid="uid://k3fyvx8tr23c"]
 
 [ext_resource type="Script" path="res://tree_chop_game/scripts/quicktime_game.gd" id="1_a5lmt"]
 [ext_resource type="Texture2D" uid="uid://c7mbk8yk3w1l3" path="res://tree_chop_game/ChopBG.png" id="2_cy12d"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dqishhaa8m6c0" path="res://sprites/world_environment/trees/ChoppedTree2.png" id="11_ln1sr"]
 [ext_resource type="Texture2D" uid="uid://b5pgttapedfmq" path="res://sprites/world_environment/trees/ChoppedTree3.png" id="12_0tqvj"]
 [ext_resource type="Texture2D" uid="uid://8sxjxs6oljoi" path="res://sprites/world_environment/trees/ChoppedTree4.png" id="13_l7vcy"]
+[ext_resource type="AudioStream" uid="uid://ddbe0s8uoaknx" path="res://audio/game_soundtrack.wav" id="18_wgi2u"]
 
 [node name="TreeChop" type="Node"]
 script = ExtResource("1_a5lmt")
@@ -96,6 +97,11 @@ texture = ExtResource("9_t3d4o")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(3420, 1973)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(3433, 2183)
+stream = ExtResource("18_wgi2u")
+autoplay = true
 
 [connection signal="finished_quicktime" from="TreeChopGame" to="." method="_on_tree_chop_game_finished_quicktime"]
 [connection signal="quicktime_finished" from="TreeChopGame/Quicktime" to="TreeChopGame" method="_on_quicktime_quicktime_finished"]
