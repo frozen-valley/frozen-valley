@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://map_levels/level 2/map_level_2.gd" id="1_dkh0h"]
 [ext_resource type="PackedScene" uid="uid://de52svsa7v0in" path="res://map_levels/sub_scenes/player.tscn" id="2_3x33r"]
 [ext_resource type="Texture2D" uid="uid://b7lk8mf6lyg1h" path="res://map_levels/tile_atlas.tres" id="2_32mex"]
-[ext_resource type="PackedScene" uid="uid://d3x8867t5rqt1" path="res://map_levels/sub_scenes/rock.tscn" id="4_bpa67"]
+[ext_resource type="PackedScene" path="res://map_levels/sub_scenes/rock.tscn" id="4_bpa67"]
 [ext_resource type="PackedScene" uid="uid://drsrtqvvlldm4" path="res://map_levels/sub_scenes/tree.tscn" id="4_jrj26"]
 [ext_resource type="PackedScene" uid="uid://buvdefihipgne" path="res://map_levels/sub_scenes/MossyTree1.tscn" id="5_lb1n4"]
 [ext_resource type="Script" path="res://map_levels/level 2/level_2_audio.gd" id="5_txy4s"]
@@ -108,7 +108,7 @@ scale = Vector2(100, 100)
 position = Vector2(17.33, -1.11)
 scale = Vector2(5, 3)
 build_mode = 1
-polygon = PackedVector2Array(-5.646, 6.28, -6.546, 5.98, -9.616, 5.9, -9.48, 4.53667, -8.196, 4.11, -7.906, 2.97667, -9.376, 2.62, -9.316, 1.52667, -7.88, 1.12333, -7.806, -0.606667, -6.562, -0.606667, -6.098, 0.59, -5.22, 1.06667, -4.382, 0.973333, -4.192, -1.12667, -2.614, -1.19, -2.648, -0.03, -2.27434, -0.716426, -1.2, -2.69, 1.102, -2.92667, 2.794, -3.83, 4.536, -3.57667, 7.292, -3.71, 7.934, -3.43333, 7.878, -4.28667, 8.766, -4.46, 8.978, -3.36, 8.836, -1.61, 9.42, -1.69667, 9.96, -1.40667, 10.308, -0.576667, 10.07, 0.346667, 9.254, 0.38, 8.936, 1.23333, 9.608, 2.75, 10.018, 2.5, 10.146, 3.62333, 9.158, 3.97, 8.056, 2.83667, 7.386, 2.09, 7.716, -0.483333, 7.404, -1.82333, 5.192, -1.86, 4.794, -1.41667, 4.628, -0.493333, 4.332, 0.0933333, 3.984, 0.0766667, 3.736, 0.0366666, 3.504, 0.396667, 3.156, -0.293333, 3.176, -1.37667, 2.774, -1.89667, 2.088, -1.63667, 0.57, -1.44333, -0.164001, -0.963333, -0.900001, -0.313333, -1.828, 0.943333, -0.576, 0.95, -0.0900002, 1.09333, 0.0240002, 1.78, -0.262, 2.33, -1.596, 3.03333, -1.138, 4.38, -3.468, 5.58667, -4.826, 3.27667, -6.406, 3.11667, -6.162, 4.34333, -4.732, 4.95333, -4.782, 6.51)
+polygon = PackedVector2Array(-5.646, 6.28, -6.546, 5.98, -9.616, 5.9, -9.48, 4.53667, -8.196, 4.11, -7.906, 2.97667, -9.376, 2.62, -9.316, 1.52667, -7.88, 1.12333, -7.806, -0.606667, -6.562, -0.606667, -6.098, 0.59, -5.22, 1.06667, -4.382, 0.973333, -4.192, -1.12667, -2.614, -1.19, -2.648, -0.03, -2.27434, -0.716426, -1.2, -2.69, 1.102, -2.92667, 2.794, -3.83, 4.536, -3.57667, 7.292, -3.71, 7.934, -3.43333, 7.878, -4.28667, 8.766, -4.46, 8.978, -3.36, 8.836, -1.61, 9.42, -1.69667, 9.96, -1.40667, 10.308, -0.576667, 10.07, 0.346667, 9.254, 0.38, 8.936, 1.23333, 9.608, 2.75, 10.018, 2.5, 10.146, 3.62333, 9.158, 3.97, 8.298, 3.00667, 7.386, 2.09, 7.716, -0.483333, 7.404, -1.82333, 5.192, -1.86, 4.794, -1.41667, 4.628, -0.493333, 4.332, 0.0933333, 3.984, 0.0766667, 3.736, 0.0366666, 3.504, 0.396667, 2.914, -0.573333, 3.176, -1.37667, 2.774, -1.89667, 2.088, -1.63667, 0.57, -1.44333, -0.164001, -0.963333, -0.900001, -0.313333, -1.828, 0.943333, -0.576, 0.95, -0.0900002, 1.09333, 0.0240002, 1.78, -0.262, 2.33, -1.596, 3.03333, -1.138, 4.38, -3.468, 5.58667, -4.826, 3.27667, -6.406, 3.11667, -6.162, 4.34333, -4.732, 4.95333, -4.782, 6.51)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ForestBorder"]
 position = Vector2(17.33, -1.11)
@@ -120,7 +120,7 @@ polygon = PackedVector2Array(-5.646, 6.28, -6.546, 5.98, -9.616, 5.9, -9.48, 4.5
 position = Vector2(17.33, -1.11)
 scale = Vector2(5, 3)
 build_mode = 1
-polygon = PackedVector2Array(-5.646, 6.28, -6.546, 5.98, -9.616, 5.9, -9.48, 4.53667, -8.196, 4.11, -7.906, 2.97667, -9.376, 2.62, -9.316, 1.52667, -7.88, 1.12333, -7.806, -0.606667, -6.562, -0.606667, -6.098, 0.59, -5.22, 1.06667, -4.382, 0.973333, -4.192, -1.12667, -2.614, -1.19, -2.648, -0.03, -2.27434, -0.716426, -1.2, -2.69, 1.102, -2.92667, 2.794, -3.83, 4.536, -3.57667, 7.292, -3.71, 7.934, -3.43333, 7.878, -4.28667, 8.766, -4.46, 8.978, -3.36, 8.836, -1.61, 9.42, -1.69667, 9.96, -1.40667, 10.308, -0.576667, 10.07, 0.346667, 9.254, 0.38, 8.936, 1.23333, 9.608, 2.75, 10.018, 2.5, 10.146, 3.62333, 9.158, 3.97, 8.056, 2.83667, 7.386, 2.09, 7.716, -0.483333, 7.404, -1.82333, 5.192, -1.86, 4.794, -1.41667, 4.628, -0.493333, 4.332, 0.0933333, 3.984, 0.0766667, 3.736, 0.0366666, 3.504, 0.396667, 3.156, -0.293333, 3.176, -1.37667, 2.774, -1.89667, 2.088, -1.63667, 0.57, -1.44333, -0.164001, -0.963333, -0.900001, -0.313333, -1.828, 0.943333, -0.576, 0.95, -0.0900002, 1.09333, 0.0240002, 1.78, -0.262, 2.33, -1.596, 3.03333, -1.138, 4.38, -3.468, 5.58667, -4.826, 3.27667, -6.406, 3.11667, -6.162, 4.34333, -4.732, 4.95333, -4.782, 6.51)
+polygon = PackedVector2Array(-5.646, 6.28, -6.546, 5.98, -9.616, 5.9, -9.48, 4.53667, -8.196, 4.11, -7.906, 2.97667, -9.376, 2.62, -9.316, 1.52667, -7.88, 1.12333, -7.806, -0.606667, -6.562, -0.606667, -6.098, 0.59, -5.22, 1.06667, -4.382, 0.973333, -4.192, -1.12667, -2.614, -1.19, -2.648, -0.03, -2.27434, -0.716426, -1.2, -2.69, 1.102, -2.92667, 2.794, -3.83, 4.536, -3.57667, 7.292, -3.71, 7.934, -3.43333, 7.878, -4.28667, 8.766, -4.46, 8.978, -3.36, 8.836, -1.61, 9.42, -1.69667, 9.96, -1.40667, 10.308, -0.576667, 10.07, 0.346667, 9.254, 0.38, 8.936, 1.23333, 9.608, 2.75, 10.018, 2.5, 10.146, 3.62333, 9.158, 3.97, 8.056, 2.83667, 7.386, 2.09, 7.716, -0.483333, 7.404, -1.82333, 5.154, -2.15333, 4.686, -1.87333, 4.628, -0.493333, 4.332, 0.0933333, 3.984, 0.0766667, 3.736, 0.0366666, 3.504, 0.396667, 3.156, -0.293333, 3.176, -1.37667, 2.774, -1.89667, 2.088, -1.63667, 0.57, -1.44333, -0.164001, -0.963333, -0.900001, -0.313333, -1.828, 0.943333, -0.576, 0.95, -0.0900002, 1.09333, 0.0240002, 1.78, -0.262, 2.33, -1.596, 3.03333, -1.138, 4.38, -3.468, 5.58667, -4.826, 3.27667, -6.406, 3.11667, -6.162, 4.34333, -4.732, 4.95333, -4.782, 6.51)
 
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -206,7 +206,7 @@ position = Vector2(856, 1467)
 position = Vector2(1057, 1218)
 
 [node name="Bush5" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-position = Vector2(215, 1553)
+position = Vector2(203, 1531)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bush54" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
@@ -217,7 +217,7 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(1950, 1941)
 
 [node name="Bush53" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-position = Vector2(2571, 1650)
+position = Vector2(2445, 1568)
 
 [node name="Bush55" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
 position = Vector2(1955, 2077)
@@ -268,11 +268,11 @@ position = Vector2(7333, -15.0001)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush70" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-position = Vector2(3278, -192)
+position = Vector2(3058, -84.0001)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush36" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-position = Vector2(7470, -682)
+position = Vector2(7594, -768)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush38" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
@@ -291,12 +291,8 @@ scale = Vector2(0.4, 0.4)
 position = Vector2(8947, -138)
 scale = Vector2(0.4, 0.4)
 
-[node name="Bush42" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-position = Vector2(9203, -333)
-scale = Vector2(0.4, 0.4)
-
 [node name="Bush57" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
-position = Vector2(9203, -333)
+position = Vector2(9327, -193)
 scale = Vector2(0.4, 0.4)
 
 [node name="Bush31" parent="YSort/Bushes" instance=ExtResource("6_0mkpf")]
@@ -387,7 +383,7 @@ position = Vector2(10261, 224)
 scale = Vector2(1, 1)
 
 [node name="Bush6" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-position = Vector2(1702, 1505)
+position = Vector2(2092, 1581)
 
 [node name="Bush18" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
 position = Vector2(3383, 442)
@@ -402,7 +398,7 @@ position = Vector2(7637, 114)
 position = Vector2(7199, -735)
 
 [node name="Bush43" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-position = Vector2(8970, 231)
+position = Vector2(9302, 701)
 
 [node name="Bush44" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
 position = Vector2(9866, 223)
@@ -475,7 +471,7 @@ position = Vector2(5390, -1061)
 scale = Vector2(0.5, 0.5)
 
 [node name="Bush30" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
-position = Vector2(4645, 474)
+position = Vector2(4461, 480)
 
 [node name="Bush86" parent="YSort/Bushes" instance=ExtResource("5_u0654")]
 position = Vector2(5567, 192)
@@ -715,7 +711,7 @@ position = Vector2(7692, -778)
 scale = Vector2(2, 2)
 
 [node name="Tree83" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
-position = Vector2(7681, -401)
+position = Vector2(7681, -329)
 scale = Vector2(2, 2)
 
 [node name="Tree98" parent="YSort/Trees" instance=ExtResource("4_jrj26")]
@@ -2087,7 +2083,7 @@ rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree3" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-position = Vector2(1051, 1256)
+position = Vector2(1085, 1338)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
@@ -2207,7 +2203,7 @@ rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
 [node name="MossTree8" parent="YSort/Trees" instance=ExtResource("5_lb1n4")]
-position = Vector2(7536, -581)
+position = Vector2(7530, -695)
 rotation = 3.14159
 scale = Vector2(0.6, -0.6)
 
@@ -2441,7 +2437,7 @@ position = Vector2(3949, 522)
 
 [node name="Hill7" parent="YSort/Hills" instance=ExtResource("7_f524a")]
 y_sort_enabled = true
-position = Vector2(5087, -288)
+position = Vector2(4975, -116)
 
 [node name="Hill14" parent="YSort/Hills" instance=ExtResource("7_f524a")]
 y_sort_enabled = true
@@ -2509,7 +2505,7 @@ position = Vector2(4772, -652)
 
 [node name="Hill26" parent="YSort/Hills" instance=ExtResource("7_f524a")]
 y_sort_enabled = true
-position = Vector2(6213, -101)
+position = Vector2(6063, 109)
 
 [node name="Hill27" parent="YSort/Hills" instance=ExtResource("7_f524a")]
 y_sort_enabled = true
@@ -2541,7 +2537,7 @@ position = Vector2(823, 263)
 
 [node name="Hill6" parent="YSort/Hills" instance=ExtResource("8_vs2na")]
 y_sort_enabled = true
-position = Vector2(3183, -129)
+position = Vector2(3207, -157)
 
 [node name="Hill10" parent="YSort/Hills" instance=ExtResource("8_vs2na")]
 y_sort_enabled = true
