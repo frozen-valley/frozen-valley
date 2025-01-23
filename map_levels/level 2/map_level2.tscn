@@ -135,7 +135,7 @@ zoom = Vector2(1.5, 1.5)
 [node name="Level2Audio" type="AudioStreamPlayer2D" parent="YSort/Player/Camera2D"]
 position = Vector2(1, 2)
 stream = ExtResource("16_h38v4")
-volume_db = -5.0
+volume_db = -2.0
 autoplay = true
 script = ExtResource("5_txy4s")
 found_sister_audio = ExtResource("6_4ffhf")
