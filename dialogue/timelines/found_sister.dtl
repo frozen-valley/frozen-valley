@@ -1,0 +1,6 @@
+main_character: There you are!
+little_sister: What took you so long?
+main_character: Don't go wandering alone again. You hear me?
+little_sister: Okay. Sorry.
+main_character: Let's go. The city isn't too far from here.
+[signal arg="found_sister"]

@@ -9,8 +9,8 @@
 [ext_resource type="Script" path="res://tree_chop_game/scripts/quicktime_item.gd" id="5_ik6if"]
 [ext_resource type="Texture2D" uid="uid://b666yerex2ivp" path="res://dialogue/styles/DialogueBox.png" id="7_igb0h"]
 [ext_resource type="Script" path="res://tree_chop_game/scripts/dead_tree_game.gd" id="7_m8k55"]
+[ext_resource type="Texture2D" uid="uid://bthllcadqhcsk" path="res://tree_chop_game/DialogueBoxColored.png" id="8_ecx65"]
 [ext_resource type="Texture2D" uid="uid://dt4rsvdwxu0wb" path="res://sprites/tools/Axe.png" id="8_gem4a"]
-[ext_resource type="Texture2D" uid="uid://bwg6hv820q0ev" path="res://UI/Button1.png" id="8_qovci"]
 [ext_resource type="Texture2D" uid="uid://pnajxw1xi271" path="res://sprites/misc/Snowflake.png" id="9_ij6fg"]
 [ext_resource type="Texture2D" uid="uid://cqw7emk7odw37" path="res://sprites/world_environment/trees/DeadTree.png" id="9_t3d4o"]
 [ext_resource type="Texture2D" uid="uid://bln1bnqqa8s2k" path="res://sprites/world_environment/trees/ChoppedTree1.png" id="10_q6sxq"]
@@ -56,16 +56,17 @@ patch_margin_right = 110
 patch_margin_bottom = 50
 
 [node name="CorrectArea" type="NinePatchRect" parent="TreeChopGame/Quicktime"]
-offset_left = 385.0
-offset_top = 5.0
-offset_right = 565.0
-offset_bottom = 185.0
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_qovci")
-patch_margin_left = 49
-patch_margin_top = 24
-patch_margin_right = 49
-patch_margin_bottom = 24
+offset_left = 365.0
+offset_top = 0.5
+offset_right = 1215.0
+offset_bottom = 660.5
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("8_ecx65")
+region_rect = Rect2(60, 40, 1110, 1010)
+patch_margin_left = 430
+patch_margin_top = 330
+patch_margin_right = 420
+patch_margin_bottom = 330
 
 [node name="Marker" type="TextureRect" parent="TreeChopGame/Quicktime"]
 offset_left = -18.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://do5pa605qh5no"]
+[gd_scene load_steps=18 format=3 uid="uid://do5pa605qh5no"]
 
 [ext_resource type="Script" path="res://bonfire/bonfire.gd" id="1_mea2b"]
 [ext_resource type="Texture2D" uid="uid://cgthq0ya6gec4" path="res://bonfire/sprites/Matches.png" id="2_lt5p1"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dpuvng05xhohw" path="res://bonfire/materials/planks.tscn" id="10_p30y3"]
 [ext_resource type="PackedScene" uid="uid://0njafmprn18g" path="res://bonfire/materials/grass.tscn" id="12_0pdiw"]
 [ext_resource type="PackedScene" uid="uid://davqj3l78lli2" path="res://journal/journal.tscn" id="16_f7ixw"]
+[ext_resource type="AudioStream" uid="uid://rgs3i6hbeuhu" path="res://audio/night-ambience-17064.mp3" id="17_jjeeg"]
 
 [node name="Bonfire" type="Node" node_paths=PackedStringArray("fireplace", "matches")]
 script = ExtResource("1_mea2b")
@@ -33,7 +34,6 @@ scale = Vector2(2, 2)
 script = ExtResource("3_2p8fn")
 
 [node name="Materials" type="HBoxContainer" parent="."]
-visible = false
 offset_left = 172.0
 offset_top = 858.0
 offset_right = 1748.0
@@ -41,35 +41,41 @@ offset_bottom = 1066.0
 theme_override_constants/separation = 20
 
 [node name="LogsButton" parent="Materials" node_paths=PackedStringArray("fireplace") instance=ExtResource("5_mfl55")]
+custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 icon = ExtResource("6_dj0rn")
 fireplace = NodePath("../../Fireplace")
 bonfire_material = ExtResource("5_qhp2t")
 
 [node name="KindleButton" parent="Materials" node_paths=PackedStringArray("fireplace") instance=ExtResource("5_mfl55")]
+custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 fireplace = NodePath("../../Fireplace")
 bonfire_material = ExtResource("6_biaru")
 
 [node name="TwigsButton" parent="Materials" node_paths=PackedStringArray("fireplace") instance=ExtResource("5_mfl55")]
+custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 icon = ExtResource("5_4381t")
 fireplace = NodePath("../../Fireplace")
 bonfire_material = ExtResource("8_bj802")
 
 [node name="TwigsButton2" parent="Materials" node_paths=PackedStringArray("fireplace") instance=ExtResource("5_mfl55")]
+custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 icon = ExtResource("5_4381t")
 fireplace = NodePath("../../Fireplace")
 bonfire_material = ExtResource("8_bj802")
 
 [node name="PlanksButton" parent="Materials" node_paths=PackedStringArray("fireplace") instance=ExtResource("5_mfl55")]
+custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 icon = ExtResource("4_lac62")
 fireplace = NodePath("../../Fireplace")
 bonfire_material = ExtResource("10_p30y3")
 
 [node name="GrassButton" parent="Materials" node_paths=PackedStringArray("fireplace") instance=ExtResource("5_mfl55")]
+custom_minimum_size = Vector2(208, 200)
 layout_mode = 2
 icon = ExtResource("7_t5vuo")
 fireplace = NodePath("../../Fireplace")
@@ -85,6 +91,10 @@ fireplace = NodePath("../../Fireplace")
 
 [node name="Book" parent="CanvasLayer" instance=ExtResource("16_f7ixw")]
 visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_jjeeg")
+autoplay = true
 
 [connection signal="pressed" from="Materials/Matches" to="." method="_on_matches_pressed"]
 [connection signal="pressed" from="Materials/Matches" to="Materials/Matches" method="_on_pressed"]

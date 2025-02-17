@@ -1,6 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dg5gxrcommbkl"]
+[gd_scene load_steps=2 format=3 uid="uid://d3e7v5gvr113p"]
 
-[ext_resource type="Texture2D" uid="uid://d3uwxk0mjyqjk" path="res://journal/sprites/JournalPG3.png" id="1_o2tml"]
+[ext_resource type="Texture2D" uid="uid://ptwc752rj85n" path="res://journal/sprites/JournalPG3Moss.png" id="1_kakbj"]
 
 [node name="JournalPage3" type="Control"]
 layout_mode = 3
@@ -14,4 +14,4 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-texture = ExtResource("1_o2tml")
+texture = ExtResource("1_kakbj")

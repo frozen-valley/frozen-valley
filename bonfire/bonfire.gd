@@ -37,4 +37,3 @@ func _fireplace_finished(win: bool):
 	for child: Control in $Materials.get_children():
 		if child is MaterialButton:
 			child.restart()
-

@@ -5,14 +5,17 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_iy7lx"]
 radius = 36.0139
 
-[node name="StaticBody2D" type="StaticBody2D"]
+[node name="MossyTree2" type="StaticBody2D"]
+y_sort_enabled = true
 position = Vector2(0, 50)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(1, -152)
 texture = ExtResource("1_4xhap")
 offset = Vector2(0, -50)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
 position = Vector2(-4, -20)
 shape = SubResource("CircleShape2D_iy7lx")

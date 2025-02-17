@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cxjtf42fqpgp5"]
+[gd_scene load_steps=7 format=3 uid="uid://cxjtf42fqpgp5"]
 
 [ext_resource type="Script" path="res://map_levels/scripts/partner.gd" id="1_g38vx"]
 [ext_resource type="Texture2D" uid="uid://s1evgrc68l15" path="res://sprites/characters/main_character/MCRed.png" id="2_pl4v2"]
 [ext_resource type="Texture2D" uid="uid://xotu58ifwo7h" path="res://sprites/characters/sister/Siswalk.png" id="3_hbxo3"]
-[ext_resource type="Texture2D" uid="uid://c72t6mm1uf6dw" path="res://sprites/characters/sister/SisterIdle.png" id="4_pthpl"]
 [ext_resource type="Texture2D" uid="uid://b7liljrbx8ny2" path="res://sprites/characters/sister/Siswalk2.png" id="4_yxbsw"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tys6c"]

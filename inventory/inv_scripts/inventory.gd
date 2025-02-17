@@ -30,5 +30,14 @@ func remove(item: InventoryItem):
 	for invItem in itemSlots:
 		invItemCounter += 1
 		if invItem.name == item.name:
-			itemSlots[invItemCounter].amount -= 1
+			itemSlots[invItemCounter].amount -=1
+	update.emit()
+
+func remove_key():
+	var invItemCounter: int = 0
+	var itemSlots = slots.filter(func(slot): if slot.item != null: return slot.item.name == "key")
+	for invItem: InventorySlot in itemSlots:
+		if invItem != null and invItem.item.name == "key":
+			itemSlots[invItemCounter].item = null
+		invItemCounter += 1
 	update.emit()

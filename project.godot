@@ -37,14 +37,21 @@ directories/dtl_directory={
 "ending": "res://dialogue/timelines/ending.dtl",
 "found_axe": "res://dialogue/timelines/found_axe.dtl",
 "found_canyon": "res://dialogue/timelines/found_canyon.dtl",
+"found_sister": "res://dialogue/timelines/found_sister.dtl",
 "level1_intro": "res://dialogue/timelines/level1_intro.dtl",
 "little_dipper_solved": "res://dialogue/timelines/little_dipper_solved.dtl",
 "little_sister_found_something": "res://dialogue/timelines/little_sister_found_something.dtl",
+"need_items": "res://dialogue/timelines/need_items.dtl",
+"need_key": "res://dialogue/timelines/need_key.dtl",
+"north_finding": "res://north_finding.dtl",
+"read_letter": "res://dialogue/timelines/read_letter.dtl",
 "sad_tree": "res://dialogue/timelines/sad_tree.dtl",
 "stargazing_cassiopeia": "res://dialogue/timelines/stargazing_cassiopeia.dtl",
 "stargazing_explanation": "res://dialogue/timelines/stargazing_explanation.dtl",
 "stargazing_intro": "res://dialogue/timelines/stargazing_intro.dtl",
-"tree_as_bridge": "res://dialogue/timelines/tree_as_bridge.dtl"
+"tree_as_bridge": "res://dialogue/timelines/tree_as_bridge.dtl",
+"tree_chop_tutorial": "res://dialogue/timelines/tree_chop_tutorial.dtl",
+"wake_up": "res://dialogue/timelines/wake_up.dtl"
 }
 glossary/default_case_sensitive=true
 layout/style_list=["res://dialogue/styles/base_style/base_style.tres", "res://dialogue/styles/main_character_style/main_character_style.tres", "res://dialogue/styles/side_character_style/side_character_style.tres", "res://dialogue/styles/portraitless_style/portraitless_style.tres"]

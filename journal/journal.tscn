@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://davqj3l78lli2"]
+[gd_scene load_steps=9 format=3 uid="uid://davqj3l78lli2"]
 
 [ext_resource type="Script" path="res://journal/journal.gd" id="1_8yidi"]
 [ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="1_ocvud"]
 [ext_resource type="Texture2D" uid="uid://bcbrhkp6fxq8k" path="res://journal/sprites/Journal.png" id="2_xainj"]
 [ext_resource type="PackedScene" uid="uid://ca3p7qid8y0u4" path="res://journal/pages/journal_page1.tscn" id="3_tp6me"]
 [ext_resource type="PackedScene" uid="uid://4f5cq5tdx1lk" path="res://journal/pages/journal_page2.tscn" id="4_uux8f"]
-[ext_resource type="PackedScene" uid="uid://dg5gxrcommbkl" path="res://journal/pages/journal_page3.tscn" id="5_527f6"]
+[ext_resource type="PackedScene" uid="uid://dg5gxrcommbkl" path="res://journal/pages/journal_page4.tscn" id="5_527f6"]
 [ext_resource type="Texture2D" uid="uid://bs0g7ox6s4f1l" path="res://journal/sprites/JournalButton.png" id="7_eomg3"]
+[ext_resource type="PackedScene" uid="uid://d3e7v5gvr113p" path="res://journal/pages/journal_page3.tscn" id="7_iljbc"]
 
 [node name="Book" type="Control"]
 layout_mode = 3
@@ -41,7 +42,15 @@ offset_top = 32.0
 offset_right = 40.0
 offset_bottom = 32.0
 
-[node name="JournalPage3" parent="JournalBackground/Pages" instance=ExtResource("5_527f6")]
+[node name="JournalPage3" parent="JournalBackground/Pages" instance=ExtResource("7_iljbc")]
+visible = false
+layout_mode = 1
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 23.0
+offset_bottom = 28.0
+
+[node name="JournalPage4" parent="JournalBackground/Pages" instance=ExtResource("5_527f6")]
 visible = false
 layout_mode = 1
 

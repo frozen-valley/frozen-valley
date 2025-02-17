@@ -6,14 +6,17 @@
 radius = 19.4165
 
 [node name="StaticBody2D" type="StaticBody2D"]
+y_sort_enabled = true
 position = Vector2(0, 16)
 collision_layer = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(1, -110)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_gvv8v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
 position = Vector2(1, -15)
 shape = SubResource("CircleShape2D_dksyn")

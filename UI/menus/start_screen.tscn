@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyb1ltl3qvtru"]
+[gd_scene load_steps=6 format=3 uid="uid://cyb1ltl3qvtru"]
 
 [ext_resource type="Script" path="res://UI/menus/start_screen.gd" id="1_bwfsw"]
 [ext_resource type="Texture2D" uid="uid://cwo7cdjb4hvuv" path="res://UI/TitlePage.png" id="2_m2v62"]
-[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="3_5cpkr"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="3_5cpkr"]
 [ext_resource type="PackedScene" uid="uid://boadmbbqicjnd" path="res://UI/menus/options_menu.tscn" id="4_jtghg"]
+[ext_resource type="AudioStream" uid="uid://bgi07tmne4kqi" path="res://audio/multi.v2.mp3" id="5_6fig8"]
 
 [node name="StartScreen" type="Node"]
 script = ExtResource("1_bwfsw")
@@ -50,6 +51,10 @@ offset_left = 796.0
 offset_top = 704.0
 offset_right = -1124.0
 offset_bottom = -376.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_6fig8")
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]

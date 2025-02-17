@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dutisekfc2hxa"]
 
-[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/theme/default_theme.tres" id="1_ba1v1"]
+[ext_resource type="Theme" uid="uid://bquvvaqw4b2ts" path="res://UI/default_theme.tres" id="1_ba1v1"]
 [ext_resource type="Script" path="res://inventory/inv_scripts/inventory_slot.gd" id="1_fbniq"]
 
 [node name="Inventory_Slot" type="Panel"]

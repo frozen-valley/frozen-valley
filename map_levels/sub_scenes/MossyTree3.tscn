@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcmwapll00ibr"]
+
+[ext_resource type="Texture2D" uid="uid://8dbvsc56uwhp" path="res://sprites/world_environment/trees/DeadTreeSouth.webp" id="1_jdfsf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iy7lx"]
+radius = 36.0139
+
+[node name="MossyTree3" type="StaticBody2D"]
+y_sort_enabled = true
+position = Vector2(0, 50)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(1, -152)
+texture = ExtResource("1_jdfsf")
+offset = Vector2(0, -50)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-4, -20)
+shape = SubResource("CircleShape2D_iy7lx")

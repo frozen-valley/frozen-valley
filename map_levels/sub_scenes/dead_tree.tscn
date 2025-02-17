@@ -6,14 +6,17 @@
 radius = 48.2597
 
 [node name="DeadTree" type="StaticBody2D"]
+y_sort_enabled = true
 position = Vector2(0, 120)
 scale = Vector2(0.8, 0.8)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
 position = Vector2(1, -83)
 texture = ExtResource("1_6jvdy")
 offset = Vector2(0, -120)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+y_sort_enabled = true
 position = Vector2(0, -20)
 shape = SubResource("CircleShape2D_0nfu6")
